@@ -8,6 +8,7 @@ namespace Tweakster.Tweaks.AutoSave
 {
     public class AutoSave
     {
+        private static DTE2 _dte;
         private static WindowEvents _windowEvents;
         private static ProjectItemsEvents _projectsEvents;
 
@@ -15,17 +16,16 @@ namespace Tweakster.Tweaks.AutoSave
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
-            var dte = await package.GetServiceAsync(typeof(DTE)) as DTE2;
-            Assumes.Present(dte);
+            _dte = await package.GetServiceAsync(typeof(DTE)) as DTE2;
+            Assumes.Present(_dte);
 
-            _windowEvents = dte.Events.WindowEvents;
+            _windowEvents = _dte.Events.WindowEvents;
             _windowEvents.WindowActivated += OnWindowActivated;
 
-            _projectsEvents = (dte.Events as Events2).ProjectItemsEvents;
+            _projectsEvents = (_dte.Events as Events2).ProjectItemsEvents;
             _projectsEvents.ItemAdded += (p) => OnProjectItemChange(p);
             _projectsEvents.ItemRemoved += (p) => OnProjectItemChange(p);
             _projectsEvents.ItemRenamed += (p, n) => OnProjectItemChange(p);
-
         }
 
 
@@ -33,7 +33,7 @@ namespace Tweakster.Tweaks.AutoSave
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
-            if (item?.ContainingProject?.IsDirty == true)
+            if (ShouldExecute() && item?.ContainingProject?.IsDirty == true)
             {
                 item.ContainingProject.Save();
             }
@@ -43,13 +43,22 @@ namespace Tweakster.Tweaks.AutoSave
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
-            lostFocus?.Document?.Save();
-
-            // Test IsDirty to filter out temp and misc project types
-            if (lostFocus?.Project?.IsDirty == true)
+            if (ShouldExecute())
             {
-                lostFocus.Project.Save();
+                lostFocus?.Document?.Save();
+
+                // Test IsDirty to filter out temp and misc project types
+                if (lostFocus?.Project?.IsDirty == true)
+                {
+                    lostFocus.Project.Save();
+                }
             }
+        }
+
+        private static bool ShouldExecute()
+        {
+            return Options.Instance.AutoSave &&
+                   _dte.Mode == vsIDEMode.vsIDEModeDesign;
         }
     }
 }
