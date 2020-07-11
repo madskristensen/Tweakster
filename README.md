@@ -22,9 +22,9 @@ You can enable or disable the various tweaks to your liking.
 ### Auto save
 From the ticket [Option to Auto Save the editor pages](https://developercommunity.visualstudio.com/idea/371187/option-to-auto-save-the-editor-pages.html).
 
-Automatic saving of documents happen when the document loses focus. That could happen when you open a different document or clicks around in another tool window such as Solution Explorer. It will also save any changes to its containing project.
+Automatic saving of documents happen when the document loses focus. That could happen when you open a different document or click around in another tool window such as Solution Explorer. It will also save any changes to its containing project.
 
-Projects are automatically saved when items are added, removed or renamed. 
+Projects are also automatically saved when files are added, removed or renamed. 
 
 ### Don't copy empty lines
 From the ticket [Please stop clearing the clipboard when you hit ctrl+c and nothing is selected](https://developercommunity.visualstudio.com/idea/693790/please-stop-clearing-the-clipboard-when-you-hit-ct.html).
