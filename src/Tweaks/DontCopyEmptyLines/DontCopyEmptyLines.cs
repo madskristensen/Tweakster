@@ -16,6 +16,12 @@ namespace Tweakster.Editor
 
         public bool ExecuteCommand(CopyCommandArgs args, CommandExecutionContext executionContext)
         {
+            if (Options.Instance.CopyEmptyLines)
+            {
+                // Feature is disabled under Tools -> Options. Abort
+                return false;
+            }
+
             ITextView view = args.TextView;
 
             if (!view.Selection.IsEmpty || !view.Caret.ContainingTextViewLine.Extent.IsEmpty)

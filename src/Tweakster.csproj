@@ -45,7 +45,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Editor\DontCopyEmptyLines.cs" />
+    <Compile Include="Tweaks\DontCopyEmptyLines\DontCopyEmptyLines.cs" />
+    <Compile Include="Options\BaseOptionModel.cs" />
+    <Compile Include="Options\BaseOptionPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Options\DialogPageProvider.cs" />
+    <Compile Include="Tweaks\DontCopyEmptyLines\Options.cs" />
+    <Compile Include="Options\Options.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="source.extension.cs">
       <AutoGen>True</AutoGen>
