@@ -45,6 +45,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Tweaks\AutoSave\AutoSave.cs" />
+    <Compile Include="Tweaks\AutoSave\Options.cs" />
     <Compile Include="Tweaks\DontCopyEmptyLines\DontCopyEmptyLines.cs" />
     <Compile Include="Options\BaseOptionModel.cs" />
     <Compile Include="Options\BaseOptionPage.cs">
@@ -76,6 +78,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
   </ItemGroup>
