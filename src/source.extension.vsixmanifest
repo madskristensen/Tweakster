@@ -4,6 +4,7 @@
         <Identity Id="0c8bd9fa-77d5-4563-ab57-9e01608c3d04" Version="1.0" Language="en-US" Publisher="Mads Kristensen" />
         <DisplayName>Tweakster</DisplayName>
         <Description xml:space="preserve">A collection of minor fixes and tweaks for Visual Studio to reduce the paper cuts and make you a happier developer</Description>
+        <MoreInfo>https://github.com/madskristensen/Tweakster</MoreInfo>
         <License>Resources\LICENSE</License>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\Icon.png</PreviewImage>
