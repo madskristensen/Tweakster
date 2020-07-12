@@ -19,6 +19,11 @@ You can enable or disable the various tweaks to your liking.
 
 ![Settings](art/settings.png)
 
+### Code Cleanup on format (C# only)
+From the ticket [Cleanup code during formatting](https://developercommunity.visualstudio.com/idea/420291/cleanup-code-during-formatting.html)
+
+Instead of running the *Code Cleanup* command manually, it now runs automatically when *Format Document* is invoked. 
+
 ### Auto save
 From the ticket [Option to Auto Save the editor pages](https://developercommunity.visualstudio.com/idea/371187/option-to-auto-save-the-editor-pages.html).
 
