@@ -47,6 +47,8 @@
   <ItemGroup>
     <Compile Include="Tweaks\AutoSave\AutoSave.cs" />
     <Compile Include="Tweaks\AutoSave\Options.cs" />
+    <Compile Include="Tweaks\CodeCleanupOnFormat\CodeCleanupOnFormat.cs" />
+    <Compile Include="Tweaks\CodeCleanupOnFormat\Options.cs" />
     <Compile Include="Tweaks\DontCopyEmptyLines\DontCopyEmptyLines.cs" />
     <Compile Include="Options\BaseOptionModel.cs" />
     <Compile Include="Options\BaseOptionPage.cs">
