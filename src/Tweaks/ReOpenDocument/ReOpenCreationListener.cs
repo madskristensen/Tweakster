@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.Composition;
-using System.IO;
+﻿using System.ComponentModel.Composition;
 using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Utilities;
@@ -10,9 +8,9 @@ namespace Tweakster
     [Export(typeof(IWpfTextViewCreationListener))]
     [ContentType("text")]
     [TextViewRole(PredefinedTextViewRoles.Document)]
-    internal class TextFileCreationListener : IWpfTextViewCreationListener
+    internal class ReOpenCreationListener : IWpfTextViewCreationListener
     {
-        public static Dictionary<string, string> OpenFiles { get; } = new Dictionary<string, string>();
+        public static string LastClosed { get; private set; }
 
         [Import]
         internal ITextDocumentFactoryService _documentService = null;
@@ -21,10 +19,7 @@ namespace Tweakster
         {
             if (_documentService.TryGetTextDocument(textView.TextBuffer, out ITextDocument doc))
             {
-                var name = Path.GetFileName(doc.FilePath);
-                OpenFiles[name] = doc.FilePath;
-
-                textView.Properties.AddProperty("doc", name);
+                textView.Properties.AddProperty("doc", doc.FilePath);
             }
 
             textView.Closed += TextView_Closed;
@@ -35,9 +30,9 @@ namespace Tweakster
             var textView = (IWpfTextView)sender;
             textView.Closed -= TextView_Closed;
 
-            if (textView.Properties.TryGetProperty("doc", out string name) && OpenFiles.ContainsKey(name))
+            if (textView.Properties.TryGetProperty("doc", out string fileName))
             {
-                OpenFiles.Remove(name);
+                LastClosed = fileName;
             }
         }
     }

@@ -70,7 +70,7 @@
       <DependentUpon>source.extension.vsixmanifest</DependentUpon>
     </Compile>
     <Compile Include="TweaksterPackage.cs" />
-    <Compile Include="Tweaks\ReOpenDocument\TextFileCreationListener.cs" />
+    <Compile Include="Tweaks\ReOpenDocument\ReOpenCreationListener.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\LICENSE">
