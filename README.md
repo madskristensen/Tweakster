@@ -21,13 +21,13 @@ It's from those tickets inspiration for this extension came.
 
 <h3 id="codecleanup">Code Cleanup on format (C# only)</h3>
 
-From the ticket [Cleanup code during formatting](https://developercommunity.visualstudio.com/idea/420291/cleanup-code-during-formatting.html)
+Inspired by the suggestion [Cleanup code during formatting](https://developercommunity.visualstudio.com/idea/420291/cleanup-code-during-formatting.html)
 
 Instead of running the *Code Cleanup* command manually, it now runs automatically when *Format Document* is invoked. 
 
 <h3 id="reopen">Re-Open Closed File</h3>
 
-From the ticket [Reopen closed tab](https://developercommunity.visualstudio.com/content/idea/402931/reopen-closed-tab.html)
+Inspired by the suggestion [Reopen closed tab](https://developercommunity.visualstudio.com/content/idea/402931/reopen-closed-tab.html)
 
 When you close a file by accident, you can now easily open it back up again. Go to **File -> Re-Open [file name]**
 
@@ -35,7 +35,7 @@ When you close a file by accident, you can now easily open it back up again. Go 
 
 <h3 id="autosave">Auto save</h3>
 
-From the ticket [Option to Auto Save the editor pages](https://developercommunity.visualstudio.com/idea/371187/option-to-auto-save-the-editor-pages.html).
+Inspired by the suggestion [Option to Auto Save the editor pages](https://developercommunity.visualstudio.com/idea/371187/option-to-auto-save-the-editor-pages.html).
 
 Automatic saving of documents happen when the document loses focus. That could happen when you open a different document or click around in another tool window such as Solution Explorer. It will also save any changes to its containing project.
 
@@ -43,7 +43,7 @@ Projects are also automatically saved when files are added, removed or renamed.
 
 <h3 id="dontcopyemptylines">Don't copy empty lines</h3>
 
-From the ticket [Please stop clearing the clipboard when you hit ctrl+c and nothing is selected](https://developercommunity.visualstudio.com/idea/693790/please-stop-clearing-the-clipboard-when-you-hit-ct.html).
+Inspired by the suggestion [Please stop clearing the clipboard when you hit ctrl+c and nothing is selected](https://developercommunity.visualstudio.com/idea/693790/please-stop-clearing-the-clipboard-when-you-hit-ct.html).
 
 When the caret is placed on an empty line and you hit *Copy* or *Ctrl+C* then the empty lines isn't copied to the clipboard like it normally would.
 
