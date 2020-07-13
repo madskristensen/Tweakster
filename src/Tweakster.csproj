@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Tweaks\ReOpenDocument\ReOpenDocument.cs" />
+    <Compile Include="TweaksterPackage1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TweaksterPackage.vsct</DependentUpon>
+    </Compile>
     <Compile Include="Tweaks\AutoSave\AutoSave.cs" />
     <Compile Include="Tweaks\AutoSave\Options.cs" />
     <Compile Include="Tweaks\CodeCleanupOnFormat\CodeCleanupOnFormat.cs" />
@@ -64,6 +70,7 @@
       <DependentUpon>source.extension.vsixmanifest</DependentUpon>
     </Compile>
     <Compile Include="TweaksterPackage.cs" />
+    <Compile Include="Tweaks\ReOpenDocument\TextFileCreationListener.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\LICENSE">
@@ -73,6 +80,11 @@
     <Content Include="Resources\Icon.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <VSCTCompile Include="TweaksterPackage.vsct">
+      <Generator>VsctGenerator</Generator>
+      <ResourceName>Menus.ctmenu</ResourceName>
+      <LastGenOutput>TweaksterPackage1.cs</LastGenOutput>
+    </VSCTCompile>
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
       <Generator>VsixManifestGenerator</Generator>
@@ -80,9 +92,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.206" ExcludeAssets="runtime" />

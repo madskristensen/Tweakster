@@ -24,6 +24,13 @@ From the ticket [Cleanup code during formatting](https://developercommunity.visu
 
 Instead of running the *Code Cleanup* command manually, it now runs automatically when *Format Document* is invoked. 
 
+### Re-Open Closed File
+From the ticket [Reopen closed tab](https://developercommunity.visualstudio.com/content/idea/402931/reopen-closed-tab.html).
+
+When you close a file by accident, you can now easily open it back up again. Go to **File -> Re-Open [file name]**
+
+![Re-Open Closed File](art/re-open-closed-file.png)
+
 ### Auto save
 From the ticket [Option to Auto Save the editor pages](https://developercommunity.visualstudio.com/idea/371187/option-to-auto-save-the-editor-pages.html).
 

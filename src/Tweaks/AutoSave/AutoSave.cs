@@ -12,7 +12,7 @@ namespace Tweakster.Tweaks.AutoSave
         private static WindowEvents _windowEvents;
         private static ProjectItemsEvents _projectsEvents;
 
-        public static async Task RegisterAsync(AsyncPackage package)
+        public static async Task InitializeAsync(AsyncPackage package)
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 

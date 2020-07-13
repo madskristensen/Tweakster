@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Include href="KnownImageIds.vsct"/>
+
+  <Commands package="guidTweaksterPackage">
+    <Buttons>
+      <Button guid="guidCommands" id="ReOpenDocument" priority="0x0100" type="Button">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_FILE_SOLUTION" />
+        <Icon guid="ImageCatalogGuid" id="OpenDocumentFromCollection" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DontCache</CommandFlag>
+        <Strings>
+          <ButtonText>Re-Open Closed File</ButtonText>
+          <CommandName>.File.ReOpenClosedFile</CommandName>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <KeyBindings>
+    <KeyBinding guid="guidCommands" id="ReOpenDocument" editor="guidVSStd97" key1="T" mod1="Control Shift" key2="T" mod2="Control Shift" />
+  </KeyBindings>
+
+  <Symbols>
+    <GuidSymbol name="guidTweaksterPackage" value="{590dcf32-ae09-49b9-b0e5-55d7ebf100d0}" />
+
+    <GuidSymbol name="guidCommands" value="{85ce63b9-a773-45e0-9a60-9a96bc2ab40b}">
+      <IDSymbol name="ReOpenDocument" value="0x0100" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
