@@ -1,4 +1,4 @@
-# Tweakster for Visual Studio
+# Tweaks for Visual Studio
 
 [![Build status](https://ci.appveyor.com/api/projects/status/4pha1svkn0aqg3u4?svg=true)](https://ci.appveyor.com/project/madskristensen/tweakster)
 
