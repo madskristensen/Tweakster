@@ -24,5 +24,6 @@ namespace Tweakster
     internal sealed partial class PackageIds
     {
         public const int ReOpenDocument = 0x0100;
+        public const int Restart = 0x0200;
     }
 }

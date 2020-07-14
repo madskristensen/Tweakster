@@ -74,7 +74,7 @@ namespace Tweakster
         private bool InterceptCommand()
         {
             return !Options.Instance.DebugOnF10F11 &&
-                   VsShellUtilities.GetDebugMode(_serviceProvider) == DBGMODE.DBGMODE_Design;
+                   VsShellUtilities.IsVisualStudioInDesignMode(_serviceProvider);
         }
     }
 }

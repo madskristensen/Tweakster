@@ -19,6 +19,7 @@ It's from those tickets inspiration for this extension came.
 * [Don't copy empty lines](#dontcopyemptylines)
 * [Settings](#settings)
 * [Don't start debug on F10/F11](#nodebugonf10)
+* [Restart command](#restart)
 
 <h3 id="codecleanup">Run Code Cleanup on format (C# only)</h3>
 
@@ -53,6 +54,14 @@ When the caret is placed on an empty line and you hit *Copy* or *Ctrl+C* then th
 Inspired by the suggestion [Please provide a way to disable F10/F11 until debug mode is entered](https://developercommunity.visualstudio.com/idea/960671/please-provide-a-way-to-disable-f10f11-until-debug.html).
 
 F10 (*Step Over*) and F11 (*Step Into*) are two commands people often hit by accident. That starts a new debugging session and that can be annoying if you didn't mean for that to happen. 
+
+<h3 id="restart">Restart command</h3>
+
+Inspired by the suggestion [Add a Restart Visual Studio option to 'File' menu](https://developercommunity.visualstudio.com/idea/537213/add-a-restart-visual-studio-option-to-file-menu.html).
+
+Make it easy to restart Visual Studio. If it's running elevated, it will restart back into elevated mode. The shortcut key is **Shift+Alt+F4**.
+
+![Restart](art/restart.png)
 
 <h3 id="settings">Settings</h3>
 
