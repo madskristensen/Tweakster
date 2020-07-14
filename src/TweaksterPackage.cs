@@ -23,6 +23,7 @@ namespace Tweakster
 
             await AutoSave.InitializeAsync(this);
             await ReOpenDocument.InitializeAsync(this);
+            await NoStepDebuggingInDesignMode.InitializeAsync(this);
         }
     }
 }

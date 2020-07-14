@@ -13,13 +13,14 @@ or get the [CI build](https://www.vsixgallery.com/extension/0c8bd9fa-77d5-4563-a
 The list of features are coming from the [Visual Studio Developer Community](https://developercommunity.visualstudio.com/topics/extension+candidate.html?page=1&pageSize=15&sort=votes&openOnly=false&closedOnly=false&topics=extension%20candidate) where users are posting feature suggestions and problem report tickets. 
 It's from those tickets inspiration for this extension came.
 
-* [Code Cleanup on format](#codecleanup)
+* [Run Code Cleanup on format](#codecleanup)
 * [Re-open closed tab](#reopen)
 * [Auto save](#autosave)
 * [Don't copy empty lines](#dontcopyemptylines)
 * [Settings](#settings)
+* [Don't start debug on F10/F11](#nodebugonf10)
 
-<h3 id="codecleanup">Code Cleanup on format (C# only)</h3>
+<h3 id="codecleanup">Run Code Cleanup on format (C# only)</h3>
 
 Inspired by the suggestion [Cleanup code during formatting](https://developercommunity.visualstudio.com/idea/420291/cleanup-code-during-formatting.html)
 
@@ -46,6 +47,12 @@ Projects are also automatically saved when files are added, removed or renamed.
 Inspired by the suggestion [Please stop clearing the clipboard when you hit ctrl+c and nothing is selected](https://developercommunity.visualstudio.com/idea/693790/please-stop-clearing-the-clipboard-when-you-hit-ct.html).
 
 When the caret is placed on an empty line and you hit *Copy* or *Ctrl+C* then the empty lines isn't copied to the clipboard like it normally would.
+
+<h3 id="nodebugonf10">Don't start debug on F10/F11</h3>
+
+Inspired by the suggestion [Please provide a way to disable F10/F11 until debug mode is entered](https://developercommunity.visualstudio.com/idea/960671/please-provide-a-way-to-disable-f10f11-until-debug.html).
+
+F10 (*Step Over*) and F11 (*Step Into*) are two commands people often hit by accident. That starts a new debugging session and that can be annoying if you didn't mean for that to happen. 
 
 <h3 id="settings">Settings</h3>
 
