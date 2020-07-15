@@ -25,5 +25,6 @@ namespace Tweakster
     {
         public const int ReOpenDocument = 0x0100;
         public const int Restart = 0x0200;
+        public const int DeleteOutputArtifacts = 0x0300;
     }
 }

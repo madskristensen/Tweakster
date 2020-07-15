@@ -46,10 +46,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ContentTypes.cs" />
+    <Compile Include="ProjectHelpers.cs" />
     <Compile Include="Tweaks\FormatOnMoveLine\FormatOnMoveLine.cs" />
     <Compile Include="Tweaks\FormatOnMoveLine\Options.cs" />
     <Compile Include="Tweaks\NoStepDebuggingInDesignMode\NoStepDebuggingInDesignMode.cs" />
     <Compile Include="Tweaks\NoStepDebuggingInDesignMode\Options.cs" />
+    <Compile Include="Tweaks\DeleteOutputArtifacts\DeleteOutputArtifacts.cs" />
     <Compile Include="Tweaks\Restart\Restart.cs" />
     <Compile Include="Tweaks\ReOpenDocument\ReOpenDocument.cs" />
     <Compile Include="TweaksterPackage1.cs">

@@ -25,7 +25,7 @@ namespace Tweakster
             await ReOpenDocument.InitializeAsync(this);
             await NoStepDebuggingInDesignMode.InitializeAsync(this);
             await Restart.InitializeAsync(this);
-            //await FormatOnMoveLine.InitializeAsync(this);
+            await DeleteOutputArtifacts.InitializeAsync(this);
         }
     }
 }
