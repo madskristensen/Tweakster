@@ -22,6 +22,8 @@ It's from those tickets inspiration for this extension came.
 * [Format on line move up/down](#formatonlinemove)
 * [Settings](#settings)
 
+If you know of any suggestion tickets that would be well suited for this extension to implement, please [open an issue](https://github.com/madskristensen/Tweakster/issues) on it. Find inspiration by [browsing the Developer Community](https://developercommunity.visualstudio.com/spaces/8/visual-studio-ide.html?sort=votes&type=idea&openOnly=true) for more suggestions.
+
 <h3 id="codecleanup">Run Code Cleanup on format (C# only)</h3>
 
 Inspired by the suggestion [Cleanup code during formatting](https://developercommunity.visualstudio.com/idea/420291/cleanup-code-during-formatting.html)
