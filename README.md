@@ -62,13 +62,13 @@ Inspired by the suggestion [Add a Restart Visual Studio option to 'File' menu](h
 
 Make it easy to restart Visual Studio. If it's running elevated, it will restart back into elevated mode. The shortcut key is **Shift+Alt+F4**.
 
+![Restart](art/restart.png)
+
 <h3 id="formatonlinemove">Format on live move up/down</h3>
 
 Inspired by the suggestion [Move lines up/down command should correct indentation](https://developercommunity.visualstudio.com/idea/1068219/move-lines-updown-command-should-correct-indentati.html).
 
 When using Alt+Up/Down arrow keys to move lines up and down in the editor, those lines will now indent correctly as they move. This is supported for C#, Visual Basic, and HTML.
-
-![Restart](art/restart.png)
 
 <h3 id="settings">Settings</h3>
 
