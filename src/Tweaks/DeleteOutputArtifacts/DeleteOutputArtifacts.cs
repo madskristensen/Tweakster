@@ -41,39 +41,10 @@ namespace Tweakster
 
             var interceptor = new DeleteOutputArtifacts(package, sln, dte);
             pct.RegisterPriorityCommandTarget(0, interceptor, out _);
-
-
-            //outWindow.GetPane(VSConstants.GUID_BuildOutputWindowPane, out IVsOutputWindowPane buildPane);
-
-            //var cmdId = new CommandID(PackageGuids.guidCommands, PackageIds.DeleteOutputArtifacts);
-            //var menuItem = new OleMenuCommand((s, e) => Execute(sln, buildPane), cmdId);
-            //menuItem.BeforeQueryStatus += (s, e) =>
-            //{
-            //    menuItem.Enabled = !VsShellUtilities.IsSolutionBuilding(package);
-            //};
-            //commandService.AddCommand(menuItem);
         }
 
         public int QueryStatus(ref Guid pguidCmdGroup, uint cCmds, OLECMD[] prgCmds, IntPtr pCmdText)
         {
-            //if (pguidCmdGroup == typeof(VSConstants.VSStd97CmdID).GUID)
-            //{
-            //    for (var i = 0; i < cCmds; i++)
-            //    {
-            //        switch (prgCmds[i].cmdID)
-            //        {
-            //            case (uint)VSConstants.VSStd97CmdID.Clean9:
-            //            case (uint)VSConstants.VSStd97CmdID.Rebuild9:
-            //                if (InterceptCommand())
-            //                {
-            //                    return VSConstants.S_FALSE;
-            //                }
-
-            //                break;
-            //        }
-            //    }
-            //}
-
             return (int)Microsoft.VisualStudio.OLE.Interop.Constants.MSOCMDEXECOPT_DODEFAULT;
         }
 
