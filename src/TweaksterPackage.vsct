@@ -29,24 +29,8 @@
           <CommandName>.File.Restart</CommandName>
         </Strings>
       </Button>
-
-      <Button guid="guidCommands" id="DeleteOutputArtifacts" priority="0x0450" type="Button">
-        <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_PROJECT_BUILD" />
-        <Icon guid="ImageCatalogGuid" id="CleanData" />
-        <CommandFlag>IconIsMoniker</CommandFlag>
-        <Strings>
-          <ButtonText>Delete Output Artifacts</ButtonText>
-          <CommandName>.File.DeleteOutputArtifacts</CommandName>
-        </Strings>
-      </Button>
     </Buttons>
   </Commands>
-
-  <CommandPlacements>
-    <CommandPlacement guid="guidCommands" id="DeleteOutputArtifacts" priority="0x0400">
-      <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_SOLUTION_BUILD" />
-    </CommandPlacement>
-  </CommandPlacements>
 
   <KeyBindings>
     <KeyBinding guid="guidCommands" id="ReOpenDocument" editor="guidVSStd97" key1="T" mod1="Control Shift" key2="T" mod2="Control Shift" />
@@ -59,7 +43,6 @@
     <GuidSymbol name="guidCommands" value="{85ce63b9-a773-45e0-9a60-9a96bc2ab40b}">
       <IDSymbol name="ReOpenDocument" value="0x0100" />
       <IDSymbol name="Restart" value="0x0200" />
-      <IDSymbol name="DeleteOutputArtifacts" value="0x0300" />
     </GuidSymbol>
   </Symbols>
 </CommandTable>

@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="ContentTypes.cs" />
     <Compile Include="ProjectHelpers.cs" />
+    <Compile Include="Tweaks\DeleteOutputArtifacts\Options.cs" />
     <Compile Include="Tweaks\FormatOnMoveLine\FormatOnMoveLine.cs" />
     <Compile Include="Tweaks\FormatOnMoveLine\Options.cs" />
     <Compile Include="Tweaks\NoStepDebuggingInDesignMode\NoStepDebuggingInDesignMode.cs" />

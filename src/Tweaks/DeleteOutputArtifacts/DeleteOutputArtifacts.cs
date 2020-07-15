@@ -4,16 +4,29 @@ using System.ComponentModel.Design;
 using System.IO;
 using System.Linq;
 using EnvDTE;
+using EnvDTE80;
 using Microsoft;
 using Microsoft.VisualStudio;
+using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
 
 namespace Tweakster
 {
-    internal sealed class DeleteOutputArtifacts
+    internal sealed class DeleteOutputArtifacts : IOleCommandTarget
     {
+        private readonly System.IServiceProvider _serviceProvider;
+        private readonly IVsSolution _solution;
+        private readonly DTE2 _dte;
+
+        private DeleteOutputArtifacts(System.IServiceProvider serviceProvider, IVsSolution solution, DTE2 dte)
+        {
+            _serviceProvider = serviceProvider;
+            _solution = solution;
+            _dte = dte;
+        }
+
         public static async Task InitializeAsync(AsyncPackage package)
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync(package.DisposalToken);
@@ -22,55 +35,119 @@ namespace Tweakster
             Assumes.Present(commandService);
 
             var sln = await package.GetServiceAsync(typeof(SVsSolution)) as IVsSolution;
-            Assumes.Present(sln);
+            var dte = await package.GetServiceAsync(typeof(DTE)) as DTE2;
+            var pct = await package.GetServiceAsync(typeof(SVsRegisterPriorityCommandTarget)) as IVsRegisterPriorityCommandTarget;
+            Assumes.Present(pct);
 
-            var outWindow = await package.GetServiceAsync(typeof(SVsOutputWindow)) as IVsOutputWindow;
-            Assumes.Present(outWindow);
+            var interceptor = new DeleteOutputArtifacts(package, sln, dte);
+            pct.RegisterPriorityCommandTarget(0, interceptor, out _);
 
-            outWindow.GetPane(VSConstants.GUID_BuildOutputWindowPane, out IVsOutputWindowPane buildPane);
 
-            var cmdId = new CommandID(PackageGuids.guidCommands, PackageIds.DeleteOutputArtifacts);
-            var menuItem = new OleMenuCommand((s, e) => Execute(sln, buildPane), cmdId);
-            menuItem.BeforeQueryStatus += (s, e) =>
-            {
-                menuItem.Enabled = !VsShellUtilities.IsSolutionBuilding(package);
-            };
-            commandService.AddCommand(menuItem);
+            //outWindow.GetPane(VSConstants.GUID_BuildOutputWindowPane, out IVsOutputWindowPane buildPane);
+
+            //var cmdId = new CommandID(PackageGuids.guidCommands, PackageIds.DeleteOutputArtifacts);
+            //var menuItem = new OleMenuCommand((s, e) => Execute(sln, buildPane), cmdId);
+            //menuItem.BeforeQueryStatus += (s, e) =>
+            //{
+            //    menuItem.Enabled = !VsShellUtilities.IsSolutionBuilding(package);
+            //};
+            //commandService.AddCommand(menuItem);
         }
 
-        private static void Execute(IVsSolution sln, IVsOutputWindowPane buildPane)
+        public int QueryStatus(ref Guid pguidCmdGroup, uint cCmds, OLECMD[] prgCmds, IntPtr pCmdText)
+        {
+            //if (pguidCmdGroup == typeof(VSConstants.VSStd97CmdID).GUID)
+            //{
+            //    for (var i = 0; i < cCmds; i++)
+            //    {
+            //        switch (prgCmds[i].cmdID)
+            //        {
+            //            case (uint)VSConstants.VSStd97CmdID.Clean9:
+            //            case (uint)VSConstants.VSStd97CmdID.Rebuild9:
+            //                if (InterceptCommand())
+            //                {
+            //                    return VSConstants.S_FALSE;
+            //                }
+
+            //                break;
+            //        }
+            //    }
+            //}
+
+            return (int)Microsoft.VisualStudio.OLE.Interop.Constants.MSOCMDEXECOPT_DODEFAULT;
+        }
+
+        public int Exec(ref Guid pguidCmdGroup, uint nCmdID, uint nCmdexecopt, IntPtr pvaIn, IntPtr pvaOut)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
-            var item = ProjectHelpers.GetSelectedItem();
-            buildPane.Clear();
-            buildPane.Activate();
-
-            if (item is Project project)
+            if (pguidCmdGroup == typeof(VSConstants.VSStd97CmdID).GUID)
             {
-                WriteToOutput($"Start deleting 2 directories...", buildPane);
-                DeleteArtifacts(project.GetFullPath(), buildPane);
-                WriteToOutput($"Done", buildPane);
-            }
-            else if (item == null) // It's a solution
-            {
-                IEnumerable<string> projectFiles = GetProjectFiles(sln);
-
-                WriteToOutput($"Start deleting {projectFiles.Count() * 2} directories...", buildPane);
-
-                foreach (var projectFile in projectFiles)
+                switch (nCmdID)
                 {
-                    DeleteArtifacts(projectFile, buildPane);
+                    case (uint)VSConstants.VSStd97CmdID.CleanSln:
+                    case (uint)VSConstants.VSStd97CmdID.RebuildSln:
+                        if (InterceptCommand())
+                        {
+                            DeleteForSolution();
+                        }
+
+                        break;
+
+                    case (uint)VSConstants.VSStd97CmdID.CleanSel:
+                    case (uint)VSConstants.VSStd97CmdID.CleanCtx:
+                    case (uint)VSConstants.VSStd97CmdID.RebuildSel:
+                        if (InterceptCommand())
+                        {
+                            DeleteForSelection();
+                        }
+
+                        break;
                 }
+            }
 
-                WriteToOutput($"Done", buildPane);
+            return (int)Microsoft.VisualStudio.OLE.Interop.Constants.MSOCMDERR_E_FIRST;
+        }
 
+        private bool InterceptCommand()
+        {
+            return Options.Instance.DeleteOuputArtifactsOnClean &&
+                   !VsShellUtilities.IsSolutionBuilding(_serviceProvider);
+        }
+
+        private void DeleteForSolution()
+        {
+            ThreadHelper.ThrowIfNotOnUIThread();
+
+            IEnumerable<string> projectFiles = GetProjectFiles(_solution);
+
+            foreach (var projectFile in projectFiles)
+            {
+                DeleteArtifacts(projectFile);
             }
         }
 
-        private static void DeleteArtifacts(string projectFile, IVsOutputWindowPane buildPane)
+        private void DeleteForSelection()
         {
             ThreadHelper.ThrowIfNotOnUIThread();
+
+            IEnumerable<Project> projects = from SelectedItem item in _dte.SelectedItems select item?.Project;
+
+            foreach (Project project in projects)
+            {
+                DeleteArtifacts(project.GetFullPath());
+            }
+        }
+
+        private void DeleteArtifacts(string projectFile)
+        {
+            ThreadHelper.ThrowIfNotOnUIThread();
+
+            if (string.IsNullOrEmpty(projectFile) || !Path.IsPathRooted(projectFile))
+            {
+                return;
+            }
+
             string directory = null;
 
             if (File.Exists(projectFile))
@@ -84,19 +161,17 @@ namespace Tweakster
 
             if (!string.IsNullOrEmpty(directory))
             {
-                SafeDeleteDirectory(Path.Combine(directory, "bin"), buildPane);
-                SafeDeleteDirectory(Path.Combine(directory, "obj"), buildPane);
+                SafeDeleteDirectory(Path.Combine(directory, "bin"));
+                SafeDeleteDirectory(Path.Combine(directory, "obj"));
             }
         }
 
-        private static void SafeDeleteDirectory(string path, IVsOutputWindowPane buildPane)
+        private void SafeDeleteDirectory(string path)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
             try
             {
-                WriteToOutput($"  Deleting {path}", buildPane);
-
                 if (Directory.Exists(path))
                 {
                     Directory.Delete(path, true);
@@ -104,11 +179,10 @@ namespace Tweakster
             }
             catch (Exception)
             {
-                WriteToOutput($"Failed to delete {path}", buildPane);
             }
         }
 
-        private static IEnumerable<string> GetProjectFiles(IVsSolution sln)
+        private IEnumerable<string> GetProjectFiles(IVsSolution sln)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
@@ -117,13 +191,6 @@ namespace Tweakster
             sln.GetProjectFilesInSolution(0x1, numberOfProjects, projects, out _);
 
             return projects.Where(p => !string.IsNullOrEmpty(p) && File.Exists(p));
-        }
-
-        public static void WriteToOutput(string message, IVsOutputWindowPane buildPane)
-        {
-            ThreadHelper.ThrowIfNotOnUIThread();
-            ErrorHandler.ThrowOnFailure(buildPane.OutputStringThreadSafe(message + Environment.NewLine));
-
         }
     }
 }

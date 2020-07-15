@@ -19,7 +19,7 @@ It's from those tickets inspiration for this extension came.
 * [Don't copy empty lines](#dontcopyemptylines)
 * [Don't start debug on F10/F11](#nodebugonf10)
 * [Restart command](#restart)
-* [Delete *obj* and *bin* folders](#deleteoutputartifacts)
+* [Delete *obj* and *bin* on Clean](#deleteoutputartifacts)
 * [Format on line move up/down](#formatonlinemove)
 * [Settings](#settings)
 
@@ -67,13 +67,11 @@ Make it easy to restart Visual Studio. If it's running elevated, it will restart
 
 ![Restart](art/restart.png)
 
-<h3 id="deleteoutputartifacts">Delete obj and bin folders</h3>
+<h3 id="deleteoutputartifacts">Delete obj and bin on Clean</h3>
 
 Inspired by the suggestion [Aggresive Clean Output Option](https://developercommunity.visualstudio.com/idea/698053/aggresive-clean-output-option.html).
 
-By adding a new command to the context menu of solutions and project, it's easy to do full cleanup of `bin` and `obj` folders. Simply right-click and hit *Delete Output Artifacts* from the menu.
-
-![Restart](art/delete-output-artifacts.png)
+Both *bin* and *obj* are now fully deleted when the *Clean* command is executed. It does so right before the regular *Clean* command runs. The *Clean* command will add the *bin* and *obj* folders back, so be aware of that when testing this feature.
 
 <h3 id="formatonlinemove">Format on live move up/down</h3>
 
