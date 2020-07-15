@@ -13,13 +13,13 @@ or get the [CI build](https://www.vsixgallery.com/extension/0c8bd9fa-77d5-4563-a
 The list of features are coming from the [Visual Studio Developer Community](https://developercommunity.visualstudio.com/topics/extension+candidate.html?page=1&pageSize=15&sort=votes&openOnly=false&closedOnly=false&topics=extension%20candidate) where users are posting feature suggestions and problem report tickets. 
 It's from those tickets inspiration for this extension came.
 
-* [Run Code Cleanup on format](#codecleanup)
-* [Re-open closed tab](#reopen)
+* [Run *Code Cleanup* on format](#codecleanup)
+* [Re-open closed file](#reopen)
 * [Auto save](#autosave)
 * [Don't copy empty lines](#dontcopyemptylines)
 * [Don't start debug on F10/F11](#nodebugonf10)
 * [Restart command](#restart)
-* [Delete *obj* and *bin* on Clean](#deleteoutputartifacts)
+* [Delete obj and bin folders on *Clean*](#deleteoutputartifacts)
 * [Format on line move up/down](#formatonlinemove)
 * [Settings](#settings)
 
@@ -31,7 +31,7 @@ Inspired by the suggestion [Cleanup code during formatting](https://developercom
 
 Instead of running the *Code Cleanup* command manually, it now runs automatically when *Format Document* or **Ctrl+K,Ctrl+D** is invoked. 
 
-<h3 id="reopen">Re-Open Closed File</h3>
+<h3 id="reopen">Re-open closed file</h3>
 
 Inspired by the suggestion [Reopen closed tab](https://developercommunity.visualstudio.com/content/idea/402931/reopen-closed-tab.html)
 
@@ -67,7 +67,7 @@ Make it easy to restart Visual Studio. If it's running elevated, it will restart
 
 ![Restart](art/restart.png)
 
-<h3 id="deleteoutputartifacts">Delete obj and bin on Clean</h3>
+<h3 id="deleteoutputartifacts">Delete obj and bin folders on <i>Clean</i></h3>
 
 Inspired by the suggestion [Aggresive Clean Output Option](https://developercommunity.visualstudio.com/idea/698053/aggresive-clean-output-option.html).
 
