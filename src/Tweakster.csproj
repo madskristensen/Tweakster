@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ContentTypes.cs" />
+    <Compile Include="Tweaks\FormatOnMoveLine\FormatOnMoveLine.cs" />
+    <Compile Include="Tweaks\FormatOnMoveLine\Options.cs" />
     <Compile Include="Tweaks\NoStepDebuggingInDesignMode\NoStepDebuggingInDesignMode.cs" />
     <Compile Include="Tweaks\NoStepDebuggingInDesignMode\Options.cs" />
     <Compile Include="Tweaks\Restart\Restart.cs" />

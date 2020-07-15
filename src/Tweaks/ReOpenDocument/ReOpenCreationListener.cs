@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.Utilities;
 namespace Tweakster
 {
     [Export(typeof(IWpfTextViewCreationListener))]
-    [ContentType("text")]
+    [ContentType(ContentTypes.Any)]
     [TextViewRole(PredefinedTextViewRoles.Document)]
     internal class ReOpenCreationListener : IWpfTextViewCreationListener
     {
@@ -20,9 +20,9 @@ namespace Tweakster
             if (_documentService.TryGetTextDocument(textView.TextBuffer, out ITextDocument doc))
             {
                 textView.Properties.AddProperty("doc", doc.FilePath);
+                textView.Closed += TextView_Closed;
             }
 
-            textView.Closed += TextView_Closed;
         }
 
         private void TextView_Closed(object sender, System.EventArgs e)

@@ -20,6 +20,7 @@ It's from those tickets inspiration for this extension came.
 * [Settings](#settings)
 * [Don't start debug on F10/F11](#nodebugonf10)
 * [Restart command](#restart)
+* [Format on line move up/down](#formatonlinemove)
 
 <h3 id="codecleanup">Run Code Cleanup on format (C# only)</h3>
 
@@ -60,6 +61,12 @@ F10 (*Step Over*) and F11 (*Step Into*) are two commands people often hit by acc
 Inspired by the suggestion [Add a Restart Visual Studio option to 'File' menu](https://developercommunity.visualstudio.com/idea/537213/add-a-restart-visual-studio-option-to-file-menu.html).
 
 Make it easy to restart Visual Studio. If it's running elevated, it will restart back into elevated mode. The shortcut key is **Shift+Alt+F4**.
+
+<h3 id="formatonlinemove">Format on live move up/down</h3>
+
+Inspired by the suggestion [Move lines up/down command should correct indentation](https://developercommunity.visualstudio.com/idea/1068219/move-lines-updown-command-should-correct-indentati.html).
+
+When using Alt+Up/Down arrow keys to move lines up and down in the editor, those lines will now indent correctly as they move. This is supported for C#, Visual Basic, and HTML.
 
 ![Restart](art/restart.png)
 

@@ -13,7 +13,7 @@ namespace Tweakster
     [ProvideOptionPage(typeof(DialogPageProvider.General), "Environment", Vsix.Name, 0, 0, true, ProvidesLocalizedCategoryName = false)]
     [ProvideProfile(typeof(DialogPageProvider.General), "Environment", Vsix.Name, 0, 0, true)]
     [ProvideAutoLoad(VSConstants.UICONTEXT.SolutionExists_string, PackageAutoLoadFlags.BackgroundLoad)]
-    //[ProvideAutoLoad(VSConstants.UICONTEXT.NoSolution_string, PackageAutoLoadFlags.BackgroundLoad)]
+    [ProvideAutoLoad(VSConstants.UICONTEXT.CodeWindow_string, PackageAutoLoadFlags.BackgroundLoad)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     public sealed class TweaksterPackage : AsyncPackage
     {
@@ -25,6 +25,7 @@ namespace Tweakster
             await ReOpenDocument.InitializeAsync(this);
             await NoStepDebuggingInDesignMode.InitializeAsync(this);
             await Restart.InitializeAsync(this);
+            //await FormatOnMoveLine.InitializeAsync(this);
         }
     }
 }

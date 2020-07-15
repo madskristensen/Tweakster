@@ -11,8 +11,8 @@ namespace Tweakster.Tweaks.CodeCleanupOnFormat
 {
     [Export(typeof(ICommandHandler))]
     [Name(nameof(CodeCleanupOnFormat))]
-    [ContentType("Csharp")]
-    [ContentType("Basic")]
+    [ContentType(ContentTypes.CSharp)]
+    [ContentType(ContentTypes.VisualBasic)]
     [TextViewRole(PredefinedTextViewRoles.PrimaryDocument)]
     public class CodeCleanupOnFormat : ICommandHandler<FormatDocumentCommandArgs>
     {
