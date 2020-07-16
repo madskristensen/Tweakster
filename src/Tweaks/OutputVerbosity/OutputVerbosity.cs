@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.Design;
-using System.Diagnostics;
 using System.Runtime.InteropServices;
 using Microsoft;
 using Microsoft.Build.Framework;
@@ -20,7 +19,7 @@ namespace Tweakster
     {
         private const string _settingName = "BuildAndRunOptions.MSBuildLoggerVerbosity";
         private static readonly string[] _names = Enum.GetNames(typeof(LoggerVerbosity));
-        private static ISettingsManager _settingsManager;
+        private static ISettingsManager _settings;
 
         public static async Task InitializeAsync(AsyncPackage package)
         {
@@ -29,35 +28,19 @@ namespace Tweakster
             var commandService = await package.GetServiceAsync(typeof(IMenuCommandService)) as OleMenuCommandService;
             Assumes.Present(commandService);
 
-            _settingsManager = await package.GetServiceAsync(typeof(SVsSettingsPersistenceManager)) as ISettingsManager;
-            Assumes.Present(_settingsManager);
+            _settings = await package.GetServiceAsync(typeof(SVsSettingsPersistenceManager)) as ISettingsManager;
+            Assumes.Present(_settings);
 
             var id1 = new CommandID(PackageGuids.guidCommands, PackageIds.OuputVerbosityList);
-            var cmd1 = new OleMenuCommand(OnPortDropDownComboList, id1);
+            var cmd1 = new OleMenuCommand(FillDropdownWithValues, id1);
             commandService.AddCommand(cmd1);
 
             var id2 = new CommandID(PackageGuids.guidCommands, PackageIds.OuputVerbosity);
-            var cmd2 = new OleMenuCommand(OnPortDropDownCombo, id2);
+            var cmd2 = new OleMenuCommand(SetSelectedValue, id2);
             commandService.AddCommand(cmd2);
         }
 
-        private static void OnPortDropDownCombo(object sender, EventArgs e)
-        {
-            if (e is OleMenuCmdEventArgs args)
-            {
-                if (args.OutValue != IntPtr.Zero)
-                {
-                    var verbosity = GetVerbosityValue().ToString();
-                    Marshal.GetNativeVariantForObject(verbosity, args.OutValue);
-                }
-                else if (args.InValue is int index)
-                {
-                    SetVerbosityValue(index);
-                }
-            }
-        }
-
-        private static void OnPortDropDownComboList(object sender, EventArgs e)
+        private static void FillDropdownWithValues(object sender, EventArgs e)
         {
             if (e is OleMenuCmdEventArgs args && args.OutValue != IntPtr.Zero)
             {
@@ -65,33 +48,21 @@ namespace Tweakster
             }
         }
 
-        private static LoggerVerbosity GetVerbosityValue()
+        private static void SetSelectedValue(object sender, EventArgs e)
         {
-            try
+            if (e is OleMenuCmdEventArgs args)
             {
-                if (_settingsManager.TryGetValue(_settingName, out LoggerVerbosity value) == GetValueResult.Success)
+                if (args.OutValue != IntPtr.Zero)
                 {
-                    return value;
+                    // Set the initial value on load
+                    LoggerVerbosity verbosity = _settings.GetValueOrDefault(_settingName, LoggerVerbosity.Minimal);
+                    Marshal.GetNativeVariantForObject(verbosity.ToString(), args.OutValue);
                 }
-            }
-            catch (Exception ex)
-            {
-                Trace.Write(ex);
-            }
-
-            return LoggerVerbosity.Minimal;
-        }
-
-        private static void SetVerbosityValue(int value)
-        {
-            try
-            {
-                _settingsManager.SetValueAsync(_settingName, value, false)
-                    .FileAndForget(nameof(OutputVerbosity));
-            }
-            catch (Exception ex)
-            {
-                Trace.Write(ex);
+                else if (args.InValue is int index)
+                {
+                    // Save the value on manual selection from dropdown
+                    _settings.SetValueAsync(_settingName, index, false).FileAndForget(nameof(OutputVerbosity));
+                }
             }
         }
     }
