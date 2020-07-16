@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.Design;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using Microsoft;
 using Microsoft.Build.Framework;
@@ -11,7 +12,9 @@ namespace Tweakster
 {
     internal sealed class OutputVerbosity
     {
+        private static readonly string[] _names = Enum.GetNames(typeof(LoggerVerbosity));
         private static AsyncPackage _package;
+
         public static async Task InitializeAsync(AsyncPackage package)
         {
             _package = package;
@@ -32,33 +35,45 @@ namespace Tweakster
 
         private static void OnPortDropDownCombo(object sender, EventArgs e)
         {
-            if (e is OleMenuCmdEventArgs eventArgs)
+            if (e is OleMenuCmdEventArgs args)
             {
-                var inParam = eventArgs.InValue;
-                IntPtr vOut = eventArgs.OutValue;
-
-                if (vOut != IntPtr.Zero)
+                if (args.OutValue != IntPtr.Zero)
                 {
                     var verbosity = GetVerbosityValue().ToString();
-                    Marshal.GetNativeVariantForObject(verbosity, vOut);
+                    Marshal.GetNativeVariantForObject(verbosity, args.OutValue);
                 }
-                else if (inParam is int index)
+                else if (args.InValue is int index)
                 {
                     SetVerbosityValue(index);
                 }
             }
         }
 
+        private static void OnPortDropDownComboList(object sender, EventArgs e)
+        {
+            if (e is OleMenuCmdEventArgs args && args.OutValue != IntPtr.Zero)
+            {
+                Marshal.GetNativeVariantForObject(_names, args.OutValue);
+            }
+        }
+
         private static LoggerVerbosity GetVerbosityValue()
         {
-            using (RegistryKey key = _package.UserRegistryRoot.OpenSubKey("ApplicationPrivateSettings\\BuildAndRunOptions"))
+            try
             {
-                var value = key.GetValue("MSBuildLoggerVerbosity", (int)LoggerVerbosity.Minimal) as string;
-
-                if (!string.IsNullOrEmpty(value) && int.TryParse(value.Substring(value.Length - 1), out var number))
+                using (RegistryKey key = _package.UserRegistryRoot.OpenSubKey("ApplicationPrivateSettings\\BuildAndRunOptions"))
                 {
-                    return (LoggerVerbosity)number;
+                    var value = key.GetValue("MSBuildLoggerVerbosity", (int)LoggerVerbosity.Minimal) as string;
+
+                    if (!string.IsNullOrEmpty(value) && int.TryParse(value.Substring(value.Length - 1), out var number))
+                    {
+                        return (LoggerVerbosity)number;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Trace.Write(ex);
             }
 
             return LoggerVerbosity.Minimal;
@@ -66,28 +81,17 @@ namespace Tweakster
 
         private static void SetVerbosityValue(int value)
         {
-            using (RegistryKey key = _package.UserRegistryRoot.OpenSubKey("ApplicationPrivateSettings\\BuildAndRunOptions", true))
+            try
             {
-                key.SetValue("MSBuildLoggerVerbosity", $"0*System.UInt32*{value}", RegistryValueKind.String);
-            }
-        }
-
-        private static void OnPortDropDownComboList(object sender, EventArgs e)
-        {
-            var names = Enum.GetNames(typeof(LoggerVerbosity));
-
-            if (e is OleMenuCmdEventArgs eventArgs)
-            {
-                var inParam = eventArgs.InValue;
-                IntPtr vOut = eventArgs.OutValue;
-
-                if (vOut != IntPtr.Zero)
+                using (RegistryKey key = _package.UserRegistryRoot.OpenSubKey("ApplicationPrivateSettings\\BuildAndRunOptions", true))
                 {
-                    Marshal.GetNativeVariantForObject(names, vOut);
+                    key.SetValue("MSBuildLoggerVerbosity", $"0*System.UInt32*{value}", RegistryValueKind.String);
                 }
             }
+            catch (Exception ex)
+            {
+                Trace.Write(ex);
+            }
         }
-
-
     }
 }

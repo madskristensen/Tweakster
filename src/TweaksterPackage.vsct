@@ -42,9 +42,9 @@
         <Parent guid="guidCommands" id="OutputVerbosityGroup" />
         <CommandFlag>IconAndText</CommandFlag>
         <Strings>
-          <ButtonText>Output Verbosity: </ButtonText>
+          <ButtonText>Output Verbosity:</ButtonText>
           <ToolTipText>Select MSBuild project build output verbosity</ToolTipText>
-          <MenuText>Output Verbosity: </MenuText>
+          <MenuText>Output Verbosity:</MenuText>
           <CommandName>BuildAndRun.SetVerbosity</CommandName>
         </Strings>
       </Combo>
