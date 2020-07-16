@@ -26,6 +26,7 @@ namespace Tweakster
             await NoStepDebuggingInDesignMode.InitializeAsync(this);
             await Restart.InitializeAsync(this);
             await DeleteOutputArtifacts.InitializeAsync(this);
+            await OutputVerbosity.InitializeAsync(this);
         }
     }
 }

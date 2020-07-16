@@ -14,6 +14,7 @@ The list of features are coming from the [Visual Studio Developer Community](htt
 It's from those tickets inspiration for this extension came.
 
 * [Run *Code Cleanup* on format](#codecleanup)
+* [Set verbosity level in Output Window](#outputverbosity)
 * [Re-open closed file](#reopen)
 * [Auto save](#autosave)
 * [Don't copy empty lines](#dontcopyemptylines)
@@ -27,13 +28,21 @@ If you know of any suggestion tickets that would be well suited for this extensi
 
 <h3 id="codecleanup">Run Code Cleanup on format (C# only)</h3>
 
-Inspired by the suggestion [Cleanup code during formatting](https://developercommunity.visualstudio.com/idea/420291/cleanup-code-during-formatting.html)
+Inspired by the suggestion [Cleanup code during formatting](https://developercommunity.visualstudio.com/idea/420291/cleanup-code-during-formatting.html).
 
 Instead of running the *Code Cleanup* command manually, it now runs automatically when *Format Document* or **Ctrl+K,Ctrl+D** is invoked. 
 
+<h3 id="outputverbosity">Set verbosity level in Output Window</h3>
+
+Inspired by the suggestion [Add a checkbox to the Output Window's context menu to toggle verbose trace messages ON or OFF](https://developercommunity.visualstudio.com/content/idea/525023/add-a-checkbox-to-the-output-windows-checkboxes-to.html).
+
+You can now change the logging verbosity level directly from the *Output Window* instead of having to go to **Tools -> Options** every time.
+
+![Output Verbosity](art/output-verbosity.png)
+
 <h3 id="reopen">Re-open closed file</h3>
 
-Inspired by the suggestion [Reopen closed tab](https://developercommunity.visualstudio.com/content/idea/402931/reopen-closed-tab.html)
+Inspired by the suggestion [Reopen closed tab](https://developercommunity.visualstudio.com/content/idea/402931/reopen-closed-tab.html).
 
 When you close a file by accident, you can now easily open it back up again. Go to **File -> Re-Open [file name]**
 

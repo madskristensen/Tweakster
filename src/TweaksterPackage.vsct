@@ -6,6 +6,12 @@
   <Include href="KnownImageIds.vsct"/>
 
   <Commands package="guidTweaksterPackage">
+    <Groups>
+      <Group guid="guidCommands" id="OutputVerbosityGroup" priority="1700">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_TOOL_OUTPUTWINDOW" />
+      </Group>
+    </Groups>
+
     <Buttons>
       <Button guid="guidCommands" id="ReOpenDocument" priority="0x0100" type="Button">
         <Parent guid="guidSHLMainMenu" id="IDG_VS_FILE_SOLUTION" />
@@ -30,6 +36,19 @@
         </Strings>
       </Button>
     </Buttons>
+
+    <Combos>
+      <Combo guid="guidCommands" id="OuputVerbosity" priority="0x0200" type="IndexCombo" defaultWidth="100" idCommandList="OuputVerbosityList">
+        <Parent guid="guidCommands" id="OutputVerbosityGroup" />
+        <CommandFlag>IconAndText</CommandFlag>
+        <Strings>
+          <ButtonText>Output Verbosity: </ButtonText>
+          <ToolTipText>Select MSBuild project build output verbosity</ToolTipText>
+          <MenuText>Output Verbosity: </MenuText>
+          <CommandName>BuildAndRun.SetVerbosity</CommandName>
+        </Strings>
+      </Combo>
+    </Combos>
   </Commands>
 
   <KeyBindings>
@@ -43,6 +62,9 @@
     <GuidSymbol name="guidCommands" value="{85ce63b9-a773-45e0-9a60-9a96bc2ab40b}">
       <IDSymbol name="ReOpenDocument" value="0x0100" />
       <IDSymbol name="Restart" value="0x0200" />
+      <IDSymbol name="OuputVerbosity" value="0x0300" />
+      <IDSymbol name="OuputVerbosityList" value="0x0301" />
+      <IDSymbol name="OutputVerbosityGroup" value="0x0302" />
     </GuidSymbol>
   </Symbols>
 </CommandTable>
