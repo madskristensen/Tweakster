@@ -4,25 +4,33 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using Microsoft;
 using Microsoft.Build.Framework;
+using Microsoft.VisualStudio.Settings;
 using Microsoft.VisualStudio.Shell;
-using Microsoft.Win32;
 using Task = System.Threading.Tasks.Task;
 
 namespace Tweakster
 {
+    [Guid("9B164E40-C3A2-4363-9BC5-EB4039DEF653")]
+    public class SVsSettingsPersistenceManager
+    {
+        // Dummy class to get to the internal SVsSettingsPersistenceManager service
+    }
+
     internal sealed class OutputVerbosity
     {
+        private const string _settingName = "BuildAndRunOptions.MSBuildLoggerVerbosity";
         private static readonly string[] _names = Enum.GetNames(typeof(LoggerVerbosity));
-        private static AsyncPackage _package;
+        private static ISettingsManager _settingsManager;
 
         public static async Task InitializeAsync(AsyncPackage package)
         {
-            _package = package;
-
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync(package.DisposalToken);
 
             var commandService = await package.GetServiceAsync(typeof(IMenuCommandService)) as OleMenuCommandService;
             Assumes.Present(commandService);
+
+            _settingsManager = await package.GetServiceAsync(typeof(SVsSettingsPersistenceManager)) as ISettingsManager;
+            Assumes.Present(_settingsManager);
 
             var id1 = new CommandID(PackageGuids.guidCommands, PackageIds.OuputVerbosityList);
             var cmd1 = new OleMenuCommand(OnPortDropDownComboList, id1);
@@ -61,14 +69,9 @@ namespace Tweakster
         {
             try
             {
-                using (RegistryKey key = _package.UserRegistryRoot.OpenSubKey("ApplicationPrivateSettings\\BuildAndRunOptions"))
+                if (_settingsManager.TryGetValue(_settingName, out LoggerVerbosity value) == GetValueResult.Success)
                 {
-                    var value = key.GetValue("MSBuildLoggerVerbosity", (int)LoggerVerbosity.Minimal) as string;
-
-                    if (!string.IsNullOrEmpty(value) && int.TryParse(value.Substring(value.Length - 1), out var number))
-                    {
-                        return (LoggerVerbosity)number;
-                    }
+                    return value;
                 }
             }
             catch (Exception ex)
@@ -83,10 +86,8 @@ namespace Tweakster
         {
             try
             {
-                using (RegistryKey key = _package.UserRegistryRoot.OpenSubKey("ApplicationPrivateSettings\\BuildAndRunOptions", true))
-                {
-                    key.SetValue("MSBuildLoggerVerbosity", $"0*System.UInt32*{value}", RegistryValueKind.String);
-                }
+                _settingsManager.SetValueAsync(_settingName, value, false)
+                    .FileAndForget(nameof(OutputVerbosity));
             }
             catch (Exception ex)
             {
