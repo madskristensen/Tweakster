@@ -9,8 +9,6 @@ namespace Tweakster
 {
     internal sealed class JustMyCode
     {
-        private const string _collectionPath = "Debugger";
-        private const string _propertyName = "JustMyCode";
         private static IDebuggerInternal _debugger;
 
         public static async Task InitializeAsync(AsyncPackage package)
