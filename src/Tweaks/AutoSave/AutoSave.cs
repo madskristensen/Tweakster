@@ -33,7 +33,7 @@ namespace Tweakster.Tweaks.AutoSave
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
-            if (ShouldExecute() && item?.ContainingProject?.IsDirty == true)
+            if (ShouldExecute(item))
             {
                 item.ContainingProject.Save();
             }
@@ -43,22 +43,23 @@ namespace Tweakster.Tweaks.AutoSave
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
-            if (ShouldExecute())
+            if (ShouldExecute(lostFocus?.Document?.ProjectItem))
             {
-                lostFocus?.Document?.Save();
+                lostFocus.Document.Save();
 
                 // Test IsDirty to filter out temp and misc project types
-                if (lostFocus?.Project?.IsDirty == true)
+                if (lostFocus.Project?.IsDirty == true)
                 {
                     lostFocus.Project.Save();
                 }
             }
         }
 
-        private static bool ShouldExecute()
+        private static bool ShouldExecute(ProjectItem item)
         {
             return Options.Instance.AutoSave &&
-                   _dte.Mode == vsIDEMode.vsIDEModeDesign;
+                   _dte.Mode == vsIDEMode.vsIDEModeDesign &&
+                   item?.ContainingProject != null;
         }
     }
 }
