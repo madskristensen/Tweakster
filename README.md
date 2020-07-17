@@ -21,7 +21,7 @@ It's from those tickets inspiration for this extension came.
 * [Don't start debug on F10/F11](#nodebugonf10)
 * [Restart command](#restart)
 * [Delete obj and bin folders on *Clean*](#deleteoutputartifacts)
-* [Format on line move up/down](#formatonlinemove)
+* [Format on moving line up/down](#formatonlinemove)
 * [Settings](#settings)
 
 If you know of any suggestion tickets that would be well suited for this extension to implement, please [open an issue](https://github.com/madskristensen/Tweakster/issues) on it. Find inspiration by [browsing the Developer Community](https://developercommunity.visualstudio.com/spaces/8/visual-studio-ide.html?sort=votes&type=idea&openOnly=true) for more suggestions.
@@ -82,7 +82,7 @@ Inspired by the suggestion [Aggresive Clean Output Option](https://developercomm
 
 Both *bin* and *obj* are now fully deleted when the *Clean* command is executed. It does so right before the regular *Clean* command runs. The *Clean* command will add the *bin* and *obj* folders back, so be aware of that when testing this feature.
 
-<h3 id="formatonlinemove">Format on live move up/down</h3>
+<h3 id="formatonlinemove">Format on moving line up/down</h3>
 
 Inspired by the suggestion [Move lines up/down command should correct indentation](https://developercommunity.visualstudio.com/idea/1068219/move-lines-updown-command-should-correct-indentati.html).
 
