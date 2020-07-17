@@ -17,6 +17,7 @@ It's from those tickets inspiration for this extension came.
 * [Set verbosity level in Output Window](#outputverbosity)
 * [Re-open closed file](#reopen)
 * [Auto save](#autosave)
+* [Save solution on build](#savesolutiononbuild)
 * [Don't copy empty lines](#dontcopyemptylines)
 * [Don't start debug on F10/F11](#nodebugonf10)
 * [Restart command](#restart)
@@ -55,6 +56,12 @@ Inspired by the suggestion [Option to Auto Save the editor pages](https://develo
 Automatic saving of documents happen when the document loses focus. That could happen when you open a different document or click around in another tool window such as Solution Explorer. It will also save any changes to its containing project.
 
 Projects are also automatically saved when files are added, removed or renamed. 
+
+<h3 id="savesolutiononbuild">Save solution on build</h3>
+
+Inspired by the suggestion [Save Solution on Build](https://developercommunity.visualstudio.com/idea/672715/save-solution-on-build.html).
+
+When executing a build, the solution, project and all unsaved files that are part of the solution will be saved. This ensures that the .suo file is kept current in case of any crash caused by the running app. 
 
 <h3 id="dontcopyemptylines">Don't copy empty lines</h3>
 

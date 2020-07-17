@@ -11,6 +11,7 @@ namespace Tweakster.Tweaks.AutoSave
         private static DTE2 _dte;
         private static WindowEvents _windowEvents;
         private static ProjectItemsEvents _projectsEvents;
+        private static BuildEvents _buildEvents;
 
         public static async Task InitializeAsync(AsyncPackage package)
         {
@@ -19,6 +20,9 @@ namespace Tweakster.Tweaks.AutoSave
             _dte = await package.GetServiceAsync(typeof(DTE)) as DTE2;
             Assumes.Present(_dte);
 
+            _buildEvents = _dte.Events.BuildEvents;
+            _buildEvents.OnBuildBegin += OnBuildBegin;
+
             _windowEvents = _dte.Events.WindowEvents;
             _windowEvents.WindowActivated += OnWindowActivated;
 
@@ -26,8 +30,17 @@ namespace Tweakster.Tweaks.AutoSave
             _projectsEvents.ItemAdded += (p) => OnProjectItemChange(p);
             _projectsEvents.ItemRemoved += (p) => OnProjectItemChange(p);
             _projectsEvents.ItemRenamed += (p, n) => OnProjectItemChange(p);
+
+
         }
 
+        private static void OnBuildBegin(vsBuildScope Scope, vsBuildAction Action)
+        {
+            if (Options.Instance.SaveAllOnBuild)
+            {
+                _dte.ExecuteCommand("File.SaveAll");
+            }
+        }
 
         private static void OnProjectItemChange(ProjectItem item)
         {
@@ -59,7 +72,8 @@ namespace Tweakster.Tweaks.AutoSave
         {
             return Options.Instance.AutoSave &&
                    _dte.Mode == vsIDEMode.vsIDEModeDesign &&
-                   item?.ContainingProject != null;
+                   item?.ContainingProject != null &&
+                   item?.ContainingProject?.Kind != ProjectKinds.vsProjectKindSolutionFolder;
         }
     }
 }
