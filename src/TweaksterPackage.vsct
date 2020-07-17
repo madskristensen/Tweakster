@@ -10,6 +10,10 @@
       <Group guid="guidCommands" id="OutputVerbosityGroup" priority="1700">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_TOOL_OUTPUTWINDOW" />
       </Group>
+
+      <Group guid="guidCommands" id="JustMyCodeGroup" priority="1700">
+        <Parent guid="guidVSDebugGroup" id="IDM_DEBUG_TOOLBAR" />
+      </Group>
     </Groups>
 
     <Buttons>
@@ -41,6 +45,18 @@
         <Strings>
           <ButtonText>Reset Zoom</ButtonText>
           <CommandName>.View.ZoomReset</CommandName>
+        </Strings>
+      </Button>
+
+      <Button guid="guidCommands" id="JustMyCode" priority="0x175" type="Button">
+        <Parent guid="guidCommands" id="JustMyCodeGroup" />
+        <Icon guid="ImageCatalogGuid" id="JustMyCode"/>
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Just My Code</ButtonText>
+          <CommandName>.Debug.ToggleJustMyCode</CommandName>
+          <ToolTipText>Toggles Just My Code in the debugger options</ToolTipText>
         </Strings>
       </Button>
     </Buttons>
@@ -75,6 +91,12 @@
       <IDSymbol name="OuputVerbosityList" value="0x0301" />
       <IDSymbol name="OutputVerbosityGroup" value="0x0302" />
       <IDSymbol name="ResetZoom" value="0x0400" />
+      <IDSymbol name="JustMyCode" value="0x0500" />
+      <IDSymbol name="JustMyCodeGroup" value="0x0501" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidVSDebugGroup" value="{c9dd4a58-47fb-11d2-83e7-00c04f9902c1}">
+      <IDSymbol name="IDM_DEBUG_TOOLBAR" value="0x421"/>
     </GuidSymbol>
   </Symbols>
 </CommandTable>

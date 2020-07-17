@@ -17,6 +17,9 @@ namespace Tweakster
 
         public const string guidCommandsString = "85ce63b9-a773-45e0-9a60-9a96bc2ab40b";
         public static Guid guidCommands = new Guid(guidCommandsString);
+
+        public const string guidVSDebugGroupString = "c9dd4a58-47fb-11d2-83e7-00c04f9902c1";
+        public static Guid guidVSDebugGroup = new Guid(guidVSDebugGroupString);
     }
     /// <summary>
     /// Helper class that encapsulates all CommandIDs uses across VS Package.
@@ -29,5 +32,8 @@ namespace Tweakster
         public const int OuputVerbosityList = 0x0301;
         public const int OutputVerbosityGroup = 0x0302;
         public const int ResetZoom = 0x0400;
+        public const int JustMyCode = 0x0500;
+        public const int JustMyCodeGroup = 0x0501;
+        public const int IDM_DEBUG_TOOLBAR = 0x0421;
     }
 }
