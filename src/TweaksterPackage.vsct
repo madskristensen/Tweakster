@@ -48,7 +48,7 @@
         </Strings>
       </Button>
 
-      <!--<Button guid="guidCommands" id="JustMyCode" priority="0x175" type="Button">
+      <Button guid="guidCommands" id="JustMyCode" priority="0x175" type="Button">
         <Parent guid="guidCommands" id="JustMyCodeGroup" />
         <Icon guid="ImageCatalogGuid" id="JustMyCode"/>
         <CommandFlag>IconIsMoniker</CommandFlag>
@@ -58,7 +58,7 @@
           <CommandName>.Debug.ToggleJustMyCode</CommandName>
           <ToolTipText>Toggles Just My Code in the debugger options</ToolTipText>
         </Strings>
-      </Button>-->
+      </Button>
     </Buttons>
 
     <Combos>
