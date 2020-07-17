@@ -15,7 +15,7 @@ It's from those tickets inspiration for this extension came.
 
 * [Run *Code Cleanup* on format](#codecleanup)
 * [Set verbosity level in Output Window](#outputverbosity)
-* [Toggle Just My Code on toolbar](#justmycode)
+* [Toggle *Just My Code* from the *Debug* toolbar](#justmycode)
 * [Re-open closed file](#reopen)
 * [Auto save](#autosave)
 * [Save solution on build](#savesolutiononbuild)
@@ -44,7 +44,7 @@ You can now change the logging verbosity level directly from the *Output Window*
 
 ![Output Verbosity](art/output-verbosity.png)
 
-<h3 id="justmycode">Toggle Just My Code from toolbar</h3>
+<h3 id="justmycode">Toggle <i>Just My Code</i> from the <i>Debug</i> toolbar</h3>
 
 Inspired by the suggestion [Expose "Enable Just My Code" option directly in the "Exception Settings" tool Window](https://developercommunity.visualstudio.com/idea/1117639/expose-enable-just-my-code-option-directly-in-the.html).
 
