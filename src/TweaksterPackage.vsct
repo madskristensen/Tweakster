@@ -35,6 +35,14 @@
           <CommandName>.File.Restart</CommandName>
         </Strings>
       </Button>
+
+      <Button guid="guidCommands" id="ResetZoom" priority="0x0100" type="Button">
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Reset Zoom</ButtonText>
+          <CommandName>.View.ZoomReset</CommandName>
+        </Strings>
+      </Button>
     </Buttons>
 
     <Combos>
@@ -54,6 +62,7 @@
   <KeyBindings>
     <KeyBinding guid="guidCommands" id="ReOpenDocument" editor="guidVSStd97" key1="T" mod1="Control Shift" key2="T" mod2="Control Shift" />
     <KeyBinding guid="guidCommands" id="Restart" editor="guidVSStd97" key1="VK_F4" mod1="Shift Alt" />
+    <KeyBinding guid="guidCommands" id="ResetZoom" mod1="Control" key1="0" editor="GUID_TextEditorFactory"/>
   </KeyBindings>
 
   <Symbols>
@@ -65,6 +74,7 @@
       <IDSymbol name="OuputVerbosity" value="0x0300" />
       <IDSymbol name="OuputVerbosityList" value="0x0301" />
       <IDSymbol name="OutputVerbosityGroup" value="0x0302" />
+      <IDSymbol name="ResetZoom" value="0x0400" />
     </GuidSymbol>
   </Symbols>
 </CommandTable>

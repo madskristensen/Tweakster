@@ -23,6 +23,8 @@ It's from those tickets inspiration for this extension came.
 * [Restart command](#restart)
 * [Delete obj and bin folders on *Clean*](#deleteoutputartifacts)
 * [Format on moving line up/down](#formatonlinemove)
+* [Disable editor zoom on mouse wheel](#disablezoom)
+* [Reset zoom](#resetzoom)
 * [Settings](#settings)
 
 If you know of any suggestion tickets that would be well suited for this extension to implement, please [open an issue](https://github.com/madskristensen/Tweakster/issues) on it. Find inspiration by [browsing the Developer Community](https://developercommunity.visualstudio.com/spaces/8/visual-studio-ide.html?sort=votes&type=idea&openOnly=true) for more suggestions.
@@ -94,6 +96,18 @@ Both *bin* and *obj* are now fully deleted when the *Clean* command is executed.
 Inspired by the suggestion [Move lines up/down command should correct indentation](https://developercommunity.visualstudio.com/idea/1068219/move-lines-updown-command-should-correct-indentati.html).
 
 When using **Alt+Up/Down** arrow keys to move lines up and down in the editor, those lines will now indent correctly as they move. This is supported for C#, Visual Basic, and HTML.
+
+<h3 id="disablezoom">Disable editor zoom on mouse wheel</h3>
+
+Inspired by the suggestion [fix zoom feature](https://developercommunity.visualstudio.com/idea/474557/fix-zoom-feature.html).
+
+People often zoom in the editor accidently by hitting **Ctrl+MouseWheel**. Zooming is now disabled by this mechanism, but can be re-enabled in the settings.
+
+<h3 id="disablezoom">Reset zoom</h3>
+
+Inspired by the suggestion [fix zoom feature](https://developercommunity.visualstudio.com/idea/474557/fix-zoom-feature.html).
+
+The ability to reset the editor zoom level using the shortcuts **Ctrl+0**. In the settings, you can chose what the default zoom level should be. The default value is *100*.
 
 <h3 id="settings">Settings</h3>
 

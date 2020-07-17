@@ -48,12 +48,16 @@
     <Compile Include="ContentTypes.cs" />
     <Compile Include="ProjectHelpers.cs" />
     <Compile Include="Tweaks\DeleteOutputArtifacts\Options.cs" />
+    <Compile Include="Tweaks\DisableZoomOnScroll\DisableZoomOnScroll.cs" />
+    <Compile Include="Tweaks\DisableZoomOnScroll\Options.cs" />
     <Compile Include="Tweaks\FormatOnMoveLine\FormatOnMoveLine.cs" />
     <Compile Include="Tweaks\FormatOnMoveLine\Options.cs" />
     <Compile Include="Tweaks\NoStepDebuggingInDesignMode\NoStepDebuggingInDesignMode.cs" />
     <Compile Include="Tweaks\NoStepDebuggingInDesignMode\Options.cs" />
     <Compile Include="Tweaks\DeleteOutputArtifacts\DeleteOutputArtifacts.cs" />
     <Compile Include="Tweaks\OutputVerbosity\OutputVerbosity.cs" />
+    <Compile Include="Tweaks\ResetZoomLevel\Options.cs" />
+    <Compile Include="Tweaks\ResetZoomLevel\ResetZoomLevel.cs" />
     <Compile Include="Tweaks\Restart\Restart.cs" />
     <Compile Include="Tweaks\ReOpenDocument\ReOpenDocument.cs" />
     <Compile Include="TweaksterPackage1.cs">

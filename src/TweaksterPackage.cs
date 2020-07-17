@@ -27,6 +27,7 @@ namespace Tweakster
             await Restart.InitializeAsync(this);
             await DeleteOutputArtifacts.InitializeAsync(this);
             await OutputVerbosity.InitializeAsync(this);
+            await ResetZoomLevel.InitializeAsync(this);
         }
     }
 }

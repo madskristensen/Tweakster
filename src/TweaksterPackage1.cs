@@ -28,5 +28,6 @@ namespace Tweakster
         public const int OuputVerbosity = 0x0300;
         public const int OuputVerbosityList = 0x0301;
         public const int OutputVerbosityGroup = 0x0302;
+        public const int ResetZoom = 0x0400;
     }
 }
