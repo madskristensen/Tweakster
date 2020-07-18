@@ -37,6 +37,7 @@ namespace Tweakster
         private static void Execute(OleMenuCommand menuItem)
         {
             var enabled = !menuItem.Checked ? (uint)1 : 0;
+
             _debugger.SetDebuggerOption(DEBUGGER_OPTIONS.Option_JustMyCode, enabled);
         }
     }
