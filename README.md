@@ -31,6 +31,7 @@ It's from those tickets inspiration for this extension came.
   * [Format on moving line up/down](#formatonlinemove)
   * [Disable editor zoom on mouse wheel](#disablezoom)
   * [Reset zoom](#resetzoom)
+  * [Select file in Solution Explorer](#selectfile)
 * **Settings**
   * [Settings](#settings)
 
@@ -141,6 +142,14 @@ You can still zoom in using **Ctrl+Shift+.** and zoom out using **Ctrl+Shift+,**
 Inspired by the suggestion [fix zoom feature](https://developercommunity.visualstudio.com/idea/474557/fix-zoom-feature.html).
 
 The ability to reset the editor zoom level using the shortcuts **Ctrl+0**. In the settings, you can chose what the default zoom level should be. The default value is *100*.
+
+<h4 id="findfile">Select file in Solution Explorer</h4>
+
+Inspired by the suggestion [Add entry for "Sync with Active Document" in the right-click context menu for a document tab](https://developercommunity.visualstudio.com/idea/702650/new-menu-entry-select-in-solution-explorer.html).
+
+Adds a command to the document tab context menu that will select the file in Solution Explorer.
+
+![Select file in Solution Explorer](art/find-in-solution-explorer.png)
 
 <h4 id="settings">Settings</h4>
 

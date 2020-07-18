@@ -14,6 +14,10 @@
       <Group guid="guidCommands" id="JustMyCodeGroup" priority="1700">
         <Parent guid="guidVSDebugGroup" id="IDM_DEBUG_TOOLBAR" />
       </Group>
+
+      <Group guid="guidCommands" id="FindInSolutionExplorerGroup" priority="1700">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_EZDOCWINTAB" />
+      </Group>
     </Groups>
 
     <Buttons>
@@ -59,6 +63,17 @@
           <ToolTipText>Toggles Just My Code in the debugger options</ToolTipText>
         </Strings>
       </Button>
+
+      <Button guid="guidCommands" id="FindInSolutionExplorer" priority="0x175" type="Button">
+        <Parent guid="guidCommands" id="FindInSolutionExplorerGroup" />
+        <Icon guid="ImageCatalogGuid" id="Sync"/>
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Find in Solution Explorer</ButtonText>
+          <CommandName>.File.FindInSolutionExplorer</CommandName>
+        </Strings>
+      </Button>
     </Buttons>
 
     <Combos>
@@ -81,8 +96,13 @@
     <KeyBinding guid="guidCommands" id="ResetZoom" mod1="Control" key1="0" editor="GUID_TextEditorFactory"/>
   </KeyBindings>
 
+  <VisibilityConstraints>
+    <VisibilityItem guid="guidCommands" id="FindInSolutionExplorer" context="guidAutoLoadSolutionHasProjects" />
+  </VisibilityConstraints>
+
   <Symbols>
     <GuidSymbol name="guidTweaksterPackage" value="{590dcf32-ae09-49b9-b0e5-55d7ebf100d0}" />
+    <GuidSymbol name="guidAutoLoadSolutionHasProjects" value="{db87ae42-32ad-434e-b53c-08cfddcc0935}" />
 
     <GuidSymbol name="guidCommands" value="{85ce63b9-a773-45e0-9a60-9a96bc2ab40b}">
       <IDSymbol name="ReOpenDocument" value="0x0100" />
@@ -93,6 +113,8 @@
       <IDSymbol name="ResetZoom" value="0x0400" />
       <IDSymbol name="JustMyCode" value="0x0500" />
       <IDSymbol name="JustMyCodeGroup" value="0x0501" />
+      <IDSymbol name="FindInSolutionExplorer" value="0x0600" />
+      <IDSymbol name="FindInSolutionExplorerGroup" value="0x0601" />
     </GuidSymbol>
 
     <GuidSymbol name="guidVSDebugGroup" value="{c9dd4a58-47fb-11d2-83e7-00c04f9902c1}">

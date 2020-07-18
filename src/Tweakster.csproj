@@ -62,6 +62,7 @@
     <Compile Include="Tweaks\ResetZoomLevel\ResetZoomLevel.cs" />
     <Compile Include="Tweaks\JustMyCode\JustMyCode.cs" />
     <Compile Include="Tweaks\BuildStats\BuildStats.cs" />
+    <Compile Include="Tweaks\FindInSolutionExplorer\FindInSolutionExplorer.cs" />
     <Compile Include="Tweaks\Restart\Restart.cs" />
     <Compile Include="Tweaks\ReOpenDocument\ReOpenDocument.cs" />
     <Compile Include="TweaksterPackage1.cs">
