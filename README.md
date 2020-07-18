@@ -50,7 +50,7 @@ Inspired by the suggestion [Expose "Enable Just My Code" option directly in the 
 
 There is now a toggle button on the *Debug* toolbar, so you no longer have to go through **Tools -> Options -> Debugging** to set it.
 
-![Just My Code](art/just-my-code.png)
+![Just My Code](art/just-my-code.gif)
 
 <h3 id="reopen">Re-open closed file</h3>
 
