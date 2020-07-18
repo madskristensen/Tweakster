@@ -29,6 +29,7 @@ namespace Tweakster
             await OutputVerbosity.InitializeAsync(this);
             await ResetZoomLevel.InitializeAsync(this);
             await JustMyCode.InitializeAsync(this);
+            await BuildStats.InitializeAsync(this);
         }
     }
 }

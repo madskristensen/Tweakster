@@ -12,6 +12,7 @@
         {
             public const string General = "General";
             public const string Build = "Build";
+            public const string Debug = "Debug";
             public const string Editor = "Editor";
         }
     }
