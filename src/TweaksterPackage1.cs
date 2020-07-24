@@ -15,8 +15,8 @@ namespace Tweakster
         public const string guidTweaksterPackageString = "590dcf32-ae09-49b9-b0e5-55d7ebf100d0";
         public static Guid guidTweaksterPackage = new Guid(guidTweaksterPackageString);
 
-        public const string guidAutoLoadSolutionHasProjectsString = "db87ae42-32ad-434e-b53c-08cfddcc0935";
-        public static Guid guidAutoLoadSolutionHasProjects = new Guid(guidAutoLoadSolutionHasProjectsString);
+        public const string guidSolutionHasProjectsString = "db87ae42-32ad-434e-b53c-08cfddcc0935";
+        public static Guid guidSolutionHasProjects = new Guid(guidSolutionHasProjectsString);
 
         public const string guidCommandsString = "85ce63b9-a773-45e0-9a60-9a96bc2ab40b";
         public static Guid guidCommands = new Guid(guidCommandsString);
@@ -39,6 +39,9 @@ namespace Tweakster
         public const int JustMyCodeGroup = 0x0501;
         public const int FindInSolutionExplorer = 0x0600;
         public const int FindInSolutionExplorerGroup = 0x0601;
+        public const int SearchInFolder = 0x0700;
+        public const int LanguageSetting = 0x0800;
+        public const int LanguageSettingGroup = 0x0801;
         public const int IDM_DEBUG_TOOLBAR = 0x0421;
     }
 }

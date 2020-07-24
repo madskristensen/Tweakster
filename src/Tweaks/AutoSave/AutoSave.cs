@@ -1,4 +1,5 @@
-﻿using EnvDTE;
+﻿using System.Diagnostics;
+using EnvDTE;
 using EnvDTE80;
 using Microsoft;
 using Microsoft.VisualStudio.Shell;
@@ -48,7 +49,14 @@ namespace Tweakster.Tweaks.AutoSave
 
             if (ShouldExecute(item))
             {
-                item.ContainingProject.Save();
+                try
+                {
+                    item.ContainingProject.Save();
+                }
+                catch (System.Exception ex)
+                {
+                    Trace.Write(ex);
+                }
             }
         }
 

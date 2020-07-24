@@ -15,7 +15,7 @@ It's from those tickets inspiration for this extension came.
 
 * **General**
   * [Re-open closed file](#reopen)
-  * [Auto save](#autosave)
+  * [Auto save documents and projects](#autosave)
   * [Restart Visual Studio command](#restart)
 * **Build**
   * [Set verbosity level in Output Window](#outputverbosity)
@@ -30,8 +30,9 @@ It's from those tickets inspiration for this extension came.
   * [Don't copy empty lines](#dontcopyemptylines)
   * [Format on moving line up/down](#formatonlinemove)
   * [Disable editor zoom on mouse wheel](#disablezoom)
-  * [Reset zoom](#resetzoom)
-  * [Select file in Solution Explorer](#selectfile)
+  * [Shortcut to set zoom to 100%](#resetzoom)
+  * [Select current file in Solution Explorer](#selectfile)
+  * [Open language settings from context menu](#languagesettings)
 * **Settings**
   * [Settings](#settings)
 
@@ -150,6 +151,14 @@ Inspired by the suggestion [Add entry for "Sync with Active Document" in the rig
 Adds a command to the document tab context menu that will select the file in Solution Explorer.
 
 ![Select file in Solution Explorer](art/find-in-solution-explorer.png)
+
+<h4 id="findfile">Open language settings from context menu</h4>
+
+Inspired by the suggestion [Add language settings command to editor context menu](https://developercommunity.visualstudio.com/idea/1124164/add-language-settings-command-to-editor-context-me.html).
+
+Some language such as HTML and CSS expose commands to open **Tools -> Options** directly to their settings. But most other languages does not. So now a Settings... command is added to C/C++, C#, 
+
+![Settings](art/langauge-settings.png)
 
 <h4 id="settings">Settings</h4>
 

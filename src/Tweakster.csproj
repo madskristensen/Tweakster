@@ -57,6 +57,7 @@
     <Compile Include="Tweaks\NoStepDebuggingInDesignMode\NoStepDebuggingInDesignMode.cs" />
     <Compile Include="Tweaks\NoStepDebuggingInDesignMode\Options.cs" />
     <Compile Include="Tweaks\DeleteOutputArtifacts\DeleteOutputArtifacts.cs" />
+    <Compile Include="Tweaks\OpenLanguageSettings\OpenLanguageSettings.cs" />
     <Compile Include="Tweaks\OutputVerbosity\OutputVerbosity.cs" />
     <Compile Include="Tweaks\ResetZoomLevel\Options.cs" />
     <Compile Include="Tweaks\ResetZoomLevel\ResetZoomLevel.cs" />
@@ -90,6 +91,7 @@
     </Compile>
     <Compile Include="TweaksterPackage.cs" />
     <Compile Include="Tweaks\ReOpenDocument\ReOpenCreationListener.cs" />
+    <Compile Include="Tweaks\SearchInFolder\SearchInFolder.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\LICENSE">

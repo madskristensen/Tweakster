@@ -15,11 +15,11 @@ namespace Tweakster
     [ProvideAutoLoad(VSConstants.UICONTEXT.SolutionExists_string, PackageAutoLoadFlags.BackgroundLoad)]
     [ProvideAutoLoad(VSConstants.UICONTEXT.CodeWindow_string, PackageAutoLoadFlags.BackgroundLoad)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
-    [ProvideUIContextRule(PackageGuids.guidAutoLoadSolutionHasProjectsString,
-    name: "Has projects",
-    expression: "single | multiple",
-    termNames: new[] { "single", "multiple" },
-    termValues: new[] { VSConstants.UICONTEXT.SolutionHasSingleProject_string, VSConstants.UICONTEXT.SolutionHasMultipleProjects_string })]
+    [ProvideUIContextRule(PackageGuids.guidSolutionHasProjectsString,
+        name: "Has projects",
+        expression: "single | multiple",
+        termNames: new[] { "single", "multiple" },
+        termValues: new[] { VSConstants.UICONTEXT.SolutionHasSingleProject_string, VSConstants.UICONTEXT.SolutionHasMultipleProjects_string })]
     public sealed class TweaksterPackage : AsyncPackage
     {
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
@@ -36,6 +36,8 @@ namespace Tweakster
             await JustMyCode.InitializeAsync(this);
             await BuildStats.InitializeAsync(this);
             await FindInSolutionExplorer.InitializeAsync(this);
+            //await SearchInFolder.InitializeAsync(this);
+            await OpenLanguageSettings.InitializeAsync(this);
         }
     }
 }
