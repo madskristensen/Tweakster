@@ -144,7 +144,7 @@ Inspired by the suggestion [fix zoom feature](https://developercommunity.visuals
 
 The ability to reset the editor zoom level using the shortcuts **Ctrl+0**. In the settings, you can chose what the default zoom level should be. The default value is *100*.
 
-<h4 id="findfile">Select file in Solution Explorer</h4>
+<h4 id="selectfile">Select file in Solution Explorer</h4>
 
 Inspired by the suggestion [Add entry for "Sync with Active Document" in the right-click context menu for a document tab](https://developercommunity.visualstudio.com/idea/702650/new-menu-entry-select-in-solution-explorer.html).
 
@@ -152,7 +152,7 @@ Adds a command to the document tab context menu that will select the file in Sol
 
 ![Select file in Solution Explorer](art/find-in-solution-explorer.png)
 
-<h4 id="findfile">Open language settings from context menu</h4>
+<h4 id="languagesettings">Open language settings from context menu</h4>
 
 Inspired by the suggestion [Add language settings command to editor context menu](https://developercommunity.visualstudio.com/idea/1124164/add-language-settings-command-to-editor-context-me.html).
 
