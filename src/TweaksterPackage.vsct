@@ -127,6 +127,12 @@
     <VisibilityItem guid="guidCommands" id="FindInSolutionExplorer" context="guidSolutionHasProjects" />
   </VisibilityConstraints>
 
+  <CommandPlacements>
+    <CommandPlacement guid="guidSHLMainMenu" id="IDM_VS_EDITOR_PASTE_MENU" priority="0x8000">
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_CODEWIN_TEXTEDIT" />
+    </CommandPlacement>
+  </CommandPlacements>
+
   <Symbols>
     <GuidSymbol name="guidTweaksterPackage" value="{590dcf32-ae09-49b9-b0e5-55d7ebf100d0}" />
     <GuidSymbol name="guidSolutionHasProjects" value="{db87ae42-32ad-434e-b53c-08cfddcc0935}" />

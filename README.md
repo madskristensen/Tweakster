@@ -33,6 +33,7 @@ It's from those tickets inspiration for this extension came.
   * [Shortcut to set zoom to 100%](#resetzoom)
   * [Select current file in Solution Explorer](#selectfile)
   * [Open language settings from context menu](#languagesettings)
+  * [Added *Paste Special* to editor context menu](#pastespecial)
 * **Settings**
   * [Settings](#settings)
 
@@ -156,9 +157,17 @@ Adds a command to the document tab context menu that will select the file in Sol
 
 Inspired by the suggestion [Add language settings command to editor context menu](https://developercommunity.visualstudio.com/idea/1124164/add-language-settings-command-to-editor-context-me.html).
 
-Some language such as HTML and CSS expose commands to open **Tools -> Options** directly to their settings. But most other languages does not. So now a Settings... command is added to C/C++, C#, 
+Some language such as HTML and CSS expose commands to open **Tools -> Options** directly to their settings. But most other languages does not. So now a Settings... command is added to C/C++, C#, JavaScript, TypeScript, Visual Basic, and XML.
 
 ![Settings](art/langauge-settings.png)
+
+<h4 id="pastespecial">Added <i>Paste Special</i> to editor context menu</h4>
+
+Inspired by the suggestion [Please add "Paste Special" to the Context Menu](https://developercommunity.visualstudio.com/idea/851239/please-add-paste-special-to-the-context-menu.html).
+
+The *Paste Special* fly-out menu has been located under the *Edit* top level menu for many years, but never in the editor context menu next to the *Paste* command. Until now.
+
+![Settings](art/paste-special.png)
 
 <h4 id="settings">Settings</h4>
 
