@@ -22,7 +22,20 @@
       <Group guid="guidCommands" id="LanguageSettingGroup" priority="5000">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
       </Group>
+      <Group guid="guidCommands" id="RestartGroup" priority="5000">
+        <Parent guid="guidCommands" id="RestartMenu" />
+      </Group>
+
     </Groups>
+
+    <Menus>
+      <Menu guid="guidCommands" id="RestartMenu" priority="100" type="Menu">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_FILE_EXIT" />
+        <Strings>
+          <ButtonText>Restart</ButtonText>
+        </Strings>
+      </Menu>
+    </Menus>
 
     <Buttons>
       <Button guid="guidCommands" id="ReOpenDocument" priority="0x0100" type="Button">
@@ -38,13 +51,29 @@
         </Strings>
       </Button>
 
-      <Button guid="guidCommands" id="Restart" priority="0x0100" type="Button">
-        <Parent guid="guidSHLMainMenu" id="IDG_VS_FILE_EXIT" />
-        <Icon guid="ImageCatalogGuid" id="Restart" />
+      <Button guid="guidCommands" id="RestartNormal" priority="0x0100" type="Button">
+        <Parent guid="guidCommands" id="RestartGroup" />
+        <Icon guid="ImageCatalogGuid" id="Restart"/>
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
           <ButtonText>Restart</ButtonText>
           <CommandName>.File.Restart</CommandName>
+        </Strings>
+      </Button>
+
+      <Button guid="guidCommands" id="RestartElevated" priority="0x0200" type="Button">
+        <Parent guid="guidCommands" id="RestartGroup" />
+        <Strings>
+          <ButtonText>Restart as Admin</ButtonText>
+          <CommandName>.File.RestartElevated</CommandName>
+        </Strings>
+      </Button>
+
+      <Button guid="guidCommands" id="RestartSafemode" priority="0x0300" type="Button">
+        <Parent guid="guidCommands" id="RestartGroup" />
+        <Strings>
+          <ButtonText>Restart in Safe Mode</ButtonText>
+          <CommandName>.File.RestartSafemode</CommandName>
         </Strings>
       </Button>
 
@@ -119,7 +148,7 @@
 
   <KeyBindings>
     <KeyBinding guid="guidCommands" id="ReOpenDocument" editor="guidVSStd97" key1="T" mod1="Control Shift" key2="T" mod2="Control Shift" />
-    <KeyBinding guid="guidCommands" id="Restart" editor="guidVSStd97" key1="VK_F4" mod1="Shift Alt" />
+    <KeyBinding guid="guidCommands" id="RestartNormal" editor="guidVSStd97" key1="VK_F4" mod1="Shift Alt" />
     <KeyBinding guid="guidCommands" id="ResetZoom" mod1="Control" key1="0" editor="GUID_TextEditorFactory"/>
   </KeyBindings>
 
@@ -139,7 +168,11 @@
 
     <GuidSymbol name="guidCommands" value="{85ce63b9-a773-45e0-9a60-9a96bc2ab40b}">
       <IDSymbol name="ReOpenDocument" value="0x0100" />
-      <IDSymbol name="Restart" value="0x0200" />
+      <IDSymbol name="RestartMenu" value="0x0200" />
+      <IDSymbol name="RestartGroup" value="0x0201" />
+      <IDSymbol name="RestartNormal" value="0x0202" />
+      <IDSymbol name="RestartElevated" value="0x0203" />
+      <IDSymbol name="RestartSafemode" value="0x0204" />
       <IDSymbol name="OuputVerbosity" value="0x0300" />
       <IDSymbol name="OuputVerbosityList" value="0x0301" />
       <IDSymbol name="OutputVerbosityGroup" value="0x0302" />

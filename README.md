@@ -64,6 +64,8 @@ Inspired by the suggestion [Add a Restart Visual Studio option to 'File' menu](h
 
 Make it easy to restart Visual Studio. If it's running elevated, it will restart back into elevated mode. The shortcut key is **Shift+Alt+F4**.
 
+You can also restart specifically into Admin or Safe modes.
+
 ![Restart](art/restart.png)
 
 <h4 id="closetab">Ctrl+W closes current document</h4>

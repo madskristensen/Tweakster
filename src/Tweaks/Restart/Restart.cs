@@ -1,6 +1,9 @@
-﻿using System.ComponentModel.Design;
+﻿using System;
+using System.ComponentModel.Design;
+using System.Diagnostics;
+using EnvDTE;
+using EnvDTE80;
 using Microsoft;
-using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
@@ -9,30 +12,89 @@ namespace Tweakster
 {
     internal sealed class Restart
     {
+        private static DTE2 _dte;
+        private static DTEEvents _events;
+        private static IVsShell4 _shell;
+        private static bool _openInSafeMode;
+
         public static async Task InitializeAsync(AsyncPackage package)
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync(package.DisposalToken);
 
-            var commandService = await package.GetServiceAsync(typeof(IMenuCommandService)) as OleMenuCommandService;
+            _shell = await package.GetServiceAsync<SVsShell, IVsShell4>();
+            _dte = await package.GetServiceAsync<DTE, DTE2>();
+            _events = _dte.Events.DTEEvents;
+            _events.OnBeginShutdown += OnBeginShutdown;
+
+            IMenuCommandService commandService = await package.GetServiceAsync<IMenuCommandService, IMenuCommandService>();
             Assumes.Present(commandService);
 
-            var shell = await package.GetServiceAsync(typeof(SVsShell)) as IVsShell3;
-            Assumes.Present(shell);
+            var cmdNormalId = new CommandID(PackageGuids.guidCommands, PackageIds.RestartNormal);
+            var cmdNormal = new OleMenuCommand((s, e) => Execute(RestartType.Normal), cmdNormalId);
+            commandService.AddCommand(cmdNormal);
 
-            var cmdId = new CommandID(PackageGuids.guidCommands, PackageIds.Restart);
-            var menuItem = new OleMenuCommand((s, e) => Execute(shell), cmdId);
-            commandService.AddCommand(menuItem);
+            var cmdElevatedId = new CommandID(PackageGuids.guidCommands, PackageIds.RestartElevated);
+            var cmdElevated = new OleMenuCommand((s, e) => Execute(RestartType.Elevated), cmdElevatedId);
+            commandService.AddCommand(cmdElevated);
+
+            var cmdSafemodeId = new CommandID(PackageGuids.guidCommands, PackageIds.RestartSafemode);
+            var cmdSafemode = new OleMenuCommand((s, e) => Execute(RestartType.Safemode), cmdSafemodeId);
+            commandService.AddCommand(cmdSafemode);
         }
 
-        private static void Execute(IVsShell3 shell3)
+        private static void Execute(RestartType restartType)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
-            var shell4 = (IVsShell4)shell3;
+            _openInSafeMode = false;
 
-            ErrorHandler.ThrowOnFailure(shell3.IsRunningElevated(out var elevated));
-            __VSRESTARTTYPE type = elevated ? __VSRESTARTTYPE.RESTART_Elevated : __VSRESTARTTYPE.RESTART_Normal;
+            switch (restartType)
+            {
+                case RestartType.Normal:
+                    ((IVsShell3)_shell).IsRunningElevated(out var elevated);
+                    __VSRESTARTTYPE type = elevated ? __VSRESTARTTYPE.RESTART_Elevated : __VSRESTARTTYPE.RESTART_Normal;
+                    _shell.Restart((uint)type);
+                    break;
 
-            shell4.Restart((uint)type);
+                case RestartType.Elevated:
+                    _shell.Restart((uint)__VSRESTARTTYPE.RESTART_Elevated);
+                    break;
+
+                case RestartType.Safemode:
+                    _openInSafeMode = true;
+                    _dte.ExecuteCommand("File.Exit");
+                    break;
+            }
+        }
+
+        private static void OnBeginShutdown()
+        {
+            if (_openInSafeMode)
+            {
+                var devenv = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
+                var args = _dte.CommandLineArguments;
+
+                if (args.IndexOf(" /safemode", StringComparison.OrdinalIgnoreCase) == -1)
+                {
+                    args += " /safemode";
+                }
+
+                var start = new ProcessStartInfo
+                {
+                    FileName = devenv,
+                    UseShellExecute = true,
+                    ErrorDialog = true,
+                    Arguments = args
+                };
+
+                System.Diagnostics.Process.Start(start);
+            }
+        }
+
+        private enum RestartType
+        {
+            Normal,
+            Elevated,
+            Safemode
         }
     }
 }

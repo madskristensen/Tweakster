@@ -30,7 +30,11 @@ namespace Tweakster
     internal sealed partial class PackageIds
     {
         public const int ReOpenDocument = 0x0100;
-        public const int Restart = 0x0200;
+        public const int RestartMenu = 0x0200;
+        public const int RestartGroup = 0x0201;
+        public const int RestartNormal = 0x0202;
+        public const int RestartElevated = 0x0203;
+        public const int RestartSafemode = 0x0204;
         public const int OuputVerbosity = 0x0300;
         public const int OuputVerbosityList = 0x0301;
         public const int OutputVerbosityGroup = 0x0302;
