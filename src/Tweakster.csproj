@@ -50,9 +50,12 @@
     <Compile Include="Tweaks\BuildStats\Options.cs" />
     <Compile Include="Tweaks\CloseActiveDocument\CloseActiveDocument.cs" />
     <Compile Include="Tweaks\CloseActiveDocument\Options.cs" />
+    <Compile Include="Tweaks\CollapseMemberAttributes\CollapseAttributeTaggerProvider.cs" />
+    <Compile Include="Tweaks\CollapseMemberAttributes\Options.cs" />
     <Compile Include="Tweaks\DeleteOutputArtifacts\Options.cs" />
     <Compile Include="Tweaks\DisableZoomOnScroll\DisableZoomOnScroll.cs" />
     <Compile Include="Tweaks\DisableZoomOnScroll\Options.cs" />
+    <Compile Include="Tweaks\CollapseMemberAttributes\CollapseAttributeTagger.cs" />
     <Compile Include="Tweaks\FormatOnMoveLine\FormatOnMoveLine.cs" />
     <Compile Include="Tweaks\FormatOnMoveLine\Options.cs" />
     <Compile Include="Tweaks\JustMyCode\IDebuggerInternal2.cs" />

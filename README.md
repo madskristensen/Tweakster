@@ -35,6 +35,7 @@ It's from those tickets inspiration for this extension came.
   * [Select current file in Solution Explorer](#selectfile)
   * [Open language settings from context menu](#languagesettings)
   * [Added *Paste Special* to editor context menu](#pastespecial)
+  * [Collapse to hide C# attributes](#collapseattributes)
 * **Settings**
   * [Settings](#settings)
 
@@ -177,6 +178,14 @@ Inspired by the suggestion [Please add "Paste Special" to the Context Menu](http
 The *Paste Special* fly-out menu has been located under the *Edit* top level menu for many years, but never in the editor context menu next to the *Paste* command. Until now.
 
 ![Settings](art/paste-special.png)
+
+<h4 id="collapseattributes">Collapse to hide C# attributes</h4>
+
+Inspired by the suggestion [Show/Hide member attributes](https://developercommunity.visualstudio.com/idea/1125506/showhide-member-attributes.html).
+
+The *Paste Special* fly-out menu has been located under the *Edit* top level menu for many years, but never in the editor context menu next to the *Paste* command. Until now.
+
+![Settings](art/collapse-attributes.gif)
 
 <h4 id="settings">Settings</h4>
 
