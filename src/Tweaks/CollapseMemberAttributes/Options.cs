@@ -5,8 +5,8 @@ namespace Tweakster
     internal partial class Options : BaseOptionModel<Options>
     {
         [Category(Category.Editor)]
-        [DisplayName("Format on move line")]
-        [Description("Calls 'Format Selection' when a line is moved up or down using Alt+UP/DOWN shortcuts.")]
+        [DisplayName("Enable collapsing attributes")]
+        [Description("It provides the possibility to collapse group of attributes into one collapsed line.")]
         [DefaultValue(true)]
         public bool CollapseMemberAttributes { get; set; } = true;
     }
