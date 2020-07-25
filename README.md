@@ -70,7 +70,7 @@ Make it easy to restart Visual Studio. If it's running elevated, it will restart
 
 Inspired by the suggestion [CTRL+W should close the current tab as a default key bind](https://developercommunity.visualstudio.com/idea/351232/ctrlw-should-close-the-current-tab-as-a-default-ke.html).
 
-By default, this extension will re-purpose the command currently using Ctrl+W to close the active open document.
+By default, this extension will re-purpose the command currently using **Ctrl+W** to close the active open document.
 
 ### Build
 
