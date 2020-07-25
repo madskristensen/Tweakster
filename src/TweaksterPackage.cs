@@ -38,6 +38,7 @@ namespace Tweakster
             await FindInSolutionExplorer.InitializeAsync(this);
             //await SearchInFolder.InitializeAsync(this);
             await OpenLanguageSettings.InitializeAsync(this);
+            await CloseActiveDocument.InitializeAsync(this);
         }
     }
 }

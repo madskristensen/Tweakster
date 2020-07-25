@@ -17,6 +17,7 @@ It's from those tickets inspiration for this extension came.
   * [Re-open closed file](#reopen)
   * [Auto save documents and projects](#autosave)
   * [Restart Visual Studio command](#restart)
+  * [Ctrl+W closes current document](#closetab)
 * **Build**
   * [Set verbosity level in Output Window](#outputverbosity)
   * [Save solution on build](#savesolutiononbuild)
@@ -64,6 +65,12 @@ Inspired by the suggestion [Add a Restart Visual Studio option to 'File' menu](h
 Make it easy to restart Visual Studio. If it's running elevated, it will restart back into elevated mode. The shortcut key is **Shift+Alt+F4**.
 
 ![Restart](art/restart.png)
+
+<h4 id="closetab">Ctrl+W closes current document</h4>
+
+Inspired by the suggestion [CTRL+W should close the current tab as a default key bind](https://developercommunity.visualstudio.com/idea/351232/ctrlw-should-close-the-current-tab-as-a-default-ke.html).
+
+By default, this extension will re-purpose the command currently using Ctrl+W to close the active open document.
 
 ### Build
 

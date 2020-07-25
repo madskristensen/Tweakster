@@ -48,6 +48,8 @@
     <Compile Include="ContentTypes.cs" />
     <Compile Include="ProjectHelpers.cs" />
     <Compile Include="Tweaks\BuildStats\Options.cs" />
+    <Compile Include="Tweaks\CloseActiveDocument\CloseActiveDocument.cs" />
+    <Compile Include="Tweaks\CloseActiveDocument\Options.cs" />
     <Compile Include="Tweaks\DeleteOutputArtifacts\Options.cs" />
     <Compile Include="Tweaks\DisableZoomOnScroll\DisableZoomOnScroll.cs" />
     <Compile Include="Tweaks\DisableZoomOnScroll\Options.cs" />
