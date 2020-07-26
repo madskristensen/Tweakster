@@ -105,7 +105,7 @@ namespace Tweakster
                         }
                         else
                         {
-                            if (start > 0 && numberOfLines > 1)
+                            if (start > 0 && (numberOfLines > 1 || (numberOfLines > 0 && _isShortCollapsedForm)))
                             {
                                 list.Add(Span.FromBounds(start, end));
                             }
