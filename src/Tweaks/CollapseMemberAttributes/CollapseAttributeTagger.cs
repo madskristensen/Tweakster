@@ -13,14 +13,17 @@ namespace Tweakster
     public class CollapseAttributeTagger : ITagger<IStructureTag>
     {
         private readonly ITextBuffer _buffer;
+        private readonly bool _isShortCollapsedForm;
+        private readonly string _shortCollapsedForm = "...";
         private List<Span> _spans = new List<Span>();
         private bool _isParsing;
 
         public event EventHandler<SnapshotSpanEventArgs> TagsChanged;
 
-        public CollapseAttributeTagger(ITextBuffer buffer)
+        public CollapseAttributeTagger(ITextBuffer buffer, bool isShortCollapsedForm)
         {
             _buffer = buffer;
+            _isShortCollapsedForm = isShortCollapsedForm;
             _buffer.ChangedHighPriority += OnBufferChanged;
             Parse(_buffer.CurrentSnapshot);
         }
@@ -62,7 +65,7 @@ namespace Tweakster
                 guideLineHorizontalAnchor: outline.Start,
                 type: PredefinedStructureTagTypes.Nonstructural,
                 isCollapsible: true,
-                collapsedForm: firstLineText,
+                collapsedForm: _isShortCollapsedForm ? _shortCollapsedForm : firstLineText,
                 collapsedHintForm: firstLineText,
                 isDefaultCollapsed: true
             );

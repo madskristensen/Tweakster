@@ -18,7 +18,7 @@ namespace Tweakster
                 return null;
             }
 
-            return buffer.Properties.GetOrCreateSingletonProperty(() => new CollapseAttributeTagger(buffer)) as ITagger<T>;
+            return buffer.Properties.GetOrCreateSingletonProperty(() => new CollapseAttributeTagger(buffer, Options.Instance.CollapseMemberAttributesShortForm)) as ITagger<T>;
         }
     }
 }
