@@ -183,9 +183,9 @@ The *Paste Special* fly-out menu has been located under the *Edit* top level men
 
 Inspired by the suggestion [Show/Hide member attributes](https://developercommunity.visualstudio.com/idea/1125506/showhide-member-attributes.html).
 
-The *Paste Special* fly-out menu has been located under the *Edit* top level menu for many years, but never in the editor context menu next to the *Paste* command. Until now.
+You can now collapse member- and class attributes in C# to reduce visual noise.
 
-![Settings](art/collapse-attributes.gif)
+![Settings](art/collapse-attributes.png)
 
 <h4 id="settings">Settings</h4>
 
