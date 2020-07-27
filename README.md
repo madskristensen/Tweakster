@@ -29,6 +29,7 @@ It's from those tickets inspiration for this extension came.
 * **Editor**
   * [Run *Code Cleanup* on format](#codecleanup)
   * [Don't copy empty lines](#dontcopyemptylines)
+  * [Don't copy when there's no selection](#dontcopyemptyselection)
   * [Format on moving line up/down](#formatonlinemove)
   * [Disable editor zoom on mouse wheel](#disablezoom)
   * [Shortcut to set zoom to 100%](#resetzoom)
@@ -130,6 +131,12 @@ Inspired by the suggestion [Cleanup code during formatting](https://developercom
 Instead of running the *Code Cleanup* command manually, it now runs automatically when *Format Document* or **Ctrl+K,Ctrl+D** is invoked. 
 
 <h4 id="dontcopyemptylines">Don't copy empty lines</h4>
+
+Inspired by the suggestion [Please stop clearing the clipboard when you hit ctrl+c and nothing is selected](https://developercommunity.visualstudio.com/idea/693790/please-stop-clearing-the-clipboard-when-you-hit-ct.html).
+
+When the cursor is in an empty line and you hit **Ctrl+C** or **Ctrl+X** to *copy*/*cut*, then the empty lines is added to the clipboard. That is a wrong default behavior that this extension fixes.
+
+<h4 id="dontcopyemptyselection">Don't copy when there's no selection</h4>
 
 Inspired by the suggestion [Please stop clearing the clipboard when you hit ctrl+c and nothing is selected](https://developercommunity.visualstudio.com/idea/693790/please-stop-clearing-the-clipboard-when-you-hit-ct.html).
 

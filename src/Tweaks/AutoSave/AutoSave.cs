@@ -66,7 +66,10 @@ namespace Tweakster.Tweaks.AutoSave
 
             if (ShouldExecute(lostFocus?.Document?.ProjectItem))
             {
-                lostFocus.Document.Save();
+                if (!lostFocus.Document.Saved)
+                {
+                    lostFocus.Document.Save();
+                }
 
                 // Test IsDirty to filter out temp and misc project types
                 if (lostFocus.Project?.IsDirty == true)
@@ -82,7 +85,6 @@ namespace Tweakster.Tweaks.AutoSave
 
             return Options.Instance.AutoSave &&
                    _dte.Mode == vsIDEMode.vsIDEModeDesign &&
-                   item?.IsDirty == true &&
                    item?.ContainingProject != null &&
                    item?.ContainingProject?.Kind != ProjectKinds.vsProjectKindSolutionFolder;
         }

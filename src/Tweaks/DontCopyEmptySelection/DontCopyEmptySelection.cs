@@ -7,31 +7,16 @@ using Microsoft.VisualStudio.Utilities;
 namespace Tweakster.Editor
 {
     [Export(typeof(ICommandHandler))]
-    [Name(nameof(DontCopyEmptyLines))]
+    [Name(nameof(DontCopyEmptySelection))]
     [ContentType("text")]
     [TextViewRole(PredefinedTextViewRoles.PrimaryDocument)]
-    public class DontCopyEmptyLines : ICommandHandler<CopyCommandArgs>
+    public class DontCopyEmptySelection : ICommandHandler<CopyCommandArgs>
     {
-        public string DisplayName => nameof(DontCopyEmptyLines);
+        public string DisplayName => nameof(DontCopyEmptySelection);
 
         public bool ExecuteCommand(CopyCommandArgs args, CommandExecutionContext executionContext)
         {
-            if (Options.Instance.CopyEmptyLines)
-            {
-                // Feature is disabled under Tools -> Options. Abort
-                return false;
-            }
-
-            ITextView view = args.TextView;
-
-            if (!view.Selection.IsEmpty || !view.Caret.ContainingTextViewLine.Extent.IsEmpty)
-            {
-                // Pass it on to the next command handler
-                return false;
-            }
-
-            // We handled it. Don't pass it on to the next command handler
-            return true;
+            return !Options.Instance.CopyEmptySelection && args.TextView.Selection.IsEmpty;
         }
 
         public CommandState GetCommandState(CopyCommandArgs args)
