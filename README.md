@@ -149,7 +149,7 @@ People often zoom in the editor accidently by hitting **Ctrl+MouseWheel**. Zoomi
 
 You can still zoom in using **Ctrl+Shift+.** and zoom out using **Ctrl+Shift+,**
 
-<h4 id="disablezoom">Reset zoom</h4>
+<h4 id="resetzoom">Reset zoom</h4>
 
 Inspired by the suggestion [fix zoom feature](https://developercommunity.visualstudio.com/idea/474557/fix-zoom-feature.html).
 

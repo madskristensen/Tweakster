@@ -78,8 +78,11 @@ namespace Tweakster.Tweaks.AutoSave
 
         private static bool ShouldExecute(ProjectItem item)
         {
+            ThreadHelper.ThrowIfNotOnUIThread();
+
             return Options.Instance.AutoSave &&
                    _dte.Mode == vsIDEMode.vsIDEModeDesign &&
+                   item?.IsDirty == true &&
                    item?.ContainingProject != null &&
                    item?.ContainingProject?.Kind != ProjectKinds.vsProjectKindSolutionFolder;
         }
