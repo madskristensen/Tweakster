@@ -5,7 +5,7 @@ using Microsoft;
 using Microsoft.VisualStudio.Shell;
 using Task = System.Threading.Tasks.Task;
 
-namespace Tweakster.Tweaks.AutoSave
+namespace Tweakster
 {
     public class AutoSave
     {

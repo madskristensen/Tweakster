@@ -30,25 +30,7 @@ namespace Tweakster
 
         public int QueryStatus(ref Guid pguidCmdGroup, uint cCmds, OLECMD[] prgCmds, IntPtr pCmdText)
         {
-            if (pguidCmdGroup == typeof(VSConstants.VSStd97CmdID).GUID)
-            {
-                for (var i = 0; i < cCmds; i++)
-                {
-                    switch (prgCmds[i].cmdID)
-                    {
-                        case (uint)VSConstants.VSStd97CmdID.StepOver:
-                        case (uint)VSConstants.VSStd97CmdID.StepInto:
-                            if (InterceptCommand())
-                            {
-                                return VSConstants.S_FALSE;
-                            }
-
-                            break;
-                    }
-                }
-            }
-
-            return (int)Microsoft.VisualStudio.OLE.Interop.Constants.MSOCMDEXECOPT_DODEFAULT;
+            return (int)Microsoft.VisualStudio.OLE.Interop.Constants.OLECMDERR_E_NOTSUPPORTED;
         }
 
         public int Exec(ref Guid pguidCmdGroup, uint nCmdID, uint nCmdexecopt, IntPtr pvaIn, IntPtr pvaOut)

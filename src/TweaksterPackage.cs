@@ -3,7 +3,6 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
-using Tweakster.Tweaks.AutoSave;
 using Task = System.Threading.Tasks.Task;
 
 namespace Tweakster
