@@ -23,6 +23,9 @@ namespace Tweakster
 
         public const string guidVSDebugGroupString = "c9dd4a58-47fb-11d2-83e7-00c04f9902c1";
         public static Guid guidVSDebugGroup = new Guid(guidVSDebugGroupString);
+
+        public const string guidNewFolderString = "5efc7975-14bc-11cf-9b2b-00aa00573819";
+        public static Guid guidNewFolder = new Guid(guidNewFolderString);
     }
     /// <summary>
     /// Helper class that encapsulates all CommandIDs uses across VS Package.
@@ -47,5 +50,6 @@ namespace Tweakster
         public const int LanguageSetting = 0x0800;
         public const int LanguageSettingGroup = 0x0801;
         public const int IDM_DEBUG_TOOLBAR = 0x0421;
+        public const int PROJECT_NEW_FOLDER = 0x00F5;
     }
 }

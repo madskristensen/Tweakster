@@ -18,6 +18,7 @@ It's from those tickets inspiration for this extension came.
   * [Auto save documents and projects](#autosave)
   * [Restart Visual Studio command](#restart)
   * [Ctrl+W closes current document](#closetab)
+  * [Keyboard shortcut to *Add New Folder*](#addfolder)
 * **Build**
   * [Set verbosity level in Output Window](#outputverbosity)
   * [Save solution on build](#savesolutiononbuild)
@@ -75,6 +76,12 @@ You can also restart specifically into Admin or Safe modes.
 Inspired by the suggestion [CTRL+W should close the current tab as a default key bind](https://developercommunity.visualstudio.com/idea/351232/ctrlw-should-close-the-current-tab-as-a-default-ke.html).
 
 By default, this extension will re-purpose the command currently using **Ctrl+W** to close the active open document.
+
+<h4 id="addfolder">Keyboard shortcut to <i>Add New Folder</i></h4>
+
+Inspired by the suggestion [shortcut to add new folder](https://developercommunity.visualstudio.com/idea/572354/shortcut-to-add-new-folder.html).
+
+**Shift+Alt+F** now adds a new folder to your project. When a document is open in the editor and has focus, the new folder will be a sibling to that document.
 
 ### Build
 
