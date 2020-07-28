@@ -29,8 +29,13 @@ namespace Tweakster
 
         private static void Execute(DTE2 dte)
         {
-            dte.ExecuteCommand("SolutionExplorer.SyncWithActiveDocument");
-            dte.ExecuteCommand("SolutionExplorer.SyncWithActiveDocument");
+            ThreadHelper.ThrowIfNotOnUIThread();
+            Command cmd = dte.Commands.Item("SolutionExplorer.SyncWithActiveDocument");
+
+            if (cmd?.IsAvailable == true)
+            {
+                dte.ExecuteCommand(cmd.Name);
+            }
         }
     }
 }
