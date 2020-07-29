@@ -19,7 +19,7 @@ It's from those tickets inspiration for this extension came.
   * [Restart Visual Studio command](#restart)
   * [Ctrl+W closes current document](#closetab)
   * [Keyboard shortcut to *Add New Folder*](#addfolder)
-  * [Activate *Solution Explorer* on project load](#showsolexp)
+  * [Focus *Solution Explorer* on project load](#showsolexp)
 * **Build**
   * [Set verbosity level in Output Window](#outputverbosity)
   * [Save solution on build](#savesolutiononbuild)
@@ -84,7 +84,7 @@ Inspired by the suggestion [shortcut to add new folder](https://developercommuni
 
 **Shift+Alt+F** now adds a new folder to your project. When a document is open in the editor and has focus, the new folder will be a sibling to that document.
 
-<h4 id="showsolexp">Activate <i>Solution Explorer</i> on project load</h4>
+<h4 id="showsolexp">Focus <i>Solution Explorer</i> on project load</h4>
 
 Inspired by the suggestion [Always open Solution Explorer when I open Visual Studio.](https://developercommunity.visualstudio.com/idea/1130136/always-open-solution-explorer-when-i-open-visual-s.html).
 

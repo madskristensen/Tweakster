@@ -6,9 +6,9 @@ using Microsoft.VisualStudio.Shell.Events;
 using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
 
-namespace Tweakster.Tweaks.ActivateSolutionExplorer
+namespace Tweakster
 {
-    internal sealed class ActivateSolutionExplorer
+    internal sealed class FocusSolutionExplorer
     {
         private static AsyncPackage _package;
         private static IVsUIShell _uiShell;
@@ -32,7 +32,7 @@ namespace Tweakster.Tweaks.ActivateSolutionExplorer
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
-            if (Options.Instance.ActivateSolutionExplorerOnProjectLoad)
+            if (Options.Instance.FocusSolutionExplorerOnProjectLoad)
             {
                 Guid guid = typeof(VSConstants.VSStd97CmdID).GUID;
                 uint id = 0xea;
