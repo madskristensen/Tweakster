@@ -35,7 +35,7 @@ namespace Tweakster.Tweaks.ActivateSolutionExplorer
             Guid guid = typeof(VSConstants.VSStd97CmdID).GUID;
             uint id = 0xea;
 
-            _uiShell.PostExecCommand(guid, id, 0, null);
+            ErrorHandler.ThrowOnFailure(_uiShell.PostExecCommand(guid, id, 0, null));
         }
 
         private static async Task<bool> IsSolutionLoadedAsync()
