@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
+using Tweakster.Tweaks.ActivateSolutionExplorer;
 using Task = System.Threading.Tasks.Task;
 
 namespace Tweakster
@@ -38,6 +39,7 @@ namespace Tweakster
             //await SearchInFolder.InitializeAsync(this);
             await OpenLanguageSettings.InitializeAsync(this);
             await CloseActiveDocument.InitializeAsync(this);
+            await ActivateSolutionExplorer.InitializeAsync(this);
         }
     }
 }

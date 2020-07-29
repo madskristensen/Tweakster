@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="ContentTypes.cs" />
     <Compile Include="ProjectHelpers.cs" />
+    <Compile Include="Tweaks\ActivateSolutionExplorer\ActivateSolutionExplorer.cs" />
     <Compile Include="Tweaks\BuildStats\Options.cs" />
     <Compile Include="Tweaks\CloseActiveDocument\CloseActiveDocument.cs" />
     <Compile Include="Tweaks\CloseActiveDocument\Options.cs" />
