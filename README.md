@@ -154,7 +154,7 @@ When the cursor is in an empty line and you hit **Ctrl+C** or **Ctrl+X** to *cop
 
 Inspired by the suggestion [Please stop clearing the clipboard when you hit ctrl+c and nothing is selected](https://developercommunity.visualstudio.com/idea/693790/please-stop-clearing-the-clipboard-when-you-hit-ct.html).
 
-When the caret is placed on an empty line and you hit *Copy* or **Ctrl+C** then the empty lines isn't copied to the clipboard like it normally would.
+When you make no selection and hit *Copy* or **Ctrl+C** then nothing is copied to the clipboard like it normally would.
 
 <h4 id="formatonlinemove">Format on moving line up/down</h4>
 
