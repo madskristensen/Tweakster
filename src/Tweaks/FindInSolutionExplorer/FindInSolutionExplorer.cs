@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.Design;
-using EnvDTE;
-using EnvDTE80;
+﻿using System;
+using System.ComponentModel.Design;
 using Microsoft;
+using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
 
 namespace Tweakster
@@ -16,26 +17,24 @@ namespace Tweakster
             OleMenuCommandService commandService = await package.GetServiceAsync<IMenuCommandService, OleMenuCommandService>();
             Assumes.Present(commandService);
 
-            DTE2 dte = await package.GetServiceAsync<DTE, DTE2>();
-            Assumes.Present(dte);
+            IVsUIShell uiShell = await package.GetServiceAsync<SVsUIShell, IVsUIShell>();
 
             var cmdId = new CommandID(PackageGuids.guidCommands, PackageIds.FindInSolutionExplorer);
-            var menuItem = new OleMenuCommand((s, e) => Execute(dte), cmdId)
+            var menuItem = new OleMenuCommand((s, e) => Execute(uiShell), cmdId)
             {
                 Supported = false
             };
             commandService.AddCommand(menuItem);
         }
 
-        private static void Execute(DTE2 dte)
+        private static void Execute(IVsUIShell uiShell)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
-            Command cmd = dte.Commands.Item("SolutionExplorer.SyncWithActiveDocument");
 
-            if (cmd?.IsAvailable == true)
-            {
-                dte.ExecuteCommand(cmd.Name);
-            }
+            Guid guid = typeof(VSConstants.VSStd11CmdID).GUID;
+            var id = (uint)VSConstants.VSStd11CmdID.SolutionExplorerSyncWithActiveDocument;
+
+            uiShell.PostExecCommand(guid, id, 0, null);
         }
     }
 }

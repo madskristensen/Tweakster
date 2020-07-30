@@ -49,7 +49,7 @@ namespace Tweakster
 
             try
             {
-                IWpfTextView view = GetCurrentTextView();
+                IWpfTextView view = GetTextView();
 
                 if (view != null)
                 {
@@ -68,11 +68,6 @@ namespace Tweakster
             view.ZoomLevel = Options.Instance.DefaultZoomLevel;
             dte.ExecuteCommand("View.ZoomOut");
             dte.ExecuteCommand("View.ZoomIn");
-        }
-
-        public IWpfTextView GetCurrentTextView()
-        {
-            return GetTextView();
         }
 
         public IWpfTextView GetTextView()

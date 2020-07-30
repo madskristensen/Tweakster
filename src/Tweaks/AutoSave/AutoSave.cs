@@ -1,14 +1,18 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using EnvDTE;
 using EnvDTE80;
 using Microsoft;
+using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
 
 namespace Tweakster
 {
     public class AutoSave
     {
+        private static IVsUIShell _uiShell;
         private static DTE2 _dte;
         private static WindowEvents _windowEvents;
         private static ProjectItemsEvents _projectsEvents;
@@ -18,6 +22,7 @@ namespace Tweakster
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
+            _uiShell = await package.GetServiceAsync<SVsUIShell, IVsUIShell>();
             _dte = await package.GetServiceAsync(typeof(DTE)) as DTE2;
             Assumes.Present(_dte);
 
@@ -31,15 +36,17 @@ namespace Tweakster
             _projectsEvents.ItemAdded += (p) => OnProjectItemChange(p);
             _projectsEvents.ItemRemoved += (p) => OnProjectItemChange(p);
             _projectsEvents.ItemRenamed += (p, n) => OnProjectItemChange(p);
-
-
         }
 
         private static void OnBuildBegin(vsBuildScope Scope, vsBuildAction Action)
         {
+            ThreadHelper.ThrowIfNotOnUIThread();
+
             if (Options.Instance.SaveAllOnBuild)
             {
-                _dte.ExecuteCommand("File.SaveAll");
+                Guid guid = typeof(VSConstants.VSStd97CmdID).GUID;
+                var id = (uint)VSConstants.VSStd97CmdID.SaveSolution;
+                _uiShell.PostExecCommand(guid, id, 0, null);
             }
         }
 

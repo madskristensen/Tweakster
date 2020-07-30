@@ -35,9 +35,9 @@ namespace Tweakster
             if (Options.Instance.FocusSolutionExplorerOnProjectLoad)
             {
                 Guid guid = typeof(VSConstants.VSStd97CmdID).GUID;
-                uint id = 0xea;
+                var id = (uint)VSConstants.VSStd97CmdID.ProjectExplorer;
 
-                ErrorHandler.ThrowOnFailure(_uiShell.PostExecCommand(guid, id, 0, null));
+                _uiShell.PostExecCommand(guid, id, 0, null);
             }
         }
 
