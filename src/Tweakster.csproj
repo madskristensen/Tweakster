@@ -46,6 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ContentTypes.cs" />
+    <Compile Include="OutputWindowTraceListener.cs" />
     <Compile Include="ProjectHelpers.cs" />
     <Compile Include="Tweaks\ActivateSolutionExplorer\ActivateSolutionExplorer.cs" />
     <Compile Include="Tweaks\ActivateSolutionExplorer\Options.cs" />

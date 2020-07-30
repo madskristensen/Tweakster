@@ -25,6 +25,8 @@ namespace Tweakster
         {
             await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
 
+            OutputWindowTraceListener.Register(Vsix.Name, nameof(Tweakster));
+
             await AutoSave.InitializeAsync(this);
             await ReOpenDocument.InitializeAsync(this);
             await NoStepDebuggingInDesignMode.InitializeAsync(this);
