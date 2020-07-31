@@ -48,49 +48,49 @@
     <Compile Include="ContentTypes.cs" />
     <Compile Include="OutputWindowTraceListener.cs" />
     <Compile Include="ProjectHelpers.cs" />
-    <Compile Include="Tweaks\ActivateSolutionExplorer\ActivateSolutionExplorer.cs" />
-    <Compile Include="Tweaks\ActivateSolutionExplorer\Options.cs" />
-    <Compile Include="Tweaks\BuildStats\Options.cs" />
-    <Compile Include="Tweaks\CloseActiveDocument\CloseActiveDocument.cs" />
-    <Compile Include="Tweaks\CloseActiveDocument\Options.cs" />
-    <Compile Include="Tweaks\CollapseMemberAttributes\CollapseAttributeTaggerProvider.cs" />
-    <Compile Include="Tweaks\CollapseMemberAttributes\Options.cs" />
-    <Compile Include="Tweaks\DeleteOutputArtifacts\Options.cs" />
-    <Compile Include="Tweaks\DisableZoomOnScroll\DisableZoomOnScroll.cs" />
-    <Compile Include="Tweaks\DisableZoomOnScroll\Options.cs" />
-    <Compile Include="Tweaks\CollapseMemberAttributes\CollapseAttributeTagger.cs" />
-    <Compile Include="Tweaks\DontCopyEmptySelection\DontCopyEmptyLines.cs" />
-    <Compile Include="Tweaks\FormatOnMoveLine\FormatOnMoveLine.cs" />
-    <Compile Include="Tweaks\FormatOnMoveLine\Options.cs" />
-    <Compile Include="Tweaks\JustMyCode\IDebuggerInternal2.cs" />
-    <Compile Include="Tweaks\NoStepDebuggingInDesignMode\NoStepDebuggingInDesignMode.cs" />
-    <Compile Include="Tweaks\NoStepDebuggingInDesignMode\Options.cs" />
-    <Compile Include="Tweaks\DeleteOutputArtifacts\DeleteOutputArtifacts.cs" />
-    <Compile Include="Tweaks\OpenLanguageSettings\OpenLanguageSettings.cs" />
-    <Compile Include="Tweaks\OutputVerbosity\OutputVerbosity.cs" />
-    <Compile Include="Tweaks\ResetZoomLevel\Options.cs" />
-    <Compile Include="Tweaks\ResetZoomLevel\ResetZoomLevel.cs" />
-    <Compile Include="Tweaks\JustMyCode\JustMyCode.cs" />
-    <Compile Include="Tweaks\BuildStats\BuildStats.cs" />
-    <Compile Include="Tweaks\FindInSolutionExplorer\FindInSolutionExplorer.cs" />
-    <Compile Include="Tweaks\Restart\Restart.cs" />
-    <Compile Include="Tweaks\ReOpenDocument\ReOpenDocument.cs" />
+    <Compile Include="Tweaks\General\ActivateSolutionExplorer\ActivateSolutionExplorer.cs" />
+    <Compile Include="Tweaks\General\ActivateSolutionExplorer\Options.cs" />
+    <Compile Include="Tweaks\Build\BuildStats\Options.cs" />
+    <Compile Include="Tweaks\Editor\CloseActiveDocument\CloseActiveDocument.cs" />
+    <Compile Include="Tweaks\Editor\CloseActiveDocument\Options.cs" />
+    <Compile Include="Tweaks\Editor\CollapseMemberAttributes\CollapseAttributeTaggerProvider.cs" />
+    <Compile Include="Tweaks\Editor\CollapseMemberAttributes\Options.cs" />
+    <Compile Include="Tweaks\Build\DeleteOutputArtifacts\Options.cs" />
+    <Compile Include="Tweaks\Editor\DisableZoomOnScroll\DisableZoomOnScroll.cs" />
+    <Compile Include="Tweaks\Editor\DisableZoomOnScroll\Options.cs" />
+    <Compile Include="Tweaks\Editor\CollapseMemberAttributes\CollapseAttributeTagger.cs" />
+    <Compile Include="Tweaks\Editor\DontCopyEmptySelection\DontCopyEmptyLines.cs" />
+    <Compile Include="Tweaks\Editor\FormatOnMoveLine\FormatOnMoveLine.cs" />
+    <Compile Include="Tweaks\Editor\FormatOnMoveLine\Options.cs" />
+    <Compile Include="Tweaks\Debug\JustMyCode\IDebuggerInternal2.cs" />
+    <Compile Include="Tweaks\Debug\NoStepDebuggingInDesignMode\NoStepDebuggingInDesignMode.cs" />
+    <Compile Include="Tweaks\Debug\NoStepDebuggingInDesignMode\Options.cs" />
+    <Compile Include="Tweaks\Build\DeleteOutputArtifacts\DeleteOutputArtifacts.cs" />
+    <Compile Include="Tweaks\Editor\OpenLanguageSettings\OpenLanguageSettings.cs" />
+    <Compile Include="Tweaks\Build\OutputVerbosity\OutputVerbosity.cs" />
+    <Compile Include="Tweaks\Editor\ResetZoomLevel\Options.cs" />
+    <Compile Include="Tweaks\Editor\ResetZoomLevel\ResetZoomLevel.cs" />
+    <Compile Include="Tweaks\Debug\JustMyCode\JustMyCode.cs" />
+    <Compile Include="Tweaks\Build\BuildStats\BuildStats.cs" />
+    <Compile Include="Tweaks\General\FindInSolutionExplorer\FindInSolutionExplorer.cs" />
+    <Compile Include="Tweaks\General\Restart\Restart.cs" />
+    <Compile Include="Tweaks\General\ReOpenDocument\ReOpenDocument.cs" />
     <Compile Include="TweaksterPackage1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TweaksterPackage.vsct</DependentUpon>
     </Compile>
-    <Compile Include="Tweaks\AutoSave\AutoSave.cs" />
-    <Compile Include="Tweaks\AutoSave\Options.cs" />
-    <Compile Include="Tweaks\CodeCleanupOnFormat\CodeCleanupOnFormat.cs" />
-    <Compile Include="Tweaks\CodeCleanupOnFormat\Options.cs" />
-    <Compile Include="Tweaks\DontCopyEmptySelection\DontCopyEmptySelection.cs" />
+    <Compile Include="Tweaks\General\AutoSave\AutoSave.cs" />
+    <Compile Include="Tweaks\General\AutoSave\Options.cs" />
+    <Compile Include="Tweaks\Editor\CodeCleanupOnFormat\CodeCleanupOnFormat.cs" />
+    <Compile Include="Tweaks\Editor\CodeCleanupOnFormat\Options.cs" />
+    <Compile Include="Tweaks\Editor\DontCopyEmptySelection\DontCopyEmptySelection.cs" />
     <Compile Include="Options\BaseOptionModel.cs" />
     <Compile Include="Options\BaseOptionPage.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Options\DialogPageProvider.cs" />
-    <Compile Include="Tweaks\DontCopyEmptySelection\Options.cs" />
+    <Compile Include="Tweaks\Editor\DontCopyEmptySelection\Options.cs" />
     <Compile Include="Options\Options.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="source.extension.cs">
@@ -99,7 +99,7 @@
       <DependentUpon>source.extension.vsixmanifest</DependentUpon>
     </Compile>
     <Compile Include="TweaksterPackage.cs" />
-    <Compile Include="Tweaks\ReOpenDocument\ReOpenCreationListener.cs" />
+    <Compile Include="Tweaks\General\ReOpenDocument\ReOpenCreationListener.cs" />
     <Compile Include="Tweaks\SearchInFolder\SearchInFolder.cs" />
   </ItemGroup>
   <ItemGroup>
