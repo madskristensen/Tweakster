@@ -148,7 +148,7 @@ Instead of running the *Code Cleanup* command manually, it now runs automaticall
 
 Inspired by the suggestion [Please stop clearing the clipboard when you hit ctrl+c and nothing is selected](https://developercommunity.visualstudio.com/idea/693790/please-stop-clearing-the-clipboard-when-you-hit-ct.html).
 
-When the cursor is in an empty line and you hit **Ctrl+C** or **Ctrl+X** to *copy*/*cut*, then the empty lines is added to the clipboard. That is a wrong default behavior that this extension fixes.
+When the cursor is in an empty line and you hit **Ctrl+C** to *copy*, then the empty lines is added to the clipboard. That is a wrong default behavior that this extension fixes.
 
 <h4 id="dontcopyemptyselection">Don't copy when there's no selection</h4>
 

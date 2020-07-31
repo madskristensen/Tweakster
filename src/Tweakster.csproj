@@ -59,7 +59,7 @@
     <Compile Include="Tweaks\DisableZoomOnScroll\DisableZoomOnScroll.cs" />
     <Compile Include="Tweaks\DisableZoomOnScroll\Options.cs" />
     <Compile Include="Tweaks\CollapseMemberAttributes\CollapseAttributeTagger.cs" />
-    <Compile Include="Tweaks\DontCopyEmptySelection\DisableCopyEmptyLines.cs" />
+    <Compile Include="Tweaks\DontCopyEmptySelection\DontCopyEmptyLines.cs" />
     <Compile Include="Tweaks\FormatOnMoveLine\FormatOnMoveLine.cs" />
     <Compile Include="Tweaks\FormatOnMoveLine\Options.cs" />
     <Compile Include="Tweaks\JustMyCode\IDebuggerInternal2.cs" />

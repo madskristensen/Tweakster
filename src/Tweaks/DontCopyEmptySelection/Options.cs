@@ -5,7 +5,7 @@ namespace Tweakster
     internal partial class Options : BaseOptionModel<Options>
     {
         [Category(Category.Editor)]
-        [DisplayName("Copy on empty selection")]
+        [DisplayName("Copy empty selection")]
         [Description("Specifies if anything should be copied to the clipboard when no selection is made.")]
         [DefaultValue(true)]
         public bool CopyEmptySelection { get; set; } = true;
