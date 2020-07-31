@@ -25,7 +25,7 @@ It's from those tickets inspiration for this extension came.
   * [Save solution on build](#savesolutiononbuild)
   * [Delete obj and bin folders on *Clean*](#deleteoutputartifacts)
   * [Show build time statistics](#buildstats)
-* **Debug**
+* **Debugger**
   * [Don't start debug on F10/F11](#nodebugonf10)
   * [Toggle *Just My Code* from the *Debug* toolbar](#justmycode)
 * **Editor**
@@ -120,7 +120,7 @@ After any *Build*, *Rebuild*, *Clean*, or *Deploy* is executed, the time statist
 
 ![Build time statistics](art/build-time-stats.png)
 
-### Debug
+### Debugger
 
 <h4 id="justmycode">Toggle <i>Just My Code</i> from the <i>Debug</i> toolbar</h4>
 
