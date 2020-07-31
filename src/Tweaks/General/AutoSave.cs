@@ -58,7 +58,10 @@ namespace Tweakster
             {
                 try
                 {
-                    item.ContainingProject.Save();
+                    if (item.ContainingProject.IsDirty)
+                    {
+                        item.ContainingProject.Save();
+                    }
                 }
                 catch (System.Exception ex)
                 {

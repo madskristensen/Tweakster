@@ -4,7 +4,9 @@ namespace Tweakster
 {
     internal partial class Options : BaseOptionModel<Options>
     {
-        [Category(Category.Debug)]
+        private const string _debugger = "Debugger";
+
+        [Category(_debugger)]
         [DisplayName("Start debugging on F10/F11")]
         [Description("Disables F10/F11 until debug mode is entered to stop accidental debugger starts.")]
         [DefaultValue(false)]

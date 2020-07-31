@@ -97,7 +97,7 @@
         </Strings>
       </Button>
 
-      <Button guid="guidCommands" id="FindInSolutionExplorer" priority="0x175" type="Button">
+      <Button guid="guidCommands" id="FindInSolutionExplorer" priority="0x100" type="Button">
         <Parent guid="guidCommands" id="FindInSolutionExplorerGroup" />
         <Icon guid="ImageCatalogGuid" id="Sync"/>
         <CommandFlag>IconIsMoniker</CommandFlag>
@@ -105,6 +105,16 @@
         <Strings>
           <ButtonText>Find in Solution Explorer</ButtonText>
           <CommandName>.File.FindInSolutionExplorer</CommandName>
+        </Strings>
+      </Button>
+
+      <Button guid="guidCommands" id="DuplicateWindow" priority="0x200" type="Button">
+        <Parent guid="guidCommands" id="FindInSolutionExplorerGroup" />
+        <Icon guid="ImageCatalogGuid" id="NewWindow"/>
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Duplicate Window</ButtonText>
+          <CommandName>.File.DuplicateWindow</CommandName>
         </Strings>
       </Button>
 
@@ -185,6 +195,7 @@
       <IDSymbol name="SearchInFolder" value="0x0700" />
       <IDSymbol name="LanguageSetting" value="0x0800" />
       <IDSymbol name="LanguageSettingGroup" value="0x0801" />
+      <IDSymbol name="DuplicateWindow" value="0x0900" />
     </GuidSymbol>
 
     <GuidSymbol name="guidVSDebugGroup" value="{c9dd4a58-47fb-11d2-83e7-00c04f9902c1}">

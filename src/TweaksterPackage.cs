@@ -41,6 +41,7 @@ namespace Tweakster
             await OpenLanguageSettings.InitializeAsync(this);
             await CloseActiveDocument.InitializeAsync(this);
             await FocusSolutionExplorer.InitializeAsync(this);
+            await DuplicateWindow.InitializeAsync(this);
         }
     }
 }
