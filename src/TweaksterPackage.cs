@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
+using Tweakster.Tweaks.General;
 using Task = System.Threading.Tasks.Task;
 
 namespace Tweakster
@@ -42,6 +43,7 @@ namespace Tweakster
             await CloseActiveDocument.InitializeAsync(this);
             await FocusSolutionExplorer.InitializeAsync(this);
             await DuplicateWindow.InitializeAsync(this);
+            await ClearRecentFilesAndProjects.InitializeAsync(this);
         }
     }
 }

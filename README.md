@@ -20,6 +20,7 @@ It's from those tickets inspiration for this extension came.
   * [Ctrl+W closes current document](#closetab)
   * [Keyboard shortcut to *Add New Folder*](#addfolder)
   * [Focus *Solution Explorer* on project load](#showsolexp)
+  * [Clear list of recent files](#clearmru)
 * **Build**
   * [Set verbosity level in Output Window](#outputverbosity)
   * [Save solution on build](#savesolutiononbuild)
@@ -89,6 +90,14 @@ Inspired by the suggestion [shortcut to add new folder](https://developercommuni
 Inspired by the suggestion [Always open Solution Explorer when I open Visual Studio.](https://developercommunity.visualstudio.com/idea/1130136/always-open-solution-explorer-when-i-open-visual-s.html).
 
 When opening a project or solution, the Solution Explorer is not always visible if it was hidden behind other docked tool windows, for instance. But now Solution Explorer is always shown when a project is being loaded.
+
+<h4 id="clearmru">Clear list of recent files</h4>
+
+Inspired by the suggestion [Add menu option to clear Most Recent File / Most Recent Project lists](https://developercommunity.visualstudio.com/idea/1114306/add-menu-option-to-clear-most-recent-file-most-rec.html).
+
+Clear the list of files from the **File -> Recent Files** list. It requiers Visual Studio to restart before the items are gone.
+
+![Clear MRU](art/clear-mru.png)
 
 ### Build
 

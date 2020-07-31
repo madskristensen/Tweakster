@@ -50,6 +50,10 @@ namespace Tweakster
         public const int LanguageSetting = 0x0800;
         public const int LanguageSettingGroup = 0x0801;
         public const int DuplicateWindow = 0x0900;
+        public const int ClearRecentFiles = 0x1000;
+        public const int ClearRecentFilesGroup = 0x1001;
+        public const int ClearRecentProjects = 0x1010;
+        public const int ClearRecentProjectsGroup = 0x1011;
         public const int IDM_DEBUG_TOOLBAR = 0x0421;
         public const int PROJECT_NEW_FOLDER = 0x00F5;
     }

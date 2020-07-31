@@ -22,10 +22,18 @@
       <Group guid="guidCommands" id="LanguageSettingGroup" priority="5000">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
       </Group>
+      
       <Group guid="guidCommands" id="RestartGroup" priority="5000">
         <Parent guid="guidCommands" id="RestartMenu" />
       </Group>
 
+      <Group guid="guidCommands" id="ClearRecentFilesGroup" priority="5000">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CSCD_FILEMRU" />
+      </Group>
+
+      <Group guid="guidCommands" id="ClearRecentProjectsGroup" priority="5000">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CSCD_PROJMRU" />
+      </Group>
     </Groups>
 
     <Menus>
@@ -140,6 +148,26 @@
           <CommandName>.File.LanguageSettings</CommandName>
         </Strings>
       </Button>
+
+      <Button guid="guidCommands" id="ClearRecentFiles" priority="0x0010" type="Button">
+        <Parent guid="guidCommands" id="ClearRecentFilesGroup" />
+        <Icon guid="ImageCatalogGuid" id="CleanData"/>
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Clear...</ButtonText>
+          <CommandName>.File.ClearRecentFiles</CommandName>
+        </Strings>
+      </Button>
+
+      <!--<Button guid="guidCommands" id="ClearRecentProjects" priority="0x0010" type="Button">
+        <Parent guid="guidCommands" id="ClearRecentProjectsGroup" />
+        <Icon guid="ImageCatalogGuid" id="CleanData"/>
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Clear...</ButtonText>
+          <CommandName>.File.ClearRecentProjects</CommandName>
+        </Strings>
+      </Button>-->
     </Buttons>
 
     <Combos>
@@ -196,6 +224,10 @@
       <IDSymbol name="LanguageSetting" value="0x0800" />
       <IDSymbol name="LanguageSettingGroup" value="0x0801" />
       <IDSymbol name="DuplicateWindow" value="0x0900" />
+      <IDSymbol name="ClearRecentFiles" value="0x1000" />
+      <IDSymbol name="ClearRecentFilesGroup" value="0x1001" />
+      <IDSymbol name="ClearRecentProjects" value="0x1010" />
+      <IDSymbol name="ClearRecentProjectsGroup" value="0x1011" />
     </GuidSymbol>
 
     <GuidSymbol name="guidVSDebugGroup" value="{c9dd4a58-47fb-11d2-83e7-00c04f9902c1}">
