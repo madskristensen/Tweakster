@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.Shell;
 
 namespace Tweakster
 {
-    public static class ProjectHelpers
+    public static class ExtensionMethods
     {
         public static string GetFullPath(this Project project)
         {

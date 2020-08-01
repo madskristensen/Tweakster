@@ -47,7 +47,7 @@
   <ItemGroup>
     <Compile Include="Common\ContentTypes.cs" />
     <Compile Include="Common\OutputWindowTraceListener.cs" />
-    <Compile Include="Common\ProjectHelpers.cs" />
+    <Compile Include="Common\ExtensionMethods.cs" />
     <Compile Include="Common\SVsSettingsPersistenceManager.cs" />
     <Compile Include="Tweaks\General\ActivateSolutionExplorer.cs" />
     <Compile Include="Tweaks\General\ClearRecentFilesAndProjects.cs" />
@@ -95,7 +95,6 @@
     </Compile>
     <Compile Include="TweaksterPackage.cs" />
     <Compile Include="Tweaks\General\ReOpenCreationListener.cs" />
-    <Compile Include="Tweaks\SearchInFolder\SearchInFolder.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\LICENSE">

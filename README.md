@@ -91,7 +91,7 @@ Inspired by the suggestion [Always open Solution Explorer when I open Visual Stu
 
 When opening a project or solution, the Solution Explorer is not always visible if it was hidden behind other docked tool windows, for instance. But now Solution Explorer is always shown when a project is being loaded.
 
-<h4 id="clearmru">Clear list of recent files</h4>
+<h4 id="clearmru">Clear list of recent files and projects</h4>
 
 Inspired by the suggestion [Add menu option to clear Most Recent File / Most Recent Project lists](https://developercommunity.visualstudio.com/idea/1114306/add-menu-option-to-clear-most-recent-file-most-rec.html).
 

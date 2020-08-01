@@ -46,7 +46,6 @@ namespace Tweakster
         public const int JustMyCodeGroup = 0x0501;
         public const int FindInSolutionExplorer = 0x0600;
         public const int FindInSolutionExplorerGroup = 0x0601;
-        public const int SearchInFolder = 0x0700;
         public const int LanguageSetting = 0x0800;
         public const int LanguageSettingGroup = 0x0801;
         public const int DuplicateWindow = 0x0900;
