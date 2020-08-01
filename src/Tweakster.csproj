@@ -73,10 +73,10 @@
     <Compile Include="Tweaks\General\FindInSolutionExplorer.cs" />
     <Compile Include="Tweaks\General\Restart.cs" />
     <Compile Include="Tweaks\General\ReOpenDocument.cs" />
-    <Compile Include="TweaksterPackage1.cs">
+    <Compile Include="VSCommandTable.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TweaksterPackage.vsct</DependentUpon>
+      <DependentUpon>VSCommandTable.vsct</DependentUpon>
     </Compile>
     <Compile Include="Tweaks\General\AutoSave.cs" />
     <Compile Include="Tweaks\Editor\CodeCleanupOnFormat.cs" />
@@ -104,10 +104,10 @@
     <Content Include="Resources\Icon.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <VSCTCompile Include="TweaksterPackage.vsct">
+    <VSCTCompile Include="VSCommandTable.vsct">
       <Generator>VsctGenerator</Generator>
       <ResourceName>Menus.ctmenu</ResourceName>
-      <LastGenOutput>TweaksterPackage1.cs</LastGenOutput>
+      <LastGenOutput>VSCommandTable.cs</LastGenOutput>
     </VSCTCompile>
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>

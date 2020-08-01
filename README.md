@@ -37,6 +37,7 @@ It's from those tickets inspiration for this extension came.
   * [Disable editor zoom on mouse wheel](#disablezoom)
   * [Shortcut to set zoom to 100%](#resetzoom)
   * [Select current file in Solution Explorer](#selectfile)
+  * [Duplicate code window](#duplicatewindow)
   * [Open language settings from context menu](#languagesettings)
   * [Added *Paste Special* to editor context menu](#pastespecial)
   * [Collapse to hide C# attributes](#collapseattributes)
@@ -185,13 +186,21 @@ Inspired by the suggestion [fix zoom feature](https://developercommunity.visuals
 
 The ability to reset the editor zoom level using the shortcuts **Ctrl+0**. In the settings, you can chose what the default zoom level should be. The default value is *100*.
 
-<h4 id="selectfile">Select file in Solution Explorer</h4>
+<h4 id="selectfile">Select current file in Solution Explorer</h4>
 
 Inspired by the suggestion [Add entry for "Sync with Active Document" in the right-click context menu for a document tab](https://developercommunity.visualstudio.com/idea/702650/new-menu-entry-select-in-solution-explorer.html).
 
 Adds a command to the document tab context menu that will select the file in Solution Explorer.
 
 ![Select file in Solution Explorer](art/find-in-solution-explorer.png)
+
+<h4 id="duplicatewindow">Duplicate code window</h4>
+
+Inspired by the suggestion [add "New Window"-command to tab context-menu](https://developercommunity.visualstudio.com/idea/1128818/add-new-window-command-to-tab-context-menu.html).
+
+Easily duplicate (or clone) a code window directly from the context menu on the document tabs. This is the same command as **Window -> New Window**, but in a more convenient location and with a more descriptive name. 
+
+![Duplicate window](art/duplicate-window.png)
 
 <h4 id="languagesettings">Open language settings from context menu</h4>
 
