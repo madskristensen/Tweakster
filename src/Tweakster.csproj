@@ -73,6 +73,7 @@
     <Compile Include="Tweaks\General\FindInSolutionExplorer.cs" />
     <Compile Include="Tweaks\General\Restart.cs" />
     <Compile Include="Tweaks\General\ReOpenDocument.cs" />
+    <Compile Include="Tweaks\General\WindowsJumpLists.cs" />
     <Compile Include="VSCommandTable.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -116,6 +117,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Design" />

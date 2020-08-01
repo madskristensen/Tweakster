@@ -21,6 +21,7 @@ It's from those tickets inspiration for this extension came.
   * [Keyboard shortcut to *Add New Folder*](#addfolder)
   * [Focus *Solution Explorer* on project load](#showsolexp)
   * [Clear list of recent files and projects](#clearmru)
+  * [Open in */SafeMode* from Jump List](#safemode)
 * **Build**
   * [Set verbosity level in Output Window](#outputverbosity)
   * [Save solution on build](#savesolutiononbuild)
@@ -99,6 +100,14 @@ Inspired by the suggestion [Add menu option to clear Most Recent File / Most Rec
 Clear the list of files from the **File -> Recent Files** list and projects from **File -> Recent Projects and Solutions**. It requiers Visual Studio to restart before the items are gone.
 
 ![Clear MRU](art/clear-mru.png)
+
+<h4 id="safemode">Open in <i>/SafeMode</i> from Jump List</h4>
+
+Inspired by the suggestion [Add a Restart Visual Studio option to 'File' menu](https://developercommunity.visualstudio.com/idea/537213/add-a-restart-visual-studio-option-to-file-menu.html).
+
+Adds a task to the Windows Jump List making it easy to open  Visual studio with the */SafeMode* switch.
+
+![Clear MRU](art/safemode.png)
 
 ### Build
 
