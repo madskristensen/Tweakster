@@ -8,16 +8,25 @@ namespace Tweakster.Tweaks.General
     {
         public static void Initialize()
         {
-            var task = new JumpTask
+            var presentationMode = new JumpTask
             {
                 ApplicationPath = Process.GetCurrentProcess().MainModule.FileName,
                 IconResourcePath = Process.GetCurrentProcess().MainModule.FileName,
-                Title = "Start in SafeMode",
+                Title = "Presentation Mode",
+                Arguments = "/RootSuffix Present"
+            };
+
+            var safeMode = new JumpTask
+            {
+                ApplicationPath = Process.GetCurrentProcess().MainModule.FileName,
+                IconResourcePath = Process.GetCurrentProcess().MainModule.FileName,
+                Title = "Safe Mode",
                 Arguments = "/safemode"
             };
 
             JumpList list = JumpList.GetJumpList(Application.Current) ?? new JumpList();
-            list.JumpItems.Add(task);
+            list.JumpItems.Add(presentationMode);
+            list.JumpItems.Add(safeMode);
             list.Apply();
         }
     }
