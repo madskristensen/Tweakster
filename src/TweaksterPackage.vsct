@@ -159,7 +159,7 @@
         </Strings>
       </Button>
 
-      <!--<Button guid="guidCommands" id="ClearRecentProjects" priority="0x0010" type="Button">
+      <Button guid="guidCommands" id="ClearRecentProjects" priority="0x0010" type="Button">
         <Parent guid="guidCommands" id="ClearRecentProjectsGroup" />
         <Icon guid="ImageCatalogGuid" id="CleanData"/>
         <CommandFlag>IconIsMoniker</CommandFlag>
@@ -167,7 +167,7 @@
           <ButtonText>Clear...</ButtonText>
           <CommandName>.File.ClearRecentProjects</CommandName>
         </Strings>
-      </Button>-->
+      </Button>
     </Buttons>
 
     <Combos>

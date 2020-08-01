@@ -45,9 +45,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ContentTypes.cs" />
-    <Compile Include="OutputWindowTraceListener.cs" />
-    <Compile Include="ProjectHelpers.cs" />
+    <Compile Include="Common\ContentTypes.cs" />
+    <Compile Include="Common\OutputWindowTraceListener.cs" />
+    <Compile Include="Common\ProjectHelpers.cs" />
+    <Compile Include="Common\SVsSettingsPersistenceManager.cs" />
     <Compile Include="Tweaks\General\ActivateSolutionExplorer.cs" />
     <Compile Include="Tweaks\General\ClearRecentFilesAndProjects.cs" />
     <Compile Include="Tweaks\General\Options.cs" />

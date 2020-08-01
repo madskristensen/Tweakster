@@ -9,11 +9,6 @@ using Task = System.Threading.Tasks.Task;
 
 namespace Tweakster
 {
-    [Guid("9B164E40-C3A2-4363-9BC5-EB4039DEF653")]
-    public class SVsSettingsPersistenceManager
-    {
-        // Dummy class to get to the internal SVsSettingsPersistenceManager service
-    }
 
     internal sealed class OutputVerbosity
     {
@@ -25,10 +20,10 @@ namespace Tweakster
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync(package.DisposalToken);
 
-            var commandService = await package.GetServiceAsync(typeof(IMenuCommandService)) as OleMenuCommandService;
+            OleMenuCommandService commandService = await package.GetServiceAsync<IMenuCommandService, OleMenuCommandService>();
             Assumes.Present(commandService);
 
-            _settings = await package.GetServiceAsync(typeof(SVsSettingsPersistenceManager)) as ISettingsManager;
+            _settings = await package.GetServiceAsync<SVsSettingsPersistenceManager, ISettingsManager>();
             Assumes.Present(_settings);
 
             var id1 = new CommandID(PackageGuids.guidCommands, PackageIds.OuputVerbosityList);
