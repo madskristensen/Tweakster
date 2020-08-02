@@ -9,6 +9,7 @@ namespace Tweakster.Tweaks.General
         public static void Initialize()
         {
             var devenv = Process.GetCurrentProcess().MainModule.FileName;
+
             var presentationMode = new JumpTask
             {
                 ApplicationPath = devenv,

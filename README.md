@@ -22,6 +22,7 @@ It's from those tickets inspiration for this extension came.
   * [Focus *Solution Explorer* on project load](#showsolexp)
   * [Clear list of recent files and projects](#clearmru)
   * [Open in */SafeMode* from Jump List](#safemode)
+  * [Presentation Mode](#demomode)
 * **Build**
   * [Set verbosity level in Output Window](#outputverbosity)
   * [Save solution on build](#savesolutiononbuild)
@@ -105,9 +106,19 @@ Clear the list of files from the **File -> Recent Files** list and projects from
 
 Inspired by the suggestion [Add a Restart Visual Studio option to 'File' menu](https://developercommunity.visualstudio.com/idea/537213/add-a-restart-visual-studio-option-to-file-menu.html).
 
-Adds a task to the Windows Jump List making it easy to open  Visual studio with the */SafeMode* switch.
+Adds a task to the Windows Jump List making it easy to open  Visual studio with the `/SafeMode` command line argument.
 
 ![Clear MRU](art/safemode.png)
+
+<h4 id="demomode">Presentation Mode</h4>
+
+Inspired by the suggestion [Visual Studio Presentation Mode](https://developercommunity.visualstudio.com/idea/842920/visual-studio-presentation-mode.html).
+
+Adds a presentation mode that starts up an instance of Visual Studio with its own settings, window layout, extensions, etc. Customize it to your presentation style without it changes anything in the regular instance of Visual Studio.
+
+It starts Visual Studio with the `/RootSuffix Demo` command line argument.
+
+![Clear MRU](art/demo-mode.png)
 
 ### Build
 
