@@ -8,19 +8,22 @@ namespace Tweakster.Tweaks.General
     {
         public static void Initialize()
         {
+            var devenv = Process.GetCurrentProcess().MainModule.FileName;
             var presentationMode = new JumpTask
             {
-                ApplicationPath = Process.GetCurrentProcess().MainModule.FileName,
-                IconResourcePath = Process.GetCurrentProcess().MainModule.FileName,
+                ApplicationPath = devenv,
+                IconResourcePath = devenv,
                 Title = "Presentation Mode",
-                Arguments = "/RootSuffix Present"
+                Description = "Starts a separate Visual Studio instance with its own settings, layout, extensions, and more...",
+                Arguments = "/RootSuffix Demo"
             };
 
             var safeMode = new JumpTask
             {
-                ApplicationPath = Process.GetCurrentProcess().MainModule.FileName,
-                IconResourcePath = Process.GetCurrentProcess().MainModule.FileName,
+                ApplicationPath = devenv,
+                IconResourcePath = devenv,
                 Title = "Safe Mode",
+                Description = "Starts Visual Studio in limited functionality mode where all extensions are disabled.",
                 Arguments = "/safemode"
             };
 

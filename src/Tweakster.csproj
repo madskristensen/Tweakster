@@ -74,11 +74,6 @@
     <Compile Include="Tweaks\General\Restart.cs" />
     <Compile Include="Tweaks\General\ReOpenDocument.cs" />
     <Compile Include="Tweaks\General\WindowsJumpLists.cs" />
-    <Compile Include="VSCommandTable.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VSCommandTable.vsct</DependentUpon>
-    </Compile>
     <Compile Include="Tweaks\General\AutoSave.cs" />
     <Compile Include="Tweaks\Editor\CodeCleanupOnFormat.cs" />
     <Compile Include="Tweaks\Editor\DontCopyEmptySelection.cs" />
@@ -96,6 +91,11 @@
     </Compile>
     <Compile Include="TweaksterPackage.cs" />
     <Compile Include="Tweaks\General\ReOpenCreationListener.cs" />
+    <Compile Include="VSCommandTable.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VSCommandTable.vsct</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\LICENSE">
@@ -106,8 +106,8 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <VSCTCompile Include="VSCommandTable.vsct">
-      <Generator>VsctGenerator</Generator>
       <ResourceName>Menus.ctmenu</ResourceName>
+      <Generator>VsctGenerator</Generator>
       <LastGenOutput>VSCommandTable.cs</LastGenOutput>
     </VSCTCompile>
     <None Include="source.extension.vsixmanifest">

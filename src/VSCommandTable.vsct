@@ -77,14 +77,6 @@
         </Strings>
       </Button>
 
-      <Button guid="guidCommands" id="RestartSafemode" priority="0x0300" type="Button">
-        <Parent guid="guidCommands" id="RestartGroup" />
-        <Strings>
-          <ButtonText>Restart in Safe Mode</ButtonText>
-          <CommandName>.File.RestartSafemode</CommandName>
-        </Strings>
-      </Button>
-
       <Button guid="guidCommands" id="ResetZoom" priority="0x0100" type="Button">
         <CommandFlag>CommandWellOnly</CommandFlag>
         <Strings>
@@ -201,7 +193,6 @@
       <IDSymbol name="RestartGroup" value="0x0201" />
       <IDSymbol name="RestartNormal" value="0x0202" />
       <IDSymbol name="RestartElevated" value="0x0203" />
-      <IDSymbol name="RestartSafemode" value="0x0204" />
       <IDSymbol name="OuputVerbosity" value="0x0300" />
       <IDSymbol name="OuputVerbosityList" value="0x0301" />
       <IDSymbol name="OutputVerbosityGroup" value="0x0302" />
