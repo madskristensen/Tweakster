@@ -57,7 +57,6 @@ namespace Tweakster
                 switch (nCmdID)
                 {
                     case (uint)VSConstants.VSStd97CmdID.CleanSln:
-                    case (uint)VSConstants.VSStd97CmdID.RebuildSln:
                         if (InterceptCommand())
                         {
                             DeleteForSolution();
@@ -67,7 +66,6 @@ namespace Tweakster
 
                     case (uint)VSConstants.VSStd97CmdID.CleanSel:
                     case (uint)VSConstants.VSStd97CmdID.CleanCtx:
-                    case (uint)VSConstants.VSStd97CmdID.RebuildSel:
                         if (InterceptCommand())
                         {
                             DeleteForSelection();
