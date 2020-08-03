@@ -116,6 +116,8 @@ Inspired by the suggestion [Visual Studio Presentation Mode](https://developerco
 
 Adds a presentation mode that starts up an instance of Visual Studio with its own settings, window layout, extensions, etc. Customize it to your presentation style without it changes anything in the regular instance of Visual Studio.
 
+For more information and how to get the most out of Presentaion Mode, see [5-minute video](https://youtu.be/7wMJIYz9lvU).
+
 It starts Visual Studio with the `/RootSuffix Demo` command line argument.
 
 ![Clear MRU](art/demo-mode.png)
