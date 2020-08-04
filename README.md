@@ -16,13 +16,15 @@ It's from those tickets inspiration for this extension came.
 * **General**
   * [Re-open closed file](#reopen)
   * [Auto save documents and projects](#autosave)
-  * [Restart Visual Studio command](#restart)
   * [Ctrl+W closes current document](#closetab)
   * [Keyboard shortcut to *Add New Folder*](#addfolder)
   * [Focus *Solution Explorer* on project load](#showsolexp)
   * [Clear list of recent files and projects](#clearmru)
+* **IDE**
+  * [Restart Visual Studio command](#restart)
   * [Open in */SafeMode* from Jump List](#safemode)
   * [Presentation Mode](#demomode)
+  * [Browse all feature suggestions](#browsesuggestions)
 * **Build**
   * [Set verbosity level in Output Window](#outputverbosity)
   * [Save solution on build](#savesolutiononbuild)
@@ -66,16 +68,6 @@ Automatic saving of documents happen when the document loses focus. That could h
 
 Projects are also automatically saved when files are added, removed or renamed. 
 
-<h4 id="restart">Restart Visual Studio command</h4>
-
-Inspired by the suggestion [Add a Restart Visual Studio option to 'File' menu](https://developercommunity.visualstudio.com/idea/537213/add-a-restart-visual-studio-option-to-file-menu.html).
-
-Make it easy to restart Visual Studio. If it's running elevated, it will restart back into elevated mode. The shortcut key is **Shift+Alt+F4**.
-
-You can also restart specifically into Admin or Safe modes.
-
-![Restart](art/restart.png)
-
 <h4 id="closetab">Ctrl+W closes current document</h4>
 
 Inspired by the suggestion [CTRL+W should close the current tab as a default key bind](https://developercommunity.visualstudio.com/idea/351232/ctrlw-should-close-the-current-tab-as-a-default-ke.html).
@@ -102,6 +94,19 @@ Clear the list of files from the **File -> Recent Files** list and projects from
 
 ![Clear MRU](art/clear-mru.png)
 
+### IDE
+
+<h4 id="restart">Restart Visual Studio command</h4>
+
+Inspired by the suggestion [Add a Restart Visual Studio option to 'File' menu](https://developercommunity.visualstudio.com/idea/537213/add-a-restart-visual-studio-option-to-file-menu.html).
+
+Make it easy to restart Visual Studio. If it's running elevated, it will restart back into elevated mode. The shortcut key is **Shift+Alt+F4**.
+
+You can also restart specifically into Admin or Safe modes.
+
+![Restart](art/restart.png)
+
+
 <h4 id="safemode">Open in <i>/SafeMode</i> from Jump List</h4>
 
 Inspired by the suggestion [Add a Restart Visual Studio option to 'File' menu](https://developercommunity.visualstudio.com/idea/537213/add-a-restart-visual-studio-option-to-file-menu.html).
@@ -121,6 +126,15 @@ For more information and how to get the most out of Presentaion Mode, see [5-min
 It starts Visual Studio with the `/RootSuffix Demo` command line argument.
 
 ![Clear MRU](art/demo-mode.png)
+
+<h4 id="browsesuggestions">Browse existing feature suggestions</h4>
+
+Inspired by the suggestion [Make it easy to discover existing suggestions to vote/comment on
+](https://developercommunity.visualstudio.com/content/idea/774869/developercommunityvisualstudiocom-plese-permit-us.html).
+
+A command under **Help -> Send Feedback** that opens your browser to the [feature suggestion page](https://aka.ms/browsesuggestions) on the Developer Community.
+
+![Browse suggestions](art/browse-suggestions.png)
 
 ### Build
 

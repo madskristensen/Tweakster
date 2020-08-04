@@ -22,7 +22,7 @@
       <Group guid="guidCommands" id="LanguageSettingGroup" priority="5000">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
       </Group>
-      
+
       <Group guid="guidCommands" id="RestartGroup" priority="5000">
         <Parent guid="guidCommands" id="RestartMenu" />
       </Group>
@@ -150,6 +150,14 @@
           <CommandName>.File.ClearRecentProjects</CommandName>
         </Strings>
       </Button>
+
+      <Button guid="guidCommands" id="ExploreSuggestions" priority="0x0100" type="Button">
+        <Parent guid="guidFeedbackCmdSet" id="grpidFeedback" />
+        <Strings>
+          <ButtonText>Browse All Suggestions...</ButtonText>
+          <CommandName>.Feedback.BrowseAllSuggestions</CommandName>
+        </Strings>
+      </Button>
     </Buttons>
 
     <Combos>
@@ -201,7 +209,7 @@
       <IDSymbol name="JustMyCodeGroup" value="0x0501" />
       <IDSymbol name="FindInSolutionExplorer" value="0x0600" />
       <IDSymbol name="FindInSolutionExplorerGroup" value="0x0601" />
-      <!--<IDSymbol name="OpenInBrowser" value="0x0700" />-->
+      <IDSymbol name="ExploreSuggestions" value="0x0700" />
       <IDSymbol name="LanguageSetting" value="0x0800" />
       <IDSymbol name="LanguageSettingGroup" value="0x0801" />
       <IDSymbol name="DuplicateWindow" value="0x0900" />
@@ -211,12 +219,17 @@
       <IDSymbol name="ClearRecentProjectsGroup" value="0x1011" />
     </GuidSymbol>
 
+    <!-- Externals -->
     <GuidSymbol name="guidVSDebugGroup" value="{c9dd4a58-47fb-11d2-83e7-00c04f9902c1}">
       <IDSymbol name="IDM_DEBUG_TOOLBAR" value="0x421"/>
     </GuidSymbol>
 
     <GuidSymbol name="guidNewFolder" value="{5EFC7975-14BC-11CF-9B2B-00AA00573819}">
       <IDSymbol name="PROJECT_NEW_FOLDER" value="0xf5"/>
+    </GuidSymbol>
+
+    <GuidSymbol name="guidFeedbackCmdSet" value="{769a4361-ad47-4ff4-86d8-d13bfdb7ed65}">
+      <IDSymbol name="grpidFeedback" value="0x1020" />
     </GuidSymbol>
   </Symbols>
 </CommandTable>

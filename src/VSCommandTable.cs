@@ -26,6 +26,9 @@ namespace Tweakster
 
         public const string guidNewFolderString = "5efc7975-14bc-11cf-9b2b-00aa00573819";
         public static Guid guidNewFolder = new Guid(guidNewFolderString);
+
+        public const string guidFeedbackCmdSetString = "769a4361-ad47-4ff4-86d8-d13bfdb7ed65";
+        public static Guid guidFeedbackCmdSet = new Guid(guidFeedbackCmdSetString);
     }
     /// <summary>
     /// Helper class that encapsulates all CommandIDs uses across VS Package.
@@ -45,6 +48,7 @@ namespace Tweakster
         public const int JustMyCodeGroup = 0x0501;
         public const int FindInSolutionExplorer = 0x0600;
         public const int FindInSolutionExplorerGroup = 0x0601;
+        public const int ExploreSuggestions = 0x0700;
         public const int LanguageSetting = 0x0800;
         public const int LanguageSettingGroup = 0x0801;
         public const int DuplicateWindow = 0x0900;
@@ -54,5 +58,6 @@ namespace Tweakster
         public const int ClearRecentProjectsGroup = 0x1011;
         public const int IDM_DEBUG_TOOLBAR = 0x0421;
         public const int PROJECT_NEW_FOLDER = 0x00F5;
+        public const int grpidFeedback = 0x1020;
     }
 }

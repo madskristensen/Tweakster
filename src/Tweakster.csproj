@@ -71,9 +71,9 @@
     <Compile Include="Tweaks\Build\BuildStats.cs" />
     <Compile Include="Tweaks\General\DuplicateWindow.cs" />
     <Compile Include="Tweaks\General\FindInSolutionExplorer.cs" />
-    <Compile Include="Tweaks\General\Restart.cs" />
+    <Compile Include="Tweaks\Ide\Restart.cs" />
     <Compile Include="Tweaks\General\ReOpenDocument.cs" />
-    <Compile Include="Tweaks\General\WindowsJumpLists.cs" />
+    <Compile Include="Tweaks\Ide\WindowsJumpLists.cs" />
     <Compile Include="Tweaks\General\AutoSave.cs" />
     <Compile Include="Tweaks\Editor\CodeCleanupOnFormat.cs" />
     <Compile Include="Tweaks\Editor\DontCopyEmptySelection.cs" />
@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="TweaksterPackage.cs" />
     <Compile Include="Tweaks\General\ReOpenCreationListener.cs" />
+    <Compile Include="Tweaks\Ide\BrowseSuggestions.cs" />
     <Compile Include="VSCommandTable.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
