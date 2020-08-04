@@ -27,11 +27,10 @@ namespace Tweakster
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
-            if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control &&
+            if ((e.KeyboardDevice.Modifiers & ModifierKeys.Control) == ModifierKeys.Control &&
                 Options.Instance.CloseTabOnControlW &&
                 e.Key == Key.W)
             {
-                e.Handled = true;
                 Guid guid = typeof(VSConstants.VSStd97CmdID).GUID;
                 var id = (uint)VSConstants.VSStd97CmdID.FileClose;
                 _uiShell.PostExecCommand(guid, id, 0, null);
