@@ -55,7 +55,7 @@
         <CommandFlag>DontCache</CommandFlag>
         <Strings>
           <ButtonText>Re-Open Closed File</ButtonText>
-          <CommandName>.File.ReOpenClosedFile</CommandName>
+          <LocCanonicalName>.File.ReOpenClosedFile</LocCanonicalName>
         </Strings>
       </Button>
 
@@ -65,7 +65,7 @@
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
           <ButtonText>Restart</ButtonText>
-          <CommandName>.File.Restart</CommandName>
+          <LocCanonicalName>.File.Restart</LocCanonicalName>
         </Strings>
       </Button>
 
@@ -73,7 +73,7 @@
         <Parent guid="guidCommands" id="RestartGroup" />
         <Strings>
           <ButtonText>Restart as Admin</ButtonText>
-          <CommandName>.File.RestartElevated</CommandName>
+          <LocCanonicalName>.File.RestartElevated</LocCanonicalName>
         </Strings>
       </Button>
 
@@ -81,7 +81,7 @@
         <CommandFlag>CommandWellOnly</CommandFlag>
         <Strings>
           <ButtonText>Reset Zoom</ButtonText>
-          <CommandName>.View.ZoomReset</CommandName>
+          <LocCanonicalName>.View.ZoomReset</LocCanonicalName>
         </Strings>
       </Button>
 
@@ -92,7 +92,7 @@
         <CommandFlag>DefaultDisabled</CommandFlag>
         <Strings>
           <ButtonText>Just My Code</ButtonText>
-          <CommandName>.Debug.ToggleJustMyCode</CommandName>
+          <LocCanonicalName>.Debug.ToggleJustMyCode</LocCanonicalName>
           <ToolTipText>Toggles Just My Code in the debugger options</ToolTipText>
         </Strings>
       </Button>
@@ -104,7 +104,7 @@
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
           <ButtonText>Find in Solution Explorer</ButtonText>
-          <CommandName>.File.FindInSolutionExplorer</CommandName>
+          <LocCanonicalName>.File.FindInSolutionExplorer</LocCanonicalName>
         </Strings>
       </Button>
 
@@ -114,7 +114,7 @@
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
           <ButtonText>Duplicate Window</ButtonText>
-          <CommandName>.File.DuplicateWindow</CommandName>
+          <LocCanonicalName>.File.DuplicateWindow</LocCanonicalName>
         </Strings>
       </Button>
 
@@ -127,7 +127,7 @@
         <CommandFlag>DefaultInvisible</CommandFlag>
         <Strings>
           <ButtonText>Settings...</ButtonText>
-          <CommandName>.File.LanguageSettings</CommandName>
+          <LocCanonicalName>.File.LanguageSettings</LocCanonicalName>
         </Strings>
       </Button>
 
@@ -137,7 +137,7 @@
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
           <ButtonText>Clear...</ButtonText>
-          <CommandName>.File.ClearRecentFiles</CommandName>
+          <LocCanonicalName>.File.ClearRecentFiles</LocCanonicalName>
         </Strings>
       </Button>
 
@@ -147,7 +147,7 @@
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
           <ButtonText>Clear...</ButtonText>
-          <CommandName>.File.ClearRecentProjects</CommandName>
+          <LocCanonicalName>.File.ClearRecentProjects</LocCanonicalName>
         </Strings>
       </Button>
 
@@ -155,7 +155,7 @@
         <Parent guid="guidFeedbackCmdSet" id="grpidFeedback" />
         <Strings>
           <ButtonText>Browse All Suggestions...</ButtonText>
-          <CommandName>.Feedback.BrowseAllSuggestions</CommandName>
+          <LocCanonicalName>.Feedback.BrowseAllSuggestions</LocCanonicalName>
         </Strings>
       </Button>
     </Buttons>
@@ -168,7 +168,7 @@
           <ButtonText>Output Verbosity:</ButtonText>
           <ToolTipText>Select MSBuild project build output verbosity</ToolTipText>
           <MenuText>Output Verbosity:</MenuText>
-          <CommandName>BuildAndRun.SetVerbosity</CommandName>
+          <LocCanonicalName>BuildAndRun.SetVerbosity</LocCanonicalName>
         </Strings>
       </Combo>
     </Combos>
