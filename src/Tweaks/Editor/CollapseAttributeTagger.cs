@@ -42,7 +42,7 @@ namespace Tweakster
             {
                 IEnumerable<Span> outlines = _spans.Where(s => s.IntersectsWith(span));
 
-                foreach (Span outline in outlines)
+                foreach (Span outline in outlines.Where(o => _buffer.CurrentSnapshot.Length >= o.End))
                 {
                     var snapshotSpan = new SnapshotSpan(_buffer.CurrentSnapshot, outline);
                     StructureTag tag = CreateTag(outline);
