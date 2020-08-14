@@ -90,7 +90,7 @@ namespace Tweakster
             {
                 try
                 {
-                    var serializedProp = settingsStore.GetString(CollectionName, property.Name);
+                    var serializedProp = settingsStore.GetString(CollectionName, property.Name, default);
                     var value = DeserializeValue(serializedProp, property.PropertyType);
                     property.SetValue(this, value);
                 }
@@ -136,6 +136,8 @@ namespace Tweakster
             {
                 await liveModel.LoadAsync();
             }
+
+            Saved?.Invoke(this, liveModel);
         }
 
         /// <summary>
@@ -184,5 +186,7 @@ namespace Tweakster
                 .GetProperties()
                 .Where(p => p.PropertyType.IsSerializable && p.PropertyType.IsPublic);
         }
+
+        public static event EventHandler<T> Saved;
     }
 }

@@ -8,6 +8,13 @@ namespace Tweakster.Tweaks.General
     {
         public static void Initialize()
         {
+            Options.Saved += delegate { AddJumpListItems(); };
+
+            AddJumpListItems();
+        }
+
+        private static void AddJumpListItems()
+        {
             var devenv = Process.GetCurrentProcess().MainModule.FileName;
 
             var presentationMode = new JumpTask
@@ -25,12 +32,22 @@ namespace Tweakster.Tweaks.General
                 IconResourcePath = devenv,
                 Title = "Safe Mode",
                 Description = "Starts Visual Studio in limited functionality mode where all extensions are disabled.",
-                Arguments = "/safemode"
+                Arguments = "/SafeMode"
             };
 
             JumpList list = JumpList.GetJumpList(Application.Current) ?? new JumpList();
-            list.JumpItems.Add(presentationMode);
-            list.JumpItems.Add(safeMode);
+            list.ShowRecentCategory = true;
+
+            if (Options.Instance.EnablePresentationMode)
+            {
+                list.JumpItems.Add(presentationMode);
+            }
+
+            if (Options.Instance.EnableSafeMode)
+            {
+                list.JumpItems.Add(safeMode);
+            }
+
             list.Apply();
         }
     }
