@@ -13,7 +13,7 @@ namespace Tweakster
         public bool CloseTabOnControlW { get; set; } = true;
 
         [Category(_editor)]
-        [DisplayName("Code Cleanup on save")]
+        [DisplayName("Code Cleanup on Format")]
         [Description("Determines if Code Cleanup should execute when formatting the document")]
         [DefaultValue(true)]
         public bool RunCodeCleanupOnFormat { get; set; } = true;
