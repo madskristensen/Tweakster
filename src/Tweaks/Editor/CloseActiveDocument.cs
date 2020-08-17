@@ -27,7 +27,8 @@ namespace Tweakster
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
-            if ((e.KeyboardDevice.Modifiers & ModifierKeys.Control) == ModifierKeys.Control &&
+            if ((e.KeyboardDevice.Modifiers == ModifierKeys.Control ||
+                e.KeyboardDevice.Modifiers == (ModifierKeys.Control | ModifierKeys.Shift)) &&
                 Options.Instance.CloseTabOnControlW &&
                 e.Key == Key.W)
             {
