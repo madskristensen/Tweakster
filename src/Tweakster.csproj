@@ -53,7 +53,7 @@
     <Compile Include="Tweaks\General\ClearRecentFilesAndProjects.cs" />
     <Compile Include="Tweaks\General\Options.cs" />
     <Compile Include="Tweaks\Build\Options.cs" />
-    <Compile Include="Tweaks\Editor\CloseActiveDocument.cs" />
+    <Compile Include="Tweaks\General\CloseActiveDocument.cs" />
     <Compile Include="Tweaks\Editor\Options.cs" />
     <Compile Include="Tweaks\Editor\CollapseAttributeTaggerProvider.cs" />
     <Compile Include="Tweaks\Editor\DisableZoomOnScroll.cs" />

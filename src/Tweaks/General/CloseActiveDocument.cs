@@ -27,13 +27,21 @@ namespace Tweakster
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
-            if ((e.KeyboardDevice.Modifiers == ModifierKeys.Control ||
-                e.KeyboardDevice.Modifiers == (ModifierKeys.Control | ModifierKeys.Shift)) &&
-                Options.Instance.CloseTabOnControlW &&
-                e.Key == Key.W)
+            if (!Options.Instance.CloseTabOnControlW || e.Key != Key.W)
+            {
+                return;
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control)
             {
                 Guid guid = typeof(VSConstants.VSStd97CmdID).GUID;
                 var id = (uint)VSConstants.VSStd97CmdID.FileClose;
+                _uiShell.PostExecCommand(guid, id, 0, null);
+            }
+            else if (e.KeyboardDevice.Modifiers == (ModifierKeys.Control | ModifierKeys.Shift))
+            {
+                Guid guid = typeof(VSConstants.VSStd97CmdID).GUID;
+                var id = (uint)VSConstants.VSStd97CmdID.CloseAllDocuments;
                 _uiShell.PostExecCommand(guid, id, 0, null);
             }
         }
