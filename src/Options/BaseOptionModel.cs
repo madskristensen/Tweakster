@@ -94,9 +94,9 @@ namespace Tweakster
                     var value = DeserializeValue(serializedProp, property.PropertyType);
                     property.SetValue(this, value);
                 }
-                catch (Exception ex)
+                catch
                 {
-                    Trace.TraceError(ex.ToString());
+                    // Do nothing here
                 }
             }
         }
