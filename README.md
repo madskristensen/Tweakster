@@ -37,6 +37,7 @@ It's from those tickets inspiration for this extension came.
   * [Run *Code Cleanup* on format](#codecleanup)
   * [Don't copy empty lines](#dontcopyemptylines)
   * [Don't copy when there's no selection](#dontcopyemptyselection)
+  * [Copy without indentation](#copywithoutindentation)
   * [Format on moving line up/down](#formatonlinemove)
   * [Disable editor zoom on mouse wheel](#disablezoom)
   * [Shortcut to set zoom to 100%](#resetzoom)
@@ -197,6 +198,14 @@ When the cursor is in an empty line and you hit **Ctrl+C** to *copy*, then the e
 Inspired by the suggestion [Please stop clearing the clipboard when you hit ctrl+c and nothing is selected](https://developercommunity.visualstudio.com/idea/693790/please-stop-clearing-the-clipboard-when-you-hit-ct.html).
 
 When you make no selection and hit *Copy* or **Ctrl+C** then nothing is copied to the clipboard like it normally would.
+
+<h4 id="copywithoutindentation">Copy without indentation</h4>
+
+Inspired by the suggestion [Please stop clearing the clipboard when you hit ctrl+c and nothing is selected](https://developercommunity.visualstudio.com/idea/693790/please-stop-clearing-the-clipboard-when-you-hit-ct.html).
+
+Removes indentation from subsequent lines when the selection starts after leading indentation.
+
+![Copy Without Indentation](art/copy-without-indentation.png)
 
 <h4 id="formatonlinemove">Format on moving line up/down</h4>
 

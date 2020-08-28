@@ -59,5 +59,11 @@ namespace Tweakster
         [Description("The zoom level to apply when executing the Reset Zoom command using 'Ctrl+0'")]
         [DefaultValue(100)]
         public int DefaultZoomLevel { get; set; } = 100;
+
+        [Category(_editor)]
+        [DisplayName("Copy without indentation")]
+        [Description("Determines if leading indentation should be removed when copying the selection.")]
+        [DefaultValue(true)]
+        public bool CopyWithoutIndentation { get; set; } = true;
     }
 }

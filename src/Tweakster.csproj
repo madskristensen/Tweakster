@@ -49,6 +49,7 @@
     <Compile Include="Common\OutputWindowTraceListener.cs" />
     <Compile Include="Common\ExtensionMethods.cs" />
     <Compile Include="Common\SVsSettingsPersistenceManager.cs" />
+    <Compile Include="Tweaks\Editor\CopyWithoutIndentation.cs" />
     <Compile Include="Tweaks\General\ActivateSolutionExplorer.cs" />
     <Compile Include="Tweaks\General\ClearRecentFilesAndProjects.cs" />
     <Compile Include="Tweaks\General\Options.cs" />
