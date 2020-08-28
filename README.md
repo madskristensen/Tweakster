@@ -74,12 +74,6 @@ Inspired by the suggestion [CTRL+W should close the current tab as a default key
 
 By default, this extension will re-purpose the command currently using **Ctrl+W** to close the active open document.
 
-**Ctrl+Shift+W** closes all open documents.
-
-<h4 id="addfolder">Keyboard shortcut to <i>Add New Folder</i></h4>
-
-Inspired by the suggestion [shortcut to add new folder](https://developercommunity.visualstudio.com/idea/572354/shortcut-to-add-new-folder.html).
-
 **Shift+Alt+F** now adds a new folder to your project. When a document is open in the editor and has focus, the new folder will be a sibling to that document.
 
 <h4 id="showsolexp">Focus <i>Solution Explorer</i> on project load</h4>

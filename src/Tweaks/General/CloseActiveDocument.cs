@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Windows;
-using System.Windows.Input;
 using Microsoft;
 using Microsoft.VisualStudio;
+using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
 
 namespace Tweakster
 {
-    internal sealed class CloseActiveDocument
+    internal sealed class CloseActiveDocument : IOleCommandTarget
     {
         private static IVsUIShell _uiShell;
 
@@ -20,30 +19,40 @@ namespace Tweakster
             _uiShell = await package.GetServiceAsync<SVsUIShell, IVsUIShell>();
             Assumes.Present(_uiShell);
 
-            Application.Current.MainWindow.KeyUp += OnKeyUp;
+            var pct = await package.GetServiceAsync(typeof(SVsRegisterPriorityCommandTarget)) as IVsRegisterPriorityCommandTarget;
+            Assumes.Present(pct);
+
+            var interceptor = new CloseActiveDocument();
+            pct.RegisterPriorityCommandTarget(0, interceptor, out _);
         }
 
-        private static void OnKeyUp(object sender, KeyEventArgs e)
+        public int QueryStatus(ref Guid pguidCmdGroup, uint cCmds, OLECMD[] prgCmds, IntPtr pCmdText)
+        {
+            return (int)Microsoft.VisualStudio.OLE.Interop.Constants.OLECMDERR_E_NOTSUPPORTED;
+        }
+
+        public int Exec(ref Guid pguidCmdGroup, uint nCmdID, uint nCmdexecopt, IntPtr pvaIn, IntPtr pvaOut)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
-            if (!Options.Instance.CloseTabOnControlW || e.Key != Key.W)
+            if (pguidCmdGroup == typeof(VSConstants.VSStd2KCmdID).GUID)
             {
-                return;
+                switch (nCmdID)
+                {
+                    case (uint)VSConstants.VSStd2KCmdID.CAPTUREKEYSTROKE:
+                    case (uint)VSConstants.VSStd2KCmdID.SELECTCURRENTWORD:
+                        if (Options.Instance.CloseTabOnControlW)
+                        {
+                            Guid guid = typeof(VSConstants.VSStd97CmdID).GUID;
+                            var id = (uint)VSConstants.VSStd97CmdID.FileClose;
+                            _uiShell.PostExecCommand(guid, id, 0, null);
+                        }
+
+                        break;
+                }
             }
 
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control)
-            {
-                Guid guid = typeof(VSConstants.VSStd97CmdID).GUID;
-                var id = (uint)VSConstants.VSStd97CmdID.FileClose;
-                _uiShell.PostExecCommand(guid, id, 0, null);
-            }
-            else if (e.KeyboardDevice.Modifiers == (ModifierKeys.Control | ModifierKeys.Shift))
-            {
-                Guid guid = typeof(VSConstants.VSStd97CmdID).GUID;
-                var id = (uint)VSConstants.VSStd97CmdID.CloseAllDocuments;
-                _uiShell.PostExecCommand(guid, id, 0, null);
-            }
+            return (int)Microsoft.VisualStudio.OLE.Interop.Constants.MSOCMDERR_E_FIRST;
         }
     }
 }
