@@ -7,6 +7,7 @@ using Microsoft.VisualStudio.Commanding;
 using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Text.Editor.Commanding.Commands;
+using Microsoft.VisualStudio.Text.Formatting;
 using Microsoft.VisualStudio.Utilities;
 
 namespace Tweakster.Tweaks.Editor
@@ -23,12 +24,14 @@ namespace Tweakster.Tweaks.Editor
         {
             ITextSelection selection = args.TextView.Selection;
 
-            if (selection.SelectedSpans.Count > 1 || !Options.Instance.CopyWithoutIndentation)
+            // Only handle single selections
+            if (selection.SelectedSpans.Count < 1 || !Options.Instance.CopyWithoutIndentation)
             {
                 return false;
             }
 
-            if (args.TextView.TryGetTextViewLineContainingBufferPosition(selection.Start.Position, out var viewLine))
+            // Only handle selections that starts with indented
+            if (args.TextView.TryGetTextViewLineContainingBufferPosition(selection.Start.Position, out ITextViewLine viewLine))
             {
                 if (viewLine.Start.Position == selection.Start.Position)
                 {
@@ -36,7 +39,15 @@ namespace Tweakster.Tweaks.Editor
                 }
             }
 
-            var lines = args.SubjectBuffer.CurrentSnapshot.GetText(selection.SelectedSpans[0]).Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            var selectionText = args.SubjectBuffer.CurrentSnapshot.GetText(selection.SelectedSpans[0]);
+            var lines = selectionText.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+
+            // Only handle multi-line selections
+            if (lines.Length == 0)
+            {
+                return false;
+            }
+
             SnapshotPoint indentation = selection.Start.Position - viewLine.Start.Position;
 
             var sb = new StringBuilder();
@@ -48,6 +59,7 @@ namespace Tweakster.Tweaks.Editor
                 {
                     var indentText = line.Substring(0, indentation);
 
+                    // Abort if subsequent lines aren't indented as much as the first line
                     if (!string.IsNullOrWhiteSpace(indentText))
                     {
                         return false;
@@ -61,7 +73,9 @@ namespace Tweakster.Tweaks.Editor
                 }
             }
 
-            Clipboard.SetText(sb.ToString());
+            // TODO: Use the VS Clipboard Ring instad of the Windows Clipboard
+            Clipboard.SetText(sb.ToString().TrimEnd());
+
             return true;
         }
 
