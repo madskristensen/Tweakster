@@ -201,7 +201,7 @@ When you make no selection and hit *Copy* or **Ctrl+C** then nothing is copied t
 
 <h4 id="copywithoutindentation">Copy without indentation</h4>
 
-Inspired by the suggestion [Please stop clearing the clipboard when you hit ctrl+c and nothing is selected](https://developercommunity.visualstudio.com/idea/693790/please-stop-clearing-the-clipboard-when-you-hit-ct.html).
+Inspired by the suggestion [Easy copy code without indentation](https://developercommunity.visualstudio.com/idea/1156022/easy-copy-code-without-indentation.html).
 
 Removes indentation from subsequent lines when the selection starts after leading indentation.
 
