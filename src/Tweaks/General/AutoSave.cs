@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using EnvDTE;
 using EnvDTE80;
 using Microsoft;
@@ -63,9 +62,9 @@ namespace Tweakster
                         item.ContainingProject.Save();
                     }
                 }
-                catch (System.Exception ex)
+                catch
                 {
-                    Trace.Write(ex);
+                    // Do nothing. Some project types don't support being saved
                 }
             }
         }
