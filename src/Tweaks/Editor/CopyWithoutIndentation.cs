@@ -73,8 +73,9 @@ namespace Tweakster.Tweaks.Editor
                 }
             }
 
-            // TODO: Use the VS Clipboard Ring instad of the Windows Clipboard
-            Clipboard.SetText(sb.ToString().TrimEnd());
+            var data = new DataObject();
+            data.SetText(sb.ToString().TrimEnd());
+            Clipboard.SetDataObject(data, false);
 
             return true;
         }
