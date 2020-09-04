@@ -158,6 +158,14 @@
           <LocCanonicalName>.Feedback.BrowseAllSuggestions</LocCanonicalName>
         </Strings>
       </Button>
+
+      <Button guid="guidCommands" id="SelectWholeLine" priority="0x0100" type="Button">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_FILE_SOLUTION" />
+        <Strings>
+          <ButtonText>Select Whole Line</ButtonText>
+          <LocCanonicalName>.Edit.SelectWholeLine</LocCanonicalName>
+        </Strings>
+      </Button>
     </Buttons>
 
     <Combos>
@@ -179,6 +187,7 @@
     <KeyBinding guid="guidCommands" id="RestartNormal" editor="guidVSStd97" key1="VK_F4" mod1="Shift Alt" />
     <KeyBinding guid="guidCommands" id="ResetZoom" editor="GUID_TextEditorFactory" mod1="Control" key1="0" />
     <KeyBinding guid="guidNewFolder" id="PROJECT_NEW_FOLDER" editor="guidVSStd97" mod1="Shift Alt" key1="F" />
+    <KeyBinding guid="guidCommands" id="SelectWholeLine" editor="guidVSStd97" mod1="Shift Alt" key1="E" />
   </KeyBindings>
 
   <VisibilityConstraints>
@@ -217,6 +226,7 @@
       <IDSymbol name="ClearRecentFilesGroup" value="0x1001" />
       <IDSymbol name="ClearRecentProjects" value="0x1010" />
       <IDSymbol name="ClearRecentProjectsGroup" value="0x1011" />
+      <IDSymbol name="SelectWholeLine" value="0x1100" />
     </GuidSymbol>
 
     <!-- Externals -->
