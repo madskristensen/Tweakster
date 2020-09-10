@@ -185,7 +185,7 @@
   </Commands>
 
   <KeyBindings>
-    <KeyBinding guid="guidCommands" id="ReOpenDocument" editor="guidVSStd97" key1="T" mod1="Control Shift" key2="T" mod2="Control Shift" />
+    <KeyBinding guid="guidCommands" id="ReOpenDocument" editor="guidVSStd97" key1="R" mod1="Shift ALT" />
     <KeyBinding guid="guidCommands" id="RestartNormal" editor="guidVSStd97" key1="VK_F4" mod1="Shift Alt" />
     <KeyBinding guid="guidCommands" id="ResetZoom" editor="GUID_TextEditorFactory" mod1="Control" key1="0" />
     <KeyBinding guid="guidNewFolder" id="PROJECT_NEW_FOLDER" editor="guidVSStd97" mod1="Shift Alt" key1="F" />

@@ -58,7 +58,7 @@ If you know of any suggestion tickets that would be well suited for this extensi
 
 Inspired by the suggestion [Reopen closed tab](https://developercommunity.visualstudio.com/content/idea/402931/reopen-closed-tab.html).
 
-When you close a file by accident, you can now easily open it back up again. Go to **File -> Re-Open [file name]**
+When you close a file by accident, you can now easily open it back up again. Go to **File -> Re-Open [file name]** or hit **Shift+Alt+R**.
 
 ![Re-Open Closed File](art/re-open-closed-file.png)
 
