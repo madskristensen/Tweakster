@@ -40,7 +40,7 @@ namespace Tweakster
             await DuplicateWindow.InitializeAsync(this);
             await ClearRecentFilesAndProjects.InitializeAsync(this);
             await BrowseSuggestions.InitializeAsync(this);
-            //await SelectWholeLineCommand.InitializeAsync(this);
+            await SelectWholeLineCommand.InitializeAsync(this);
         }
     }
 }

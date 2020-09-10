@@ -24,22 +24,25 @@ namespace Tweakster
             Assumes.Present(commandService);
 
             var cmdId = new CommandID(PackageGuids.guidCommands, PackageIds.SelectWholeLine);
-            var cmd = new OleMenuCommand(Execute, cmdId);
+            var cmd = new OleMenuCommand(Execute, cmdId)
+            {
+                Supported = false
+            };
             commandService.AddCommand(cmd);
         }
 
         private static void Execute(object sender, EventArgs e)
         {
-            var view = GetTextView();
+            IWpfTextView view = GetTextView();
 
             if (view == null)
             {
                 return;
             }
 
-            var position = view.Selection.Start.Position;
-            var line = view.GetTextViewLineContainingBufferPosition(position);
-            var span = line.Extent;
+            Microsoft.VisualStudio.Text.SnapshotPoint position = view.Selection.Start.Position;
+            Microsoft.VisualStudio.Text.Formatting.IWpfTextViewLine line = view.GetTextViewLineContainingBufferPosition(position);
+            Microsoft.VisualStudio.Text.SnapshotSpan span = line.Extent;
 
             view.Selection.Select(span, false);
         }

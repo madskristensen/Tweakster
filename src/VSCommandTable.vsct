@@ -159,8 +159,10 @@
         </Strings>
       </Button>
 
-      <Button guid="guidCommands" id="SelectWholeLine" priority="0x0100" type="Button">
-        <Parent guid="guidSHLMainMenu" id="IDG_VS_FILE_SOLUTION" />
+      <Button guid="guidCommands" id="SelectWholeLine" priority="0x6030" type="Button">
+        <Parent guid="guidStdEditor" id="IDG_VS_EDITOR_ADVANCED_CMDS" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
         <Strings>
           <ButtonText>Select Whole Line</ButtonText>
           <LocCanonicalName>.Edit.SelectWholeLine</LocCanonicalName>
@@ -192,6 +194,7 @@
 
   <VisibilityConstraints>
     <VisibilityItem guid="guidCommands" id="FindInSolutionExplorer" context="guidSolutionHasProjects" />
+    <VisibilityItem guid="guidCommands" id="SelectWholeLine" context="GUID_TextEditorFactory" />
   </VisibilityConstraints>
 
   <CommandPlacements>

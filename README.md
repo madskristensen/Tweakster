@@ -46,6 +46,7 @@ It's from those tickets inspiration for this extension came.
   * [Open language settings from context menu](#languagesettings)
   * [Added *Paste Special* to editor context menu](#pastespecial)
   * [Collapse to hide C# attributes](#collapseattributes)
+  * [Select whole line](#selectwholeline)
 * **Settings**
   * [Settings](#settings)
 
@@ -266,6 +267,10 @@ Inspired by the suggestion [Show/Hide member attributes](https://developercommun
 You can now collapse member- and class attributes in C# to reduce visual noise.
 
 ![Settings](art/collapse-attributes.png)
+
+<h4 id="selectwholeline">Select Whole Line</h4>
+
+To select the whole line, hit **Shift+Alt+E** or go to *Edit -> Advanced -> Select Whole Line*.
 
 <h4 id="settings">Settings</h4>
 
