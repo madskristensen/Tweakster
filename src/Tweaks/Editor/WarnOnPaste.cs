@@ -30,7 +30,7 @@ namespace Tweakster.Tweaks.Editor
 
             var length = Clipboard.GetText(TextDataFormat.Text).Length;
 
-            if (length < 10000)
+            if (length < GetMaxLength(args.TextView))
             {
                 return false;
             }
@@ -44,6 +44,19 @@ namespace Tweakster.Tweaks.Editor
                 OLEMSGDEFBUTTON.OLEMSGDEFBUTTON_FIRST);
 
             return proceed != (int)VSConstants.MessageBoxResult.IDOK;
+        }
+
+        private static int GetMaxLength(ITextView view)
+        {
+            // TODO: Find threshold in each content type
+            switch (view.TextBuffer.ContentType.DisplayName.ToLowerInvariant())
+            {
+                case "html":
+                case "htmlx":
+                    return 8000;
+            }
+
+            return 10000;
         }
 
         public CommandState GetCommandState(PasteCommandArgs args)
