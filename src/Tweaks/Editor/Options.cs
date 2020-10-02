@@ -65,5 +65,11 @@ namespace Tweakster
         [Description("Determines if leading indentation should be removed when copying the selection.")]
         [DefaultValue(true)]
         public bool CopyWithoutIndentation { get; set; } = true;
+
+        [Category(_editor)]
+        [DisplayName("Warn on Paste")]
+        [Description("Warn when pasting large amounts of text into the editor.")]
+        [DefaultValue(true)]
+        public bool WarnOnPaste { get; set; } = true;
     }
 }

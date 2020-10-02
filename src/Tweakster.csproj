@@ -51,6 +51,7 @@
     <Compile Include="Common\SVsSettingsPersistenceManager.cs" />
     <Compile Include="Tweaks\Editor\CopyWithoutIndentation.cs" />
     <Compile Include="Tweaks\Editor\SelectWholeLineCommand.cs" />
+    <Compile Include="Tweaks\Editor\WarnOnPaste.cs" />
     <Compile Include="Tweaks\General\ActivateSolutionExplorer.cs" />
     <Compile Include="Tweaks\General\ClearRecentFilesAndProjects.cs" />
     <Compile Include="Tweaks\General\Options.cs" />
