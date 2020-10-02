@@ -47,7 +47,7 @@ It's from those tickets inspiration for this extension came.
   * [Added *Paste Special* to editor context menu](#pastespecial)
   * [Collapse to hide C# attributes](#collapseattributes)
   * [Select whole line](#selectwholeline)
-  * [Warn on paste huge text](#warnonpate)
+  * [Warn on paste huge text](#warnonpaste)
 * **Settings**
   * [Settings](#settings)
 
