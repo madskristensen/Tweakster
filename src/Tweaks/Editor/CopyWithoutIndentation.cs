@@ -40,7 +40,7 @@ namespace Tweakster.Tweaks.Editor
             }
 
             var selectionText = args.SubjectBuffer.CurrentSnapshot.GetText(selection.SelectedSpans[0]);
-            var lines = selectionText.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            var lines = selectionText.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
 
             // Only handle multi-line selections
             if (lines.Length == 0)
