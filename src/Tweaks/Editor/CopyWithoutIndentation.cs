@@ -39,7 +39,7 @@ namespace Tweakster.Tweaks.Editor
                 }
             }
 
-            var selectionText = args.SubjectBuffer.CurrentSnapshot.GetText(selection.SelectedSpans[0]);
+            var selectionText = args.TextView.TextBuffer.CurrentSnapshot.GetText(selection.SelectedSpans[0]);
             var lines = selectionText.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
 
             // Only handle multi-line selections
