@@ -28,7 +28,7 @@ namespace Tweakster.Tweaks.Editor
             ITextSelection selection = args.TextView.Selection;
 
             // Only handle single selections
-            if (selection.SelectedSpans.Count < 1 || !Options.Instance.CopyWithoutIndentation)
+            if (selection.SelectedSpans.Count != 1 || !Options.Instance.CopyWithoutIndentation)
             {
                 return false;
             }
