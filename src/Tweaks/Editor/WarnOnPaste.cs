@@ -27,8 +27,7 @@ namespace Tweakster.Tweaks.Editor
             {
                 return false;
             }
-
-            var length = Clipboard.GetText(TextDataFormat.Text).Length;
+            var length = GetClipboardLength();
 
             if (length < GetMaxLength(args.TextView))
             {
@@ -44,6 +43,20 @@ namespace Tweakster.Tweaks.Editor
                 OLEMSGDEFBUTTON.OLEMSGDEFBUTTON_FIRST);
 
             return proceed != (int)VSConstants.MessageBoxResult.IDOK;
+        }
+
+        private static int? GetClipboardLength()
+        {
+            // Accessing the clipboard can result in COMExceptions
+            // See more at https://github.com/madskristensen/Tweakster/issues/55
+            try
+            {
+                return Clipboard.GetText(TextDataFormat.Text)?.Length ?? 0;
+            }
+            catch 
+            {
+                return 0;
+            }
         }
 
         private static int GetMaxLength(ITextView view)
