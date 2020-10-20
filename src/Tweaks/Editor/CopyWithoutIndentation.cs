@@ -49,6 +49,12 @@ namespace Tweakster.Tweaks.Editor
                                                where line.IntersectsBufferSpan(selection.SelectedSpans[0])
                                                select line;
 
+            // Only handle when multiple lines are selected
+            if (lines.Count() == 1)
+            {
+                return false;
+            }
+
             SnapshotPoint indentation = selection.Start.Position - viewLine.Start.Position;
             var spans = new List<SnapshotSpan>();
             var sb = new StringBuilder();
@@ -62,7 +68,13 @@ namespace Tweakster.Tweaks.Editor
                 }
                 else
                 {
-                    var span = new SnapshotSpan(snapshot, line.Start + indentation, line.Length - indentation);
+                    var end = line.Length - indentation;
+                    if (selection.End.Position.Position < line.End.Position)
+                    {
+                        end -= (line.End.Position - selection.End.Position.Position);
+                    }
+
+                    var span = new SnapshotSpan(snapshot, line.Start + indentation, end);
                     spans.Add(span);
                     sb.AppendLine(span.GetText());
                 }
