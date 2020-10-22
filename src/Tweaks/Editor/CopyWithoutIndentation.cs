@@ -55,9 +55,17 @@ namespace Tweakster.Tweaks.Editor
                 return false;
             }
 
-            SnapshotPoint indentation = selection.Start.Position - viewLine.Start.Position;
+            var indentation = selection.Start.Position.Position - viewLine.Start.Position;
             var spans = new List<SnapshotSpan>();
             var sb = new StringBuilder();
+
+            var text = args.TextView.TextBuffer.CurrentSnapshot.GetText(viewLine.Start.Position, indentation);
+
+            // Only handle cases when selection starts is on an empty indentation
+            if (!string.IsNullOrWhiteSpace(text))
+            {
+                return false;
+            }
 
             foreach (ITextViewLine line in lines)
             {
@@ -75,8 +83,12 @@ namespace Tweakster.Tweaks.Editor
                     }
 
                     var span = new SnapshotSpan(snapshot, line.Start + indentation, end);
-                    spans.Add(span);
-                    sb.AppendLine(span.GetText());
+
+                    if (!span.IsEmpty)
+                    {
+                        spans.Add(span);
+                        sb.AppendLine(span.GetText());
+                    }
                 }
             }
 
