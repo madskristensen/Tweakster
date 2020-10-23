@@ -96,7 +96,7 @@ namespace Tweakster.Tweaks.Editor
 
             var data = new DataObject();
             data.SetText(rtf.TrimEnd(), TextDataFormat.Rtf);
-            data.SetText(sb.ToString().TrimEnd(), TextDataFormat.Text);
+            data.SetText(sb.ToString().TrimEnd(), TextDataFormat.UnicodeText);
             Clipboard.SetDataObject(data, false);
 
             return true;
