@@ -80,19 +80,46 @@ namespace Tweakster
         {
             ShellSettingsManager manager = await _settingsManager.GetValueAsync();
             SettingsStore settingsStore = manager.GetReadOnlySettingsStore(SettingsScope.UserSettings);
+            HashSet<string> testedCollections = new HashSet<string>();
 
-            if (!settingsStore.CollectionExists(CollectionName))
+            bool DoesCollectionExist(string collectionName)
             {
-                return;
+                if (testedCollections.Contains(collectionName))
+                    return true;
+                if (settingsStore.CollectionExists(collectionName))
+                {
+                    testedCollections.Add(collectionName);
+                    return true;
+                }
+                return false;
             }
 
             foreach (PropertyInfo property in GetOptionProperties())
             {
                 try
                 {
-                    var serializedProp = settingsStore.GetString(CollectionName, property.Name, default);
-                    var value = DeserializeValue(serializedProp, property.PropertyType);
-                    property.SetValue(this, value);
+                    var collectionNameAttribute = property.GetCustomAttribute<OverrideCollectionNameAttribute>();
+                    var collectionName = collectionNameAttribute?.CollectionName ?? this.CollectionName;
+                    if (!DoesCollectionExist(collectionName))
+                        continue;
+
+                    var overrideDataTypeAttribute = property.GetCustomAttribute<OverrideDataTypeAttribute>();
+                    var dataType = overrideDataTypeAttribute?.SettingDataType ?? SettingDataType.Serialized;
+
+                    switch (dataType)
+                    {
+                        case SettingDataType.Serialized:
+                            var serializedProp = settingsStore.GetString(collectionName, property.Name, default);
+                            var value = DeserializeValue(serializedProp, property.PropertyType);
+                            property.SetValue(this, value);
+                            break;
+                        case SettingDataType.Bool:
+                            var boolValue = settingsStore.GetBoolean(collectionName, property.Name, false);
+                            property.SetValue(this, boolValue);
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
                 }
                 catch
                 {
@@ -118,16 +145,36 @@ namespace Tweakster
         {
             ShellSettingsManager manager = await _settingsManager.GetValueAsync();
             WritableSettingsStore settingsStore = manager.GetWritableSettingsStore(SettingsScope.UserSettings);
-
-            if (!settingsStore.CollectionExists(CollectionName))
-            {
-                settingsStore.CreateCollection(CollectionName);
-            }
+            HashSet<string> testedCollections = new HashSet<string>();
 
             foreach (PropertyInfo property in GetOptionProperties())
             {
-                var output = SerializeValue(property.GetValue(this));
-                settingsStore.SetString(CollectionName, property.Name, output);
+                var collectionNameAttribute = property.GetCustomAttribute<OverrideCollectionNameAttribute>();
+                var collectionName = collectionNameAttribute?.CollectionName ?? this.CollectionName;
+
+                var overrideDataTypeAttribute = property.GetCustomAttribute<OverrideDataTypeAttribute>();
+                var dataType = overrideDataTypeAttribute?.SettingDataType ?? SettingDataType.Serialized;
+
+                if (!testedCollections.Contains(collectionName))
+                {
+                    if (!settingsStore.CollectionExists(collectionName))
+                        settingsStore.CreateCollection(collectionName);
+                    testedCollections.Add(collectionName);
+                }
+
+                switch (dataType)
+                {
+                    case SettingDataType.Serialized:
+                        var output = SerializeValue(property.GetValue(this));
+                        settingsStore.SetString(collectionName, property.Name, output);
+                        break;
+                    case SettingDataType.Bool:
+                        var boolValue = (bool)property.GetValue(this);
+                        settingsStore.SetBoolean(collectionName, property.Name, boolValue);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
             }
 
             T liveModel = await GetLiveInstanceAsync();

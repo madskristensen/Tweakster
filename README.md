@@ -30,6 +30,7 @@ It's from those tickets inspiration for this extension came.
   * [Save solution on build](#savesolutiononbuild)
   * [Delete obj and bin folders on *Clean*](#deleteoutputartifacts)
   * [Show build time statistics](#buildstats)
+  * [Up-To-Date Check Verbose](#u2dcheckverbosity)
 * **Debugger**
   * [Don't start debug on F10/F11](#nodebugonf10)
   * [Toggle *Just My Code* from the *Debug* toolbar](#justmycode)
@@ -164,6 +165,16 @@ Inspired by the suggestion [Build Statistics](https://developercommunity.visuals
 After any *Build*, *Rebuild*, *Clean*, or *Deploy* is executed, the time statistics are written to the output window.
 
 ![Build time statistics](art/build-time-stats.png)
+
+<h4 id="u2dcheckverbosity">Up-To-Date Check Verbose</h4>
+
+Inspired by the suggestion [There is no easy way to tell why a project rebuilds every time (is never considered up-to-date)](https://developercommunity.visualstudio.com/content/problem/185102/there-is-no-easy-way-to-tell-why-a-project-rebuild.html).
+
+This toggles a [difficult to get to setting `U2DCheckVerbosity`](https://docs.microsoft.com/en-us/archive/blogs/kirillosenkov/how-to-investigate-rebuilding-in-visual-studio-when-nothing-has-changed) that
+can help easily diagnose why a project is being rebuilt. Setting the build *Output Verbosity* to *Diagnostic* can be useful for troubleshooting this, but contains much more data to sort through. The output
+generated when this setting is enabled goes directly to the *Output Window*, even with *Minimal* build output verbosity.
+
+![Up To Date Check](art/up-to-date-check.png)
 
 ### Debugger
 
