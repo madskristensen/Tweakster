@@ -193,7 +193,8 @@
   </KeyBindings>
 
   <VisibilityConstraints>
-    <VisibilityItem guid="guidCommands" id="FindInSolutionExplorer" context="guidSolutionHasProjects" />
+    <VisibilityItem guid="guidCommands" id="FindInSolutionExplorer" context="UICONTEXT_SolutionHasMultipleProjects" />
+    <VisibilityItem guid="guidCommands" id="FindInSolutionExplorer" context="UICONTEXT_SolutionHasSingleProject" />
     <VisibilityItem guid="guidCommands" id="SelectWholeLine" context="GUID_TextEditorFactory" />
   </VisibilityConstraints>
 
