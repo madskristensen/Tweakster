@@ -15,9 +15,6 @@ namespace Tweakster
         public const string guidTweaksterPackageString = "590dcf32-ae09-49b9-b0e5-55d7ebf100d0";
         public static Guid guidTweaksterPackage = new Guid(guidTweaksterPackageString);
 
-        public const string guidSolutionHasProjectsString = "db87ae42-32ad-434e-b53c-08cfddcc0935";
-        public static Guid guidSolutionHasProjects = new Guid(guidSolutionHasProjectsString);
-
         public const string guidCommandsString = "85ce63b9-a773-45e0-9a60-9a96bc2ab40b";
         public static Guid guidCommands = new Guid(guidCommandsString);
 

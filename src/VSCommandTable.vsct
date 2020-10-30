@@ -206,7 +206,6 @@
 
   <Symbols>
     <GuidSymbol name="guidTweaksterPackage" value="{590dcf32-ae09-49b9-b0e5-55d7ebf100d0}" />
-    <GuidSymbol name="guidSolutionHasProjects" value="{db87ae42-32ad-434e-b53c-08cfddcc0935}" />
 
     <GuidSymbol name="guidCommands" value="{85ce63b9-a773-45e0-9a60-9a96bc2ab40b}">
       <IDSymbol name="ReOpenDocument" value="0x0100" />
