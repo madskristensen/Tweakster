@@ -31,6 +31,7 @@ It's from those tickets inspiration for this extension came.
   * [Delete obj and bin folders on *Clean*](#deleteoutputartifacts)
   * [Show build time statistics](#buildstats)
   * [Up-To-Date Check Verbose](#u2dcheckverbosity)
+  * [Show ordered build output after build](#showBuildOrdered)
 * **Debugger**
   * [Don't start debug on F10/F11](#nodebugonf10)
   * [Toggle *Just My Code* from the *Debug* toolbar](#justmycode)
@@ -175,6 +176,10 @@ can help easily diagnose why a project is being rebuilt. Setting the build *Outp
 generated when this setting is enabled goes directly to the *Output Window*, even with *Minimal* build output verbosity.
 
 ![Up To Date Check](art/up-to-date-check.png)
+
+<h4 id="showBuildOrdered">Show ordered build output</h4>
+
+Activates the Build Order pane in the Output Window when the build completes.
 
 ### Debugger
 

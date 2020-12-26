@@ -33,6 +33,7 @@ namespace Tweakster
             await ResetZoomLevel.InitializeAsync(this);
             await JustMyCode.InitializeAsync(this);
             await BuildStats.InitializeAsync(this);
+            await BuildOrdered.InitializeAsync(this);
             await FindInSolutionExplorer.InitializeAsync(this);
             await OpenLanguageSettings.InitializeAsync(this);
             await CloseActiveDocument.InitializeAsync(this);

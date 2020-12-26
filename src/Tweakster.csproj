@@ -51,6 +51,7 @@
     <Compile Include="Common\SVsSettingsPersistenceManager.cs" />
     <Compile Include="Options\OverrideCollectionNameAttribute.cs" />
     <Compile Include="Options\OverrideDataTypeAttribute.cs" />
+    <Compile Include="Tweaks\Build\BuildOrdered.cs" />
     <Compile Include="Tweaks\Editor\CopyWithoutIndentation.cs" />
     <Compile Include="Tweaks\Editor\SelectWholeLineCommand.cs" />
     <Compile Include="Tweaks\Editor\WarnOnPaste.cs" />
