@@ -10,7 +10,7 @@ or get the [CI build](https://www.vsixgallery.com/extension/0c8bd9fa-77d5-4563-a
 ----------------------------------------------
 
 ## Features
-The list of features are coming from the [Visual Studio Developer Community](https://developercommunity.visualstudio.com/topics/extension+candidate.html?page=1&pageSize=15&sort=votes&openOnly=false&closedOnly=false&topics=extension%20candidate) where users are posting feature suggestions and problem report tickets. 
+The list of features are coming from the [Visual Studio Developer Community](https://developercommunity2.visualstudio.com/search?space=8&q=%5Bextension+candidate%5D) where users are posting feature suggestions and problem report tickets. 
 It's from those tickets inspiration for this extension came.
 
 * **General**
