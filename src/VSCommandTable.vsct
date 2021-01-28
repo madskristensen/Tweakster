@@ -34,6 +34,10 @@
       <Group guid="guidCommands" id="ClearRecentProjectsGroup" priority="5000">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_CSCD_PROJMRU" />
       </Group>
+
+      <Group guid="guidCommands" id="RoadmapGroup" priority="2000">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_HELP" />
+      </Group>
     </Groups>
 
     <Menus>
@@ -168,6 +172,24 @@
           <LocCanonicalName>.Edit.SelectWholeLine</LocCanonicalName>
         </Strings>
       </Button>
+
+      <Button guid="guidCommands" id="OpenReleaseNotes" priority="0x0100" type="Button">
+        <Parent guid="guidCommands" id="RoadmapGroup" />
+        <Strings>
+          <ButtonText>Release Notes</ButtonText>
+          <LocCanonicalName>.Help.ReleaseNotes</LocCanonicalName>
+        </Strings>
+      </Button>
+
+      <Button guid="guidCommands" id="OpenRoadmap" priority="0x0200" type="Button">
+        <Parent guid="guidCommands" id="RoadmapGroup" />
+        <Icon guid="ImageCatalogGuid" id="SiteMap"/>
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Roadmap</ButtonText>
+          <LocCanonicalName>.Help.Roadmap</LocCanonicalName>
+        </Strings>
+      </Button>
     </Buttons>
 
     <Combos>
@@ -230,6 +252,9 @@
       <IDSymbol name="ClearRecentProjects" value="0x1010" />
       <IDSymbol name="ClearRecentProjectsGroup" value="0x1011" />
       <IDSymbol name="SelectWholeLine" value="0x1100" />
+      <IDSymbol name="RoadmapGroup" value="0x1200" />
+      <IDSymbol name="OpenRoadmap" value="0x1201" />
+      <IDSymbol name="OpenReleaseNotes" value="0x1202" />
     </GuidSymbol>
 
     <!-- Externals -->

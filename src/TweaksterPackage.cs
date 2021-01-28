@@ -42,6 +42,8 @@ namespace Tweakster
             await ClearRecentFilesAndProjects.InitializeAsync(this);
             await BrowseSuggestions.InitializeAsync(this);
             await SelectWholeLineCommand.InitializeAsync(this);
+            await OpenReleaseNotes.InitializeAsync(this);
+            await OpenRoadmap.InitializeAsync(this);
         }
     }
 }

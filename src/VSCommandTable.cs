@@ -54,6 +54,9 @@ namespace Tweakster
         public const int ClearRecentProjects = 0x1010;
         public const int ClearRecentProjectsGroup = 0x1011;
         public const int SelectWholeLine = 0x1100;
+        public const int RoadmapGroup = 0x1200;
+        public const int OpenRoadmap = 0x1201;
+        public const int OpenReleaseNotes = 0x1202;
         public const int IDM_DEBUG_TOOLBAR = 0x0421;
         public const int PROJECT_NEW_FOLDER = 0x00F5;
         public const int grpidFeedback = 0x1020;

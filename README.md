@@ -25,6 +25,7 @@ It's from those tickets inspiration for this extension came.
   * [Open in */SafeMode* from Jump List](#safemode)
   * [Presentation Mode](#demomode)
   * [Browse all feature suggestions](#browsesuggestions)
+  * [Browse roadmap and release notes](#roadmap)
 * **Build**
   * [Set verbosity level in Output Window](#outputverbosity)
   * [Save solution on build](#savesolutiononbuild)
@@ -136,6 +137,14 @@ Inspired by the suggestion [Make it easy to discover existing suggestions to vot
 A command under **Help -> Send Feedback** that opens your browser to the [feature suggestion page](https://aka.ms/browsesuggestions) on the Developer Community.
 
 ![Browse suggestions](art/browse-suggestions.png)
+
+<h4 id="roadmap">Browse roadmap and release notes</h4>
+
+Inspired by the suggestion [There's no easy way to check release notes](https://developercommunity2.visualstudio.com/t/Theres-no-easy-way-to-check-shrelease/1023302).
+
+Commands under the top-level **Help** menu that opens your browser to the the Visual Studio roadmap and release notes.
+
+![Roadmap and release notes](art/roadmap.png)
 
 ### Build
 

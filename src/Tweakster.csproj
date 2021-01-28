@@ -77,6 +77,8 @@
     <Compile Include="Tweaks\Build\BuildStats.cs" />
     <Compile Include="Tweaks\General\DuplicateWindow.cs" />
     <Compile Include="Tweaks\General\FindInSolutionExplorer.cs" />
+    <Compile Include="Tweaks\Ide\OpenRoadmap.cs" />
+    <Compile Include="Tweaks\Ide\OpenReleaseNotes.cs" />
     <Compile Include="Tweaks\Ide\Options.cs" />
     <Compile Include="Tweaks\Ide\Restart.cs" />
     <Compile Include="Tweaks\General\ReOpenDocument.cs" />
