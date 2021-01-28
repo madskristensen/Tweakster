@@ -158,8 +158,8 @@
       <Button guid="guidCommands" id="ExploreSuggestions" priority="0x0100" type="Button">
         <Parent guid="guidFeedbackCmdSet" id="grpidFeedback" />
         <Strings>
-          <ButtonText>Browse All Suggestions...</ButtonText>
-          <LocCanonicalName>.Feedback.BrowseAllSuggestions</LocCanonicalName>
+          <ButtonText>Explore All Feedback...</ButtonText>
+          <LocCanonicalName>.Feedback.ExploreAllFeedback</LocCanonicalName>
         </Strings>
       </Button>
 
