@@ -53,19 +53,19 @@ namespace Tweakster
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
-            if (ShouldExecute(item))
+            try
             {
-                try
+                if (ShouldExecute(item))
                 {
                     if (item.ContainingProject.IsDirty)
                     {
                         item.ContainingProject.Save();
                     }
                 }
-                catch
-                {
-                    // Do nothing. Some project types don't support being saved
-                }
+            }
+            catch
+            {
+                // Do nothing. Some project types don't support being saved
             }
         }
 
