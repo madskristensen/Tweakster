@@ -45,9 +45,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Common\ContentTypes.cs" />
-    <Compile Include="Common\OutputWindowTraceListener.cs" />
-    <Compile Include="Common\ExtensionMethods.cs" />
     <Compile Include="Common\SVsSettingsPersistenceManager.cs" />
     <Compile Include="Options\OverrideCollectionNameAttribute.cs" />
     <Compile Include="Options\OverrideDataTypeAttribute.cs" />
@@ -86,11 +83,6 @@
     <Compile Include="Tweaks\General\AutoSave.cs" />
     <Compile Include="Tweaks\Editor\CodeCleanupOnFormat.cs" />
     <Compile Include="Tweaks\Editor\DontCopyEmptySelection.cs" />
-    <Compile Include="Options\BaseOptionModel.cs" />
-    <Compile Include="Options\BaseOptionPage.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Options\DialogPageProvider.cs" />
     <Compile Include="Options\Options.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="source.extension.cs">
@@ -135,12 +127,14 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Community.VisualStudio.Toolkit">
+      <Version>16.0.6</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.Build.Framework">
       <Version>16.0.461</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.206" ExcludeAssets="runtime" />
     <PackageReference Include="Microsoft.VSSDK.BuildTools">
-      <Version>16.8.8</Version>
+      <Version>16.10.23</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>

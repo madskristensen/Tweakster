@@ -21,7 +21,6 @@ namespace Tweakster
         {
             await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
 
-            OutputWindowTraceListener.Register(Vsix.Name, nameof(Tweakster));
             WindowsJumpLists.Initialize();
 
             await AutoSave.InitializeAsync(this);

@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.Composition;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Utilities;
+using static Community.VisualStudio.Toolkit.Editor;
 
 namespace Tweakster
 {

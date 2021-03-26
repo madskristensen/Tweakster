@@ -1,11 +1,11 @@
 ﻿using System;
 using System.ComponentModel.Composition;
-using System.Diagnostics;
 using Microsoft.VisualStudio.Commanding;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Text.Editor.Commanding;
 using Microsoft.VisualStudio.Text.Editor.Commanding.Commands;
 using Microsoft.VisualStudio.Utilities;
+using static Community.VisualStudio.Toolkit.Editor;
 
 namespace Tweakster.Tweaks.CodeCleanupOnFormat
 {
@@ -37,7 +37,7 @@ namespace Tweakster.Tweaks.CodeCleanupOnFormat
             }
             catch (Exception ex)
             {
-                Trace.Write(ex);
+                ex.LogAsync().ConfigureAwait(false);
             }
 
             return false;

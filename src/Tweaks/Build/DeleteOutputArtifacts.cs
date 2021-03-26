@@ -104,7 +104,7 @@ namespace Tweakster
 
             foreach (Project project in projects)
             {
-                DeleteArtifacts(project.GetFullPath());
+                DeleteArtifacts(project.GetDirectory());
             }
         }
 
