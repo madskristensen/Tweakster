@@ -7,11 +7,9 @@ using Task = System.Threading.Tasks.Task;
 
 namespace Tweakster
 {
+    [Command(PackageGuids.guidCommandsString, PackageIds.ResetZoom)]
     internal sealed class ResetZoomLevel : BaseCommand<ResetZoomLevel>
     {
-        public ResetZoomLevel() : base(PackageGuids.guidCommands, PackageIds.ResetZoom)
-        { }
-
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
