@@ -146,8 +146,9 @@ namespace Tweakster
                     Directory.Delete(path, true);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                ex.Log();
             }
         }
 
