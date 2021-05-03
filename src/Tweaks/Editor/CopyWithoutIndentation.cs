@@ -9,6 +9,7 @@ using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Text.Editor.Commanding.Commands;
 using Microsoft.VisualStudio.Text.Formatting;
 using Microsoft.VisualStudio.Utilities;
+using static Community.VisualStudio.Toolkit.Editor;
 
 namespace Tweakster.Tweaks.Editor
 {
@@ -34,7 +35,6 @@ namespace Tweakster.Tweaks.Editor
                 return false;
             }
 
-            ITextSnapshot snapshot = args.TextView.TextBuffer.CurrentSnapshot;
 
             // Only handle selections that starts with indented
             if (args.TextView.TryGetTextViewLineContainingBufferPosition(selection.Start.Position, out ITextViewLine viewLine))
@@ -45,9 +45,11 @@ namespace Tweakster.Tweaks.Editor
                 }
             }
 
-            IEnumerable<ITextViewLine> lines = from line in args.TextView.TextViewLines
-                                               where line.IntersectsBufferSpan(selection.SelectedSpans[0])
-                                               select line;
+            ITextSnapshot snapshot = args.TextView.TextBuffer.CurrentSnapshot;
+
+            IEnumerable<ITextSnapshotLine> lines = from line in snapshot.Lines
+                                                   where line.Extent.IntersectsWith(selection.SelectedSpans[0])
+                                                   select line;
 
             // Only handle when multiple lines are selected
             if (lines.Count() == 1)
@@ -67,7 +69,7 @@ namespace Tweakster.Tweaks.Editor
                 return false;
             }
 
-            foreach (ITextViewLine line in lines)
+            foreach (ITextSnapshotLine line in lines)
             {
                 if (line.Extent.IsEmpty)
                 {
@@ -82,12 +84,10 @@ namespace Tweakster.Tweaks.Editor
                         end -= (line.End.Position - selection.End.Position.Position);
                     }
 
-                    var span = new SnapshotSpan(snapshot, line.Start + indentation, end);
-
-                    if (!span.IsEmpty)
+                    if (!line.Extent.IsEmpty)
                     {
-                        spans.Add(span);
-                        sb.AppendLine(span.GetText());
+                        spans.Add(line.Extent);
+                        sb.AppendLine(line.Extent.GetText());
                     }
                 }
             }

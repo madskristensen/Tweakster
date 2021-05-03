@@ -45,12 +45,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Common\ContentTypes.cs" />
-    <Compile Include="Common\OutputWindowTraceListener.cs" />
-    <Compile Include="Common\ExtensionMethods.cs" />
     <Compile Include="Common\SVsSettingsPersistenceManager.cs" />
     <Compile Include="Options\OverrideCollectionNameAttribute.cs" />
     <Compile Include="Options\OverrideDataTypeAttribute.cs" />
+    <Compile Include="Tweaks\Build\BuildOrdered.cs" />
     <Compile Include="Tweaks\Editor\CopyWithoutIndentation.cs" />
     <Compile Include="Tweaks\Editor\SelectWholeLineCommand.cs" />
     <Compile Include="Tweaks\Editor\WarnOnPaste.cs" />
@@ -76,6 +74,8 @@
     <Compile Include="Tweaks\Build\BuildStats.cs" />
     <Compile Include="Tweaks\General\DuplicateWindow.cs" />
     <Compile Include="Tweaks\General\FindInSolutionExplorer.cs" />
+    <Compile Include="Tweaks\Ide\OpenRoadmap.cs" />
+    <Compile Include="Tweaks\Ide\OpenReleaseNotes.cs" />
     <Compile Include="Tweaks\Ide\Options.cs" />
     <Compile Include="Tweaks\Ide\Restart.cs" />
     <Compile Include="Tweaks\General\ReOpenDocument.cs" />
@@ -83,11 +83,6 @@
     <Compile Include="Tweaks\General\AutoSave.cs" />
     <Compile Include="Tweaks\Editor\CodeCleanupOnFormat.cs" />
     <Compile Include="Tweaks\Editor\DontCopyEmptySelection.cs" />
-    <Compile Include="Options\BaseOptionModel.cs" />
-    <Compile Include="Options\BaseOptionPage.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Options\DialogPageProvider.cs" />
     <Compile Include="Options\Options.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="source.extension.cs">
@@ -132,12 +127,14 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Build.Framework">
-      <Version>16.0.461</Version>
+    <PackageReference Include="Community.VisualStudio.Toolkit">
+      <Version>16.0.75.40</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.206" ExcludeAssets="runtime" />
+    <PackageReference Include="Microsoft.Build.Framework">
+      <Version>16.9.0</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.VSSDK.BuildTools">
-      <Version>16.8.8</Version>
+      <Version>16.10.23</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>

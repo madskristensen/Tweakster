@@ -104,7 +104,7 @@ namespace Tweakster
 
             foreach (Project project in projects)
             {
-                DeleteArtifacts(project.GetFullPath());
+                DeleteArtifacts(project.GetDirectory());
             }
         }
 
@@ -146,8 +146,9 @@ namespace Tweakster
                     Directory.Delete(path, true);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                ex.Log();
             }
         }
 

@@ -10,7 +10,7 @@ or get the [CI build](https://www.vsixgallery.com/extension/0c8bd9fa-77d5-4563-a
 ----------------------------------------------
 
 ## Features
-The list of features are coming from the [Visual Studio Developer Community](https://developercommunity.visualstudio.com/topics/extension+candidate.html?page=1&pageSize=15&sort=votes&openOnly=false&closedOnly=false&topics=extension%20candidate) where users are posting feature suggestions and problem report tickets. 
+The list of features are coming from the [Visual Studio Developer Community](https://developercommunity2.visualstudio.com/search?space=8&q=%5Bextension+candidate%5D) where users are posting feature suggestions and problem report tickets. 
 It's from those tickets inspiration for this extension came.
 
 * **General**
@@ -25,12 +25,14 @@ It's from those tickets inspiration for this extension came.
   * [Open in */SafeMode* from Jump List](#safemode)
   * [Presentation Mode](#demomode)
   * [Browse all feature suggestions](#browsesuggestions)
+  * [Browse roadmap and release notes](#roadmap)
 * **Build**
   * [Set verbosity level in Output Window](#outputverbosity)
   * [Save solution on build](#savesolutiononbuild)
   * [Delete obj and bin folders on *Clean*](#deleteoutputartifacts)
   * [Show build time statistics](#buildstats)
   * [Up-To-Date Check Verbose](#u2dcheckverbosity)
+  * [Show ordered build output after build](#showBuildOrdered)
 * **Debugger**
   * [Don't start debug on F10/F11](#nodebugonf10)
   * [Toggle *Just My Code* from the *Debug* toolbar](#justmycode)
@@ -136,6 +138,14 @@ A command under **Help -> Send Feedback** that opens your browser to the [featur
 
 ![Browse suggestions](art/browse-suggestions.png)
 
+<h4 id="roadmap">Browse roadmap and release notes</h4>
+
+Inspired by the suggestion [There's no easy way to check release notes](https://developercommunity2.visualstudio.com/t/Theres-no-easy-way-to-check-shrelease/1023302).
+
+Commands under the top-level **Help** menu that opens your browser to the the Visual Studio roadmap and release notes.
+
+![Roadmap and release notes](art/roadmap.png)
+
 ### Build
 
 <h4 id="outputverbosity">Set verbosity level in Output Window</h4>
@@ -175,6 +185,10 @@ can help easily diagnose why a project is being rebuilt. Setting the build *Outp
 generated when this setting is enabled goes directly to the *Output Window*, even with *Minimal* build output verbosity.
 
 ![Up To Date Check](art/up-to-date-check.png)
+
+<h4 id="showBuildOrdered">Show ordered build output</h4>
+
+Activates the Build Order pane in the Output Window when the build completes.
 
 ### Debugger
 

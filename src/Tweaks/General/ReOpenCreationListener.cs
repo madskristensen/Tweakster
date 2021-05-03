@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Utilities;
+using static Community.VisualStudio.Toolkit.Editor;
 
 namespace Tweakster
 {

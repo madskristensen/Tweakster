@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using Community.VisualStudio.Toolkit;
 
 namespace Tweakster
 {
@@ -34,5 +35,11 @@ namespace Tweakster
         [OverrideCollectionName("General")]
         [OverrideDataType(SettingDataType.Bool)]
         public bool U2DCheckVerbosity { get; set; } = false;
+
+        [Category(_build)]
+        [DisplayName("Show ordered build output")]
+        [Description("Activate the Build Order tab in the Output Window after each build")]
+        [DefaultValue(false)]
+        public bool ShowBuildOrder { get; set; } = false;
     }
 }

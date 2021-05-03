@@ -15,9 +15,6 @@ namespace Tweakster
         public const string guidTweaksterPackageString = "590dcf32-ae09-49b9-b0e5-55d7ebf100d0";
         public static Guid guidTweaksterPackage = new Guid(guidTweaksterPackageString);
 
-        public const string guidSolutionHasProjectsString = "db87ae42-32ad-434e-b53c-08cfddcc0935";
-        public static Guid guidSolutionHasProjects = new Guid(guidSolutionHasProjectsString);
-
         public const string guidCommandsString = "85ce63b9-a773-45e0-9a60-9a96bc2ab40b";
         public static Guid guidCommands = new Guid(guidCommandsString);
 
@@ -57,6 +54,9 @@ namespace Tweakster
         public const int ClearRecentProjects = 0x1010;
         public const int ClearRecentProjectsGroup = 0x1011;
         public const int SelectWholeLine = 0x1100;
+        public const int RoadmapGroup = 0x1200;
+        public const int OpenRoadmap = 0x1201;
+        public const int OpenReleaseNotes = 0x1202;
         public const int IDM_DEBUG_TOOLBAR = 0x0421;
         public const int PROJECT_NEW_FOLDER = 0x00F5;
         public const int grpidFeedback = 0x1020;

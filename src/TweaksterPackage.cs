@@ -11,6 +11,7 @@ namespace Tweakster
 {
     [Guid(PackageGuids.guidTweaksterPackageString)]
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
+    [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
     [ProvideOptionPage(typeof(DialogPageProvider.General), "Environment", Vsix.Name, 0, 0, true, ProvidesLocalizedCategoryName = false)]
     [ProvideProfile(typeof(DialogPageProvider.General), "Environment", Vsix.Name, 0, 0, true)]
     [ProvideAutoLoad(VSConstants.UICONTEXT.SolutionExists_string, PackageAutoLoadFlags.BackgroundLoad)]
@@ -21,7 +22,6 @@ namespace Tweakster
         {
             await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
 
-            OutputWindowTraceListener.Register(Vsix.Name, nameof(Tweakster));
             WindowsJumpLists.Initialize();
 
             await AutoSave.InitializeAsync(this);
@@ -33,6 +33,7 @@ namespace Tweakster
             await ResetZoomLevel.InitializeAsync(this);
             await JustMyCode.InitializeAsync(this);
             await BuildStats.InitializeAsync(this);
+            await BuildOrdered.InitializeAsync(this);
             await FindInSolutionExplorer.InitializeAsync(this);
             await OpenLanguageSettings.InitializeAsync(this);
             await CloseActiveDocument.InitializeAsync(this);
@@ -41,6 +42,8 @@ namespace Tweakster
             await ClearRecentFilesAndProjects.InitializeAsync(this);
             await BrowseSuggestions.InitializeAsync(this);
             await SelectWholeLineCommand.InitializeAsync(this);
+            await OpenReleaseNotes.InitializeAsync(this);
+            await OpenRoadmap.InitializeAsync(this);
         }
     }
 }

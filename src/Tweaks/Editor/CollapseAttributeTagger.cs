@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Text;
@@ -117,7 +116,7 @@ namespace Tweakster
                 }
                 catch (Exception ex)
                 {
-                    Trace.Write(ex);
+                    await ex.LogAsync();
                 }
 
                 _spans = list;

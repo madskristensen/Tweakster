@@ -1,5 +1,12 @@
-﻿namespace Tweakster
+﻿using Community.VisualStudio.Toolkit;
+
+namespace Tweakster
 {
+    internal class DialogPageProvider
+    {
+        public class General : BaseOptionPage<Options> { }
+    }
+
     internal partial class Options : BaseOptionModel<Options>
     {
         /* ------------------------------------------

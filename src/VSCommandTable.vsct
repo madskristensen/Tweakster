@@ -34,6 +34,10 @@
       <Group guid="guidCommands" id="ClearRecentProjectsGroup" priority="5000">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_CSCD_PROJMRU" />
       </Group>
+
+      <Group guid="guidCommands" id="RoadmapGroup" priority="2000">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_HELP" />
+      </Group>
     </Groups>
 
     <Menus>
@@ -154,8 +158,8 @@
       <Button guid="guidCommands" id="ExploreSuggestions" priority="0x0100" type="Button">
         <Parent guid="guidFeedbackCmdSet" id="grpidFeedback" />
         <Strings>
-          <ButtonText>Browse All Suggestions...</ButtonText>
-          <LocCanonicalName>.Feedback.BrowseAllSuggestions</LocCanonicalName>
+          <ButtonText>Explore All Feedback...</ButtonText>
+          <LocCanonicalName>.Feedback.ExploreAllFeedback</LocCanonicalName>
         </Strings>
       </Button>
 
@@ -166,6 +170,24 @@
         <Strings>
           <ButtonText>Select Whole Line</ButtonText>
           <LocCanonicalName>.Edit.SelectWholeLine</LocCanonicalName>
+        </Strings>
+      </Button>
+
+      <Button guid="guidCommands" id="OpenReleaseNotes" priority="0x0100" type="Button">
+        <Parent guid="guidCommands" id="RoadmapGroup" />
+        <Strings>
+          <ButtonText>Release Notes</ButtonText>
+          <LocCanonicalName>.Help.ReleaseNotes</LocCanonicalName>
+        </Strings>
+      </Button>
+
+      <Button guid="guidCommands" id="OpenRoadmap" priority="0x0200" type="Button">
+        <Parent guid="guidCommands" id="RoadmapGroup" />
+        <Icon guid="ImageCatalogGuid" id="SiteMap"/>
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Roadmap</ButtonText>
+          <LocCanonicalName>.Help.Roadmap</LocCanonicalName>
         </Strings>
       </Button>
     </Buttons>
@@ -193,7 +215,8 @@
   </KeyBindings>
 
   <VisibilityConstraints>
-    <VisibilityItem guid="guidCommands" id="FindInSolutionExplorer" context="guidSolutionHasProjects" />
+    <VisibilityItem guid="guidCommands" id="FindInSolutionExplorer" context="UICONTEXT_SolutionHasMultipleProjects" />
+    <VisibilityItem guid="guidCommands" id="FindInSolutionExplorer" context="UICONTEXT_SolutionHasSingleProject" />
     <VisibilityItem guid="guidCommands" id="SelectWholeLine" context="GUID_TextEditorFactory" />
   </VisibilityConstraints>
 
@@ -205,7 +228,6 @@
 
   <Symbols>
     <GuidSymbol name="guidTweaksterPackage" value="{590dcf32-ae09-49b9-b0e5-55d7ebf100d0}" />
-    <GuidSymbol name="guidSolutionHasProjects" value="{db87ae42-32ad-434e-b53c-08cfddcc0935}" />
 
     <GuidSymbol name="guidCommands" value="{85ce63b9-a773-45e0-9a60-9a96bc2ab40b}">
       <IDSymbol name="ReOpenDocument" value="0x0100" />
@@ -230,6 +252,9 @@
       <IDSymbol name="ClearRecentProjects" value="0x1010" />
       <IDSymbol name="ClearRecentProjectsGroup" value="0x1011" />
       <IDSymbol name="SelectWholeLine" value="0x1100" />
+      <IDSymbol name="RoadmapGroup" value="0x1200" />
+      <IDSymbol name="OpenRoadmap" value="0x1201" />
+      <IDSymbol name="OpenReleaseNotes" value="0x1202" />
     </GuidSymbol>
 
     <!-- Externals -->

@@ -45,7 +45,8 @@ namespace Tweakster
 
         private static void OnBeforeQueryStatus(OleMenuCommand menuItem, DTE2 dte)
         {
-            menuItem.Visible = menuItem.Enabled = _map.ContainsKey(dte.ActiveDocument?.Language);
+            var language = dte.ActiveDocument?.Language;
+            menuItem.Visible = menuItem.Enabled = language != null && _map.ContainsKey(language);
         }
 
         public static void Execute(IVsUIShell shell, DTE2 dte)
