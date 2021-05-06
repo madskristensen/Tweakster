@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Tagging;
 using Microsoft.VisualStudio.Utilities;
-using static Community.VisualStudio.Toolkit.Editor;
+using Community.VisualStudio.Toolkit;
 
 namespace Tweakster
 {

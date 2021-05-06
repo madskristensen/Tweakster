@@ -9,7 +9,7 @@ using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Text.Editor.Commanding.Commands;
 using Microsoft.VisualStudio.Text.Formatting;
 using Microsoft.VisualStudio.Utilities;
-using static Community.VisualStudio.Toolkit.Editor;
+using Community.VisualStudio.Toolkit;
 
 namespace Tweakster.Tweaks.Editor
 {
