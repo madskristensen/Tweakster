@@ -7,7 +7,7 @@ using Microsoft.VisualStudio.Text.Editor.Commanding;
 using Microsoft.VisualStudio.Text.Editor.Commanding.Commands;
 using Microsoft.VisualStudio.Text.Formatting;
 using Microsoft.VisualStudio.Utilities;
-using static Community.VisualStudio.Toolkit.Editor;
+using Community.VisualStudio.Toolkit;
 using Task = System.Threading.Tasks.Task;
 
 namespace Tweakster

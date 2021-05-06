@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Text.Editor.Commanding;
 using Microsoft.VisualStudio.Text.Editor.Commanding.Commands;
 using Microsoft.VisualStudio.Utilities;
-using static Community.VisualStudio.Toolkit.Editor;
+using Community.VisualStudio.Toolkit;
 
 namespace Tweakster.Tweaks.CodeCleanupOnFormat
 {
