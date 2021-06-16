@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>ed45b709-a0d1-444a-9f6b-11e7531675b2</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>TweaksterShared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Common\SVsSettingsPersistenceManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Options\Options.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TweaksterPackage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Build\BuildOrdered.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Build\BuildStats.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Build\DeleteOutputArtifacts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Build\Options.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Build\OutputVerbosity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Debugger\IDebuggerInternal2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Debugger\JustMyCode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Debugger\NoStepDebuggingInDesignMode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Debugger\Options.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\CodeCleanupOnFormat.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\CollapseAttributeTagger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\CollapseAttributeTaggerProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\CopyWithoutIndentation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\DisableZoomOnScroll.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\DontCopyEmptyLines.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\DontCopyEmptySelection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\FormatOnMoveLine.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\OpenLanguageSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\Options.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\ResetZoomLevel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\SelectWholeLineCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\WarnOnPaste.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\ActivateSolutionExplorer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\AutoSave.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\ClearRecentFilesAndProjects.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\CloseActiveDocument.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\DuplicateWindow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\FindInSolutionExplorer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\Options.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\ReOpenCreationListener.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\ReOpenDocument.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Ide\BrowseSuggestions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Ide\OpenReleaseNotes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Ide\OpenRoadmap.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Ide\Options.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Ide\Restart.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Ide\WindowsJumpLists.cs" />
+  </ItemGroup>
+</Project>

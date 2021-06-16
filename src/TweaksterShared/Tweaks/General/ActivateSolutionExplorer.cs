@@ -19,8 +19,9 @@ namespace Tweakster
 
             _package = package;
             _uiShell = await package.GetServiceAsync<SVsUIShell, IVsUIShell>();
+            IVsSolution solService = await _package.GetServiceAsync<SVsSolution, IVsSolution>();
 
-            if (await IsSolutionLoadedAsync())
+            if (solService.IsOpen())
             {
                 Execute();
             }
@@ -31,7 +32,7 @@ namespace Tweakster
         private static void Execute(object sender = null, EventArgs e = null)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
-
+            
             if (Options.Instance.FocusSolutionExplorerOnProjectLoad)
             {
                 Guid guid = typeof(VSConstants.VSStd97CmdID).GUID;
@@ -39,16 +40,6 @@ namespace Tweakster
 
                 _uiShell.PostExecCommand(guid, id, 0, null);
             }
-        }
-
-        private static async Task<bool> IsSolutionLoadedAsync()
-        {
-            await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
-            IVsSolution solService = await _package.GetServiceAsync<SVsSolution, IVsSolution>();
-
-            ErrorHandler.ThrowOnFailure(solService.GetProperty((int)__VSPROPID.VSPROPID_IsSolutionOpen, out var value));
-
-            return value is bool isSolOpen && isSolOpen;
         }
     }
 }

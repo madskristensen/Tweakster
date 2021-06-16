@@ -10,6 +10,7 @@ using Microsoft.VisualStudio.Text.Editor.Commanding.Commands;
 using Microsoft.VisualStudio.Text.Formatting;
 using Microsoft.VisualStudio.Utilities;
 using Community.VisualStudio.Toolkit;
+using System;
 
 namespace Tweakster.Tweaks.Editor
 {
@@ -78,17 +79,10 @@ namespace Tweakster.Tweaks.Editor
                 }
                 else
                 {
-                    var end = line.Length - indentation;
-                    if (selection.End.Position.Position < line.End.Position)
-                    {
-                        end -= (line.End.Position - selection.End.Position.Position);
-                    }
-
-                    if (!line.Extent.IsEmpty)
-                    {
-                        spans.Add(line.Extent);
-                        sb.AppendLine(line.Extent.GetText());
-                    }
+                    var end = Math.Min(line.End.Position, selection.End.Position.Position);
+                    var extent = new SnapshotSpan(snapshot, Span.FromBounds(line.Start + indentation, end));
+                    spans.Add(extent);
+                    sb.AppendLine(extent.GetText());
                 }
             }
 

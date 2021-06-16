@@ -66,10 +66,10 @@ namespace Tweakster.Tweaks.Editor
             {
                 case "html":
                 case "htmlx":
-                    return 15000;
+                    return 20000;
             }
 
-            return 20000;
+            return 30000;
         }
 
         public CommandState GetCommandState(PasteCommandArgs args)

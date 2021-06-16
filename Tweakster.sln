@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30309.33
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31410.414
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tweakster", "src\Tweakster.csproj", "{CEFD275C-6217-4CD8-A0A8-BB33B20D5E6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tweakster2019", "src\Tweaks2019\Tweakster2019.csproj", "{CEFD275C-6217-4CD8-A0A8-BB33B20D5E6F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D5CE5BD3-69E0-40A8-97C8-024E48B7DC88}"
 	ProjectSection(SolutionItems) = preProject
@@ -12,16 +12,39 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "TweaksterShared", "src\TweaksterShared\TweaksterShared.shproj", "{ED45B709-A0D1-444A-9F6B-11E7531675B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tweakster2022", "src\Tweaks2022\Tweakster2022.csproj", "{CEFD275C-6217-4CD8-A0A8-BB33B20D5E7F}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		src\TweaksterShared\TweaksterShared.projitems*{cefd275c-6217-4cd8-a0a8-bb33b20d5e6f}*SharedItemsImports = 4
+		src\TweaksterShared\TweaksterShared.projitems*{cefd275c-6217-4cd8-a0a8-bb33b20d5e7f}*SharedItemsImports = 4
+		src\TweaksterShared\TweaksterShared.projitems*{ed45b709-a0d1-444a-9f6b-11e7531675b2}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{CEFD275C-6217-4CD8-A0A8-BB33B20D5E6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CEFD275C-6217-4CD8-A0A8-BB33B20D5E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEFD275C-6217-4CD8-A0A8-BB33B20D5E6F}.Debug|x86.ActiveCfg = Debug|x86
+		{CEFD275C-6217-4CD8-A0A8-BB33B20D5E6F}.Debug|x86.Build.0 = Debug|x86
 		{CEFD275C-6217-4CD8-A0A8-BB33B20D5E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEFD275C-6217-4CD8-A0A8-BB33B20D5E6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEFD275C-6217-4CD8-A0A8-BB33B20D5E6F}.Release|x86.ActiveCfg = Release|x86
+		{CEFD275C-6217-4CD8-A0A8-BB33B20D5E6F}.Release|x86.Build.0 = Release|x86
+		{CEFD275C-6217-4CD8-A0A8-BB33B20D5E7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEFD275C-6217-4CD8-A0A8-BB33B20D5E7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEFD275C-6217-4CD8-A0A8-BB33B20D5E7F}.Debug|x86.ActiveCfg = Debug|x86
+		{CEFD275C-6217-4CD8-A0A8-BB33B20D5E7F}.Debug|x86.Build.0 = Debug|x86
+		{CEFD275C-6217-4CD8-A0A8-BB33B20D5E7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEFD275C-6217-4CD8-A0A8-BB33B20D5E7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEFD275C-6217-4CD8-A0A8-BB33B20D5E7F}.Release|x86.ActiveCfg = Release|x86
+		{CEFD275C-6217-4CD8-A0A8-BB33B20D5E7F}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

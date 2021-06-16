@@ -37,7 +37,7 @@ namespace Tweakster.Tweaks.CodeCleanupOnFormat
             }
             catch (Exception ex)
             {
-                ex.LogAsync().ConfigureAwait(false);
+                ex.Log();
             }
 
             return false;

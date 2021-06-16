@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Include href="KnownImageIds.vsct"/>
+
+  <Commands package="guidTweaksterPackage">
+    <Groups>
+      <Group guid="guidCommands" id="OutputVerbosityGroup" priority="1700">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_TOOL_OUTPUTWINDOW" />
+      </Group>
+
+      <Group guid="guidCommands" id="JustMyCodeGroup" priority="1700">
+        <Parent guid="guidVSDebugGroup" id="IDM_DEBUG_TOOLBAR" />
+      </Group>
+
+      <Group guid="guidCommands" id="FindInSolutionExplorerGroup" priority="1700">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_EZDOCWINTAB" />
+      </Group>
+
+      <Group guid="guidCommands" id="LanguageSettingGroup" priority="5000">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
+      </Group>
+
+      <Group guid="guidCommands" id="RestartGroup" priority="5000">
+        <Parent guid="guidCommands" id="RestartMenu" />
+      </Group>
+
+      <Group guid="guidCommands" id="ClearRecentFilesGroup" priority="5000">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CSCD_FILEMRU" />
+      </Group>
+
+      <Group guid="guidCommands" id="ClearRecentProjectsGroup" priority="5000">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CSCD_PROJMRU" />
+      </Group>
+
+      <Group guid="guidCommands" id="RoadmapGroup" priority="2000">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_HELP" />
+      </Group>
+    </Groups>
+
+    <Menus>
+      <Menu guid="guidCommands" id="RestartMenu" priority="100" type="Menu">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_FILE_EXIT" />
+        <Strings>
+          <ButtonText>Restart</ButtonText>
+        </Strings>
+      </Menu>
+    </Menus>
+
+    <Buttons>
+      <Button guid="guidCommands" id="ReOpenDocument" priority="0x0100" type="Button">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_FILE_SOLUTION" />
+        <Icon guid="ImageCatalogGuid" id="OpenDocumentFromCollection" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>DontCache</CommandFlag>
+        <Strings>
+          <ButtonText>Re-Open Closed File</ButtonText>
+          <LocCanonicalName>.File.ReOpenClosedFile</LocCanonicalName>
+        </Strings>
+      </Button>
+
+      <Button guid="guidCommands" id="RestartNormal" priority="0x0100" type="Button">
+        <Parent guid="guidCommands" id="RestartGroup" />
+        <Icon guid="ImageCatalogGuid" id="Restart"/>
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Restart</ButtonText>
+          <LocCanonicalName>.File.Restart</LocCanonicalName>
+        </Strings>
+      </Button>
+
+      <Button guid="guidCommands" id="RestartElevated" priority="0x0200" type="Button">
+        <Parent guid="guidCommands" id="RestartGroup" />
+        <Strings>
+          <ButtonText>Restart as Admin</ButtonText>
+          <LocCanonicalName>.File.RestartElevated</LocCanonicalName>
+        </Strings>
+      </Button>
+
+      <Button guid="guidCommands" id="ResetZoom" priority="0x0100" type="Button">
+        <CommandFlag>CommandWellOnly</CommandFlag>
+        <Strings>
+          <ButtonText>Reset Zoom</ButtonText>
+          <LocCanonicalName>.View.ZoomReset</LocCanonicalName>
+        </Strings>
+      </Button>
+
+      <Button guid="guidCommands" id="JustMyCode" priority="0x175" type="Button">
+        <Parent guid="guidCommands" id="JustMyCodeGroup" />
+        <Icon guid="ImageCatalogGuid" id="JustMyCode"/>
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <Strings>
+          <ButtonText>Just My Code</ButtonText>
+          <LocCanonicalName>.Debug.ToggleJustMyCode</LocCanonicalName>
+          <ToolTipText>Toggles Just My Code in the debugger options</ToolTipText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidCommands" id="FindInSolutionExplorer" priority="0x100" type="Button">
+        <Parent guid="guidCommands" id="FindInSolutionExplorerGroup" />
+        <Icon guid="ImageCatalogGuid" id="Sync"/>
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Find in Solution Explorer</ButtonText>
+          <LocCanonicalName>.File.FindInSolutionExplorer</LocCanonicalName>
+        </Strings>
+      </Button>
+
+      <Button guid="guidCommands" id="DuplicateWindow" priority="0x200" type="Button">
+        <Parent guid="guidCommands" id="FindInSolutionExplorerGroup" />
+        <Icon guid="ImageCatalogGuid" id="NewWindow"/>
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Duplicate Window</ButtonText>
+          <LocCanonicalName>.File.DuplicateWindow</LocCanonicalName>
+        </Strings>
+      </Button>
+
+      <Button guid="guidCommands" id="LanguageSetting" priority="0x175" type="Button">
+        <Parent guid="guidCommands" id="LanguageSettingGroup" />
+        <Icon guid="ImageCatalogGuid" id="Settings"/>
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <ButtonText>Settings...</ButtonText>
+          <LocCanonicalName>.File.LanguageSettings</LocCanonicalName>
+        </Strings>
+      </Button>
+
+      <Button guid="guidCommands" id="ClearRecentFiles" priority="0x0010" type="Button">
+        <Parent guid="guidCommands" id="ClearRecentFilesGroup" />
+        <Icon guid="ImageCatalogGuid" id="CleanData"/>
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Clear...</ButtonText>
+          <LocCanonicalName>.File.ClearRecentFiles</LocCanonicalName>
+        </Strings>
+      </Button>
+
+      <Button guid="guidCommands" id="ClearRecentProjects" priority="0x0010" type="Button">
+        <Parent guid="guidCommands" id="ClearRecentProjectsGroup" />
+        <Icon guid="ImageCatalogGuid" id="CleanData"/>
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Clear...</ButtonText>
+          <LocCanonicalName>.File.ClearRecentProjects</LocCanonicalName>
+        </Strings>
+      </Button>
+
+      <Button guid="guidCommands" id="ExploreSuggestions" priority="0x0100" type="Button">
+        <Parent guid="guidFeedbackCmdSet" id="grpidFeedback" />
+        <Strings>
+          <ButtonText>Explore All Feedback...</ButtonText>
+          <LocCanonicalName>.Feedback.ExploreAllFeedback</LocCanonicalName>
+        </Strings>
+      </Button>
+
+      <Button guid="guidCommands" id="SelectWholeLine" priority="0x6030" type="Button">
+        <Parent guid="guidStdEditor" id="IDG_VS_EDITOR_ADVANCED_CMDS" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <ButtonText>Select Whole Line</ButtonText>
+          <LocCanonicalName>.Edit.SelectWholeLine</LocCanonicalName>
+        </Strings>
+      </Button>
+
+      <Button guid="guidCommands" id="OpenReleaseNotes" priority="0x0100" type="Button">
+        <Parent guid="guidCommands" id="RoadmapGroup" />
+        <Strings>
+          <ButtonText>Release Notes</ButtonText>
+          <LocCanonicalName>.Help.ReleaseNotes</LocCanonicalName>
+        </Strings>
+      </Button>
+
+      <Button guid="guidCommands" id="OpenRoadmap" priority="0x0200" type="Button">
+        <Parent guid="guidCommands" id="RoadmapGroup" />
+        <Icon guid="ImageCatalogGuid" id="SiteMap"/>
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Roadmap</ButtonText>
+          <LocCanonicalName>.Help.Roadmap</LocCanonicalName>
+        </Strings>
+      </Button>
+    </Buttons>
+
+    <Combos>
+      <Combo guid="guidCommands" id="OuputVerbosity" priority="0x0200" type="IndexCombo" defaultWidth="100" idCommandList="OuputVerbosityList">
+        <Parent guid="guidCommands" id="OutputVerbosityGroup" />
+        <CommandFlag>IconAndText</CommandFlag>
+        <Strings>
+          <ButtonText>Output Verbosity:</ButtonText>
+          <ToolTipText>Select MSBuild project build output verbosity</ToolTipText>
+          <MenuText>Output Verbosity:</MenuText>
+          <LocCanonicalName>BuildAndRun.SetVerbosity</LocCanonicalName>
+        </Strings>
+      </Combo>
+    </Combos>
+  </Commands>
+
+  <KeyBindings>
+    <KeyBinding guid="guidCommands" id="ReOpenDocument" editor="guidVSStd97" key1="R" mod1="Shift ALT" />
+    <KeyBinding guid="guidCommands" id="RestartNormal" editor="guidVSStd97" key1="VK_F4" mod1="Shift Alt" />
+    <KeyBinding guid="guidCommands" id="ResetZoom" editor="GUID_TextEditorFactory" mod1="Control" key1="0" />
+    <KeyBinding guid="guidNewFolder" id="PROJECT_NEW_FOLDER" editor="guidVSStd97" mod1="Shift Alt" key1="F" />
+    <KeyBinding guid="guidCommands" id="SelectWholeLine" editor="guidVSStd97" mod1="Shift Alt" key1="E" />
+  </KeyBindings>
+
+  <VisibilityConstraints>
+    <VisibilityItem guid="guidCommands" id="FindInSolutionExplorer" context="UICONTEXT_SolutionHasMultipleProjects" />
+    <VisibilityItem guid="guidCommands" id="FindInSolutionExplorer" context="UICONTEXT_SolutionHasSingleProject" />
+    <VisibilityItem guid="guidCommands" id="SelectWholeLine" context="GUID_TextEditorFactory" />
+  </VisibilityConstraints>
+
+  <CommandPlacements>
+    <CommandPlacement guid="guidSHLMainMenu" id="IDM_VS_EDITOR_PASTE_MENU" priority="0x8000">
+      <Parent guid="guidSHLMainMenu" id="IDG_VS_CODEWIN_TEXTEDIT" />
+    </CommandPlacement>
+  </CommandPlacements>
+
+  <Symbols>
+    <GuidSymbol name="guidTweaksterPackage" value="{590dcf32-ae09-49b9-b0e5-55d7ebf100d0}" />
+
+    <GuidSymbol name="guidCommands" value="{85ce63b9-a773-45e0-9a60-9a96bc2ab40b}">
+      <IDSymbol name="ReOpenDocument" value="0x0100" />
+      <IDSymbol name="RestartMenu" value="0x0200" />
+      <IDSymbol name="RestartGroup" value="0x0201" />
+      <IDSymbol name="RestartNormal" value="0x0202" />
+      <IDSymbol name="RestartElevated" value="0x0203" />
+      <IDSymbol name="OuputVerbosity" value="0x0300" />
+      <IDSymbol name="OuputVerbosityList" value="0x0301" />
+      <IDSymbol name="OutputVerbosityGroup" value="0x0302" />
+      <IDSymbol name="ResetZoom" value="0x0400" />
+      <IDSymbol name="JustMyCode" value="0x0500" />
+      <IDSymbol name="JustMyCodeGroup" value="0x0501" />
+      <IDSymbol name="FindInSolutionExplorer" value="0x0600" />
+      <IDSymbol name="FindInSolutionExplorerGroup" value="0x0601" />
+      <IDSymbol name="ExploreSuggestions" value="0x0700" />
+      <IDSymbol name="LanguageSetting" value="0x0800" />
+      <IDSymbol name="LanguageSettingGroup" value="0x0801" />
+      <IDSymbol name="DuplicateWindow" value="0x0900" />
+      <IDSymbol name="ClearRecentFiles" value="0x1000" />
+      <IDSymbol name="ClearRecentFilesGroup" value="0x1001" />
+      <IDSymbol name="ClearRecentProjects" value="0x1010" />
+      <IDSymbol name="ClearRecentProjectsGroup" value="0x1011" />
+      <IDSymbol name="SelectWholeLine" value="0x1100" />
+      <IDSymbol name="RoadmapGroup" value="0x1200" />
+      <IDSymbol name="OpenRoadmap" value="0x1201" />
+      <IDSymbol name="OpenReleaseNotes" value="0x1202" />
+    </GuidSymbol>
+
+    <!-- Externals -->
+    <GuidSymbol name="guidVSDebugGroup" value="{c9dd4a58-47fb-11d2-83e7-00c04f9902c1}">
+      <IDSymbol name="IDM_DEBUG_TOOLBAR" value="0x421"/>
+    </GuidSymbol>
+
+    <GuidSymbol name="guidNewFolder" value="{5EFC7975-14BC-11CF-9B2B-00AA00573819}">
+      <IDSymbol name="PROJECT_NEW_FOLDER" value="0xf5"/>
+    </GuidSymbol>
+
+    <GuidSymbol name="guidFeedbackCmdSet" value="{769a4361-ad47-4ff4-86d8-d13bfdb7ed65}">
+      <IDSymbol name="grpidFeedback" value="0x1020" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>

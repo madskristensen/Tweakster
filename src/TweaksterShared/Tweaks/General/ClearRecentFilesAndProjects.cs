@@ -48,7 +48,7 @@ namespace Tweakster
             if (UserConfirmation("Are you sure you with to clear the list of recently opened solutions and projects?", uiShell))
             {
                 ISettingsList list = manager.GetOrCreateList("CodeContainers.Offline", true);
-                list.ClearAsync().ConfigureAwait(false);
+                list.ClearAsync().FireAndForget();
             }
         }
 

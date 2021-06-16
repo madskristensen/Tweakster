@@ -2,7 +2,7 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="0c8bd9fa-77d5-4563-ab57-9e01608c3d04" Version="1.1.2" Language="en-US" Publisher="Mads Kristensen" />
-        <DisplayName>Tweaks</DisplayName>
+        <DisplayName>Tweaks 2019</DisplayName>
         <Description xml:space="preserve">A collection of minor fixes and tweaks for Visual Studio to reduce the paper cuts and make you a happier developer</Description>
         <MoreInfo>https://github.com/madskristensen/Tweakster</MoreInfo>
         <License>Resources\LICENSE</License>
@@ -13,9 +13,6 @@
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0, 17.0)" />
     </Installation>
-    <Dependencies>
-        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
-    </Dependencies>
     <Prerequisites>
         <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[16.0,17.0)" DisplayName="Visual Studio core editor" />
     </Prerequisites>
