@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="0c8bd9fa-77d5-4563-ab57-9e01608c3d04" Version="1.1.99" Language="en-US" Publisher="Mads Kristensen" />
+    <Identity Id="0c8bd9fa-77d5-4563-ab57-9e01608c3d05" Version="1.1.99" Language="en-US" Publisher="Mads Kristensen" />
     <DisplayName>Tweaks 2022</DisplayName>
     <Description xml:space="preserve">A collection of minor fixes and tweaks for Visual Studio to reduce the paper cuts and make you a happier developer</Description>
     <MoreInfo>https://github.com/madskristensen/Tweakster</MoreInfo>
