@@ -34,10 +34,6 @@
       <Group guid="guidCommands" id="ClearRecentProjectsGroup" priority="5000">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_CSCD_PROJMRU" />
       </Group>
-
-      <Group guid="guidCommands" id="RoadmapGroup" priority="2000">
-        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_HELP" />
-      </Group>
     </Groups>
 
     <Menus>
@@ -155,14 +151,6 @@
         </Strings>
       </Button>
 
-      <Button guid="guidCommands" id="ExploreSuggestions" priority="0x0100" type="Button">
-        <Parent guid="guidFeedbackCmdSet" id="grpidFeedback" />
-        <Strings>
-          <ButtonText>Explore All Feedback...</ButtonText>
-          <LocCanonicalName>.Feedback.ExploreAllFeedback</LocCanonicalName>
-        </Strings>
-      </Button>
-
       <Button guid="guidCommands" id="SelectWholeLine" priority="0x6030" type="Button">
         <Parent guid="guidStdEditor" id="IDG_VS_EDITOR_ADVANCED_CMDS" />
         <CommandFlag>DynamicVisibility</CommandFlag>
@@ -170,24 +158,6 @@
         <Strings>
           <ButtonText>Select Whole Line</ButtonText>
           <LocCanonicalName>.Edit.SelectWholeLine</LocCanonicalName>
-        </Strings>
-      </Button>
-
-      <Button guid="guidCommands" id="OpenReleaseNotes" priority="0x0100" type="Button">
-        <Parent guid="guidCommands" id="RoadmapGroup" />
-        <Strings>
-          <ButtonText>Release Notes</ButtonText>
-          <LocCanonicalName>.Help.ReleaseNotes</LocCanonicalName>
-        </Strings>
-      </Button>
-
-      <Button guid="guidCommands" id="OpenRoadmap" priority="0x0200" type="Button">
-        <Parent guid="guidCommands" id="RoadmapGroup" />
-        <Icon guid="ImageCatalogGuid" id="SiteMap"/>
-        <CommandFlag>IconIsMoniker</CommandFlag>
-        <Strings>
-          <ButtonText>Roadmap</ButtonText>
-          <LocCanonicalName>.Help.Roadmap</LocCanonicalName>
         </Strings>
       </Button>
     </Buttons>
@@ -252,9 +222,6 @@
       <IDSymbol name="ClearRecentProjects" value="0x1010" />
       <IDSymbol name="ClearRecentProjectsGroup" value="0x1011" />
       <IDSymbol name="SelectWholeLine" value="0x1100" />
-      <IDSymbol name="RoadmapGroup" value="0x1200" />
-      <IDSymbol name="OpenRoadmap" value="0x1201" />
-      <IDSymbol name="OpenReleaseNotes" value="0x1202" />
     </GuidSymbol>
 
     <!-- Externals -->
@@ -264,10 +231,6 @@
 
     <GuidSymbol name="guidNewFolder" value="{5EFC7975-14BC-11CF-9B2B-00AA00573819}">
       <IDSymbol name="PROJECT_NEW_FOLDER" value="0xf5"/>
-    </GuidSymbol>
-
-    <GuidSymbol name="guidFeedbackCmdSet" value="{769a4361-ad47-4ff4-86d8-d13bfdb7ed65}">
-      <IDSymbol name="grpidFeedback" value="0x1020" />
     </GuidSymbol>
   </Symbols>
 </CommandTable>

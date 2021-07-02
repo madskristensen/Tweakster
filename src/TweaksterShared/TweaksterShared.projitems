@@ -43,9 +43,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\Options.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\ReOpenCreationListener.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\ReOpenDocument.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Ide\BrowseSuggestions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Ide\OpenReleaseNotes.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Ide\OpenRoadmap.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Ide\Options.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Ide\Restart.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Ide\WindowsJumpLists.cs" />
