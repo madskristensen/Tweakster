@@ -9,6 +9,7 @@
     <Import_RootNamespace>TweaksterShared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Common\ExtensionMethods.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\SVsSettingsPersistenceManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Options\Options.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TweaksterPackage.cs" />

@@ -87,7 +87,8 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Community.VisualStudio.Toolkit" ExcludeAssets="Runtime">
-      <Version>16.0.75.103</Version>
+      <Version>16.0.76.253-pre</Version>
+      <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Build.Framework">
       <Version>16.9.0</Version>

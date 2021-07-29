@@ -13,7 +13,7 @@ namespace Tweakster
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
-            DTE2 dte = await VS.GetDTEAsync();
+            DTE2 dte = await VS.GetServiceAsync<EnvDTE.DTE, DTE2>();
 
             if (dte?.ActiveDocument == null)
             {
@@ -22,11 +22,11 @@ namespace Tweakster
 
             try
             {
-                IWpfTextView view = await VS.Editor.GetCurrentWpfTextViewAsync();
+                DocumentView docView = await VS.Documents.GetActiveDocumentViewAsync();
 
-                if (view != null)
+                if (docView?.TextView != null)
                 {
-                    ResetZoom(dte, view);
+                    ResetZoom(dte, docView.TextView);
                 }
             }
             catch (Exception ex)

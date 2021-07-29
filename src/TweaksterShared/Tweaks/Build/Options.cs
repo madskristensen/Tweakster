@@ -33,7 +33,6 @@ namespace Tweakster
         [Description("If Enabled, the Build Output Windows will output the reason why a project is being built.")]
         [DefaultValue(false)]
         [OverrideCollectionName("General")]
-        [OverrideDataType(SettingDataType.Bool)]
         public bool U2DCheckVerbosity { get; set; } = false;
 
         [Category(_build)]
