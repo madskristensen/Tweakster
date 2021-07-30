@@ -11,7 +11,7 @@ namespace Tweakster
     [Guid(PackageGuids.guidTweaksterPackageString)]
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
-    [ProvideOptionPage(typeof(DialogPageProvider.General), "Environment", Vsix.Name, 0, 0, true, ProvidesLocalizedCategoryName = false)]
+    [ProvideOptionPage(typeof(DialogPageProvider.General), "Environment", Vsix.Name, 0, 0, true, new[] { "save", "open", "close", "clear", "focus", "restart", "output", "verbosity", "delete", "bin", "obj", "build", "debug", "copy", "empty", "line", "zoom", "format", "select", "paste" }, ProvidesLocalizedCategoryName = false)]
     [ProvideProfile(typeof(DialogPageProvider.General), "Environment", Vsix.Name, 0, 0, true)]
     [ProvideAutoLoad(VSConstants.UICONTEXT.SolutionExists_string, PackageAutoLoadFlags.BackgroundLoad)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
