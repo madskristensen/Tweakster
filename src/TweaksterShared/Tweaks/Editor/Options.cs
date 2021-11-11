@@ -27,7 +27,7 @@ namespace Tweakster
 
         [Category(_editor)]
         [DisplayName("Short form for attribute collapse")]
-        [Description("Display short text (...) for the collapased form of attributes.")]
+        [Description("Display short text (...) for the collapsed form of attributes.")]
         [DefaultValue(true)]
         public bool CollapseMemberAttributesShortForm { get; set; } = true;
 
