@@ -166,7 +166,7 @@
         <Icon guid="ImageCatalogGuid" id="SplitScreenVertically"/>
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
-          <ButtonText>Open To The Side</ButtonText>
+          <ButtonText>Open to the Side</ButtonText>
           <LocCanonicalName>.File.OpenToTheSide</LocCanonicalName>
         </Strings>
       </Button>
@@ -192,7 +192,7 @@
     <KeyBinding guid="guidCommands" id="ResetZoom" editor="GUID_TextEditorFactory" mod1="Control" key1="0" />
     <KeyBinding guid="guidNewFolder" id="PROJECT_NEW_FOLDER" editor="guidVSStd97" mod1="Shift Alt" key1="F" />
     <KeyBinding guid="guidCommands" id="SelectWholeLine" editor="guidVSStd97" mod1="Shift Alt" key1="E" />
-    <KeyBinding guid="guidCommands" id="OpenToTheSide" editor="guidSolutionExplorerToolWindow" mod1="Alt" key1="VK_RETURN" />
+    <KeyBinding guid="guidCommands" id="OpenToTheSide" editor="guidSolutionExplorerToolWindow" mod1="Control" key1="VK_RETURN" />
   </KeyBindings>
 
   <VisibilityConstraints>
