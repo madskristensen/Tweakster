@@ -20,6 +20,7 @@ It's from those tickets inspiration for this extension came.
   * [Keyboard shortcut to *Add New Folder*](#addfolder)
   * [Focus *Solution Explorer* on project load](#showsolexp)
   * [Clear list of recent files and projects](#clearmru)
+  * [Open to the side](#opentotheside)
 * **IDE**
   * [Restart Visual Studio command](#restart)
   * [Open in */SafeMode* from Jump List](#safemode)
@@ -93,6 +94,12 @@ Inspired by the suggestion [Add menu option to clear Most Recent File / Most Rec
 Clear the list of files from the **File -> Recent Files** list and projects from **File -> Recent Projects and Solutions**. It requiers Visual Studio to restart before the items are gone.
 
 ![Clear MRU](art/clear-mru.png)
+
+<h4 id="opentotheside">Open to the side</h4>
+
+In Solution Explorer you can now find the command **Open To The Side** in the right-click context menu. Invoking it will open the document in a new vertical tab group. This feature is handy for wide monitors where you can dock multiple document groups next to each other to optimize for horizontal space.
+
+Another way to invoke this command is to hold down the *Alt* key when opening files.
 
 ### IDE
 

@@ -1,9 +1,11 @@
-﻿using Community.VisualStudio.Toolkit;
+﻿using System.Runtime.InteropServices;
+using Community.VisualStudio.Toolkit;
 
 namespace Tweakster
 {
     internal class DialogPageProvider
     {
+        [ComVisible(true)]
         public class General : BaseOptionPage<Options> { }
     }
 

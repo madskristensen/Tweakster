@@ -44,6 +44,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\Options.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\ReOpenCreationListener.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\ReOpenDocument.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\OpenToTheSide.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Ide\Options.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Ide\Restart.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Ide\WindowsJumpLists.cs" />

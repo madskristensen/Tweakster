@@ -23,6 +23,9 @@ namespace Tweakster
 
         public const string guidNewFolderString = "5efc7975-14bc-11cf-9b2b-00aa00573819";
         public static Guid guidNewFolder = new Guid(guidNewFolderString);
+
+        public const string guidSolutionExplorerToolWindowString = "3ae79031-e1bc-11d0-8f78-00a0c9110057";
+        public static Guid guidSolutionExplorerToolWindow = new Guid(guidSolutionExplorerToolWindowString);
     }
     /// <summary>
     /// Helper class that encapsulates all CommandIDs uses across VS Package.
@@ -51,6 +54,7 @@ namespace Tweakster
         public const int ClearRecentProjects = 0x1010;
         public const int ClearRecentProjectsGroup = 0x1011;
         public const int SelectWholeLine = 0x1100;
+        public const int OpenToTheSide = 0x1101;
         public const int IDM_DEBUG_TOOLBAR = 0x0421;
         public const int PROJECT_NEW_FOLDER = 0x00F5;
     }
