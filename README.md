@@ -99,7 +99,7 @@ Clear the list of files from the **File -> Recent Files** list and projects from
 
 In Solution Explorer you can now find the command **Open To The Side** in the right-click context menu. Invoking it will open the document in a new vertical tab group. This feature is handy for wide monitors where you can dock multiple document groups next to each other to optimize for horizontal space.
 
-Another way to invoke this command is to hold down the *Ctrl* key when opening files.
+Another way to invoke this command is to hold down the *Alt* key when opening files.
 
 ### IDE
 
