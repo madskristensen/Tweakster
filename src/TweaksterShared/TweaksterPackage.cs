@@ -23,8 +23,6 @@ namespace Tweakster
 
             WindowsJumpLists.Initialize();
 
-            await AutoSave.InitializeAsync(this);
-            await ReOpenDocument.InitializeAsync(this);
             await NoStepDebuggingInDesignMode.InitializeAsync(this);
             await Restart.InitializeAsync(this);
             await DeleteOutputArtifacts.InitializeAsync(this);
@@ -41,6 +39,11 @@ namespace Tweakster
             await ClearRecentFilesAndProjects.InitializeAsync(this);
             await SelectWholeLineCommand.InitializeAsync(this);
             await OpenToTheSide.InitializeAsync(this);
+
+#if VS16
+            await AutoSave.InitializeAsync(this);
+            await ReOpenDocument.InitializeAsync(this);
+#endif
         }
     }
 }

@@ -36,14 +36,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\SelectWholeLineCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\WarnOnPaste.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\ActivateSolutionExplorer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\AutoSave.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\ClearRecentFilesAndProjects.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\CloseActiveDocument.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\DuplicateWindow.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\FindInSolutionExplorer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\Options.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\ReOpenCreationListener.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\ReOpenDocument.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\General\OpenToTheSide.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Ide\Options.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Ide\Restart.cs" />
