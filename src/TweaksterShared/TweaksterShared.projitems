@@ -27,8 +27,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\CollapseAttributeTaggerProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\CopyWithoutIndentation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\DisableZoomOnScroll.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\DontCopyEmptyLines.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\DontCopyEmptySelection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\FormatOnMoveLine.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\OpenLanguageSettings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tweaks\Editor\Options.cs" />

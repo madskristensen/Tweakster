@@ -52,6 +52,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>source.extension.vsixmanifest</DependentUpon>
     </Compile>
+    <Compile Include="Tweaks\Editor\DontCopyEmptyLines.cs" />
+    <Compile Include="Tweaks\Editor\DontCopyEmptySelection.cs" />
     <Compile Include="Tweaks\General\AutoSave.cs" />
     <Compile Include="Tweaks\General\ReOpenCreationListener.cs" />
     <Compile Include="Tweaks\General\ReOpenDocument.cs" />

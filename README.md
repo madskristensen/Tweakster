@@ -39,8 +39,8 @@ It's from those tickets inspiration for this extension came.
   * [Toggle *Just My Code* from the *Debug* toolbar](#justmycode)
 * **Editor**
   * [Run *Code Cleanup* on format](#codecleanup)
-  * [Don't copy empty lines](#dontcopyemptylines)
-  * [Don't copy when there's no selection](#dontcopyemptyselection)
+  * ~~[Don't copy empty lines](#dontcopyemptylines)~~ Now in VS 2022 v17.0
+  * ~~[Don't copy when there's no selection](#dontcopyemptyselection)~~ Now in VS 2022 v17.5
   * [Copy without indentation](#copywithoutindentation)
   * [Format on moving line up/down](#formatonlinemove)
   * [Disable editor zoom on mouse wheel](#disablezoom)
