@@ -31,6 +31,7 @@ namespace Tweakster.Tweaks.Editor
 
             if (selection.SelectedSpans.Count != 1 // Only handle single selections
                 || selection.Start.Position == selection.End.Position // Don't handle zero-width selections
+                || selection.Mode == TextSelectionMode.Box // Don't handle box selection
                 || !Options.Instance.CopyWithoutIndentation)
             {
                 return false;
