@@ -44,7 +44,7 @@ namespace Tweakster.Tweaks.General
                 ApplicationPath = _installerPath,
                 IconResourcePath = _installerPath,
                 Title = "Visual Studio Installer",
-                Description = "Starts Visual Studio installer.",
+                Description = "Starts the Visual Studio installer.",
                 Arguments = ""
             };
 
