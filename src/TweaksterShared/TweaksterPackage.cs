@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Diagnostics;
+using System.IO.Packaging;
 using System.Runtime.InteropServices;
 using System.Threading;
+using Microsoft;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Interop;
 using Tweakster.Tweaks.General;
 using Task = System.Threading.Tasks.Task;
 
@@ -21,7 +25,13 @@ namespace Tweakster
         {
             await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
 
-            WindowsJumpLists.Initialize();
+            IVsSetupCompositionService setupCompositionService = await this.GetServiceAsync(typeof(SVsSetupCompositionService)) as IVsSetupCompositionService;
+            Assumes.Present(setupCompositionService);
+
+            var devenvPath = Process.GetCurrentProcess().MainModule.FileName;;
+            var installerPath = setupCompositionService.InstallerPath;
+
+            WindowsJumpLists.Initialize(devenvPath, installerPath);
 
             await NoStepDebuggingInDesignMode.InitializeAsync(this);
             await Restart.InitializeAsync(this);

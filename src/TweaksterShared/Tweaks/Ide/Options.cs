@@ -16,5 +16,11 @@ namespace Tweakster
         [Description("Determines if Safe Mode should be added to the Windows Jump List. Requires Visual Studio restart.")]
         [DefaultValue(true)]
         public bool EnableSafeMode { get; set; } = true;
+
+        [Category(_general)]
+        [DisplayName("Enable Visual Studio Installer Shortcut")]
+        [Description("Determines if a shortcut to launch the Visual Studio Installer should be added to the Windows Jump List. Requires Visual Studio restart.")]
+        [DefaultValue(true)]
+        public bool EnableInstallerShortcut { get; set; } = true;
     }
 }
